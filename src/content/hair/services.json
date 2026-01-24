@@ -19,10 +19,20 @@
       "fromPriceZar": 230,
       "priceRangeZar": [230, 550],
       "durationMins": 60,
-      "outcome": "Soft, glossy movement with a polished finish.",
-      "includes": ["Consultation", "Cleanse", "Blow dry finish"],
-      "prepNotes": ["Arrive with hair detangled if possible."],
-      "afterCare": ["Sleep on a silk scarf or pillowcase for longevity."],
+      "outcome": "Lightweight volume, glossy movement, and a polished finish that lasts.",
+      "includes": [
+        "Texture + goal consultation",
+        "Cleansing shampoo and conditioning",
+        "Blow dry tailored to your finish"
+      ],
+      "prepNotes": [
+        "Arrive with hair detangled if possible.",
+        "Let us know if you need heat-protectant or styling preferences."
+      ],
+      "afterCare": [
+        "Sleep on a silk scarf or pillowcase for longevity.",
+        "Use a light serum to keep ends smooth between washes."
+      ],
       "recommendedTherapistIds": ["t-lee", "t-sam"],
       "image": "/services/hair-1.jpg"
     },
@@ -34,10 +44,17 @@
       "fromPriceZar": 220,
       "priceRangeZar": [220, 450],
       "durationMins": 40,
-      "outcome": "A precision shape tailored to your face and lifestyle.",
-      "includes": ["Consultation", "Cut & shape"],
+      "outcome": "A custom shape that frames your face and grows out gracefully.",
+      "includes": [
+        "Consultation and hairline assessment",
+        "Dry or wet cut to your preferred shape",
+        "Finish and styling tips"
+      ],
       "prepNotes": ["Come with hair in its natural texture for best shaping."],
-      "afterCare": ["Trim every 8–10 weeks to maintain shape."],
+      "afterCare": [
+        "Trim every 8–10 weeks to maintain shape.",
+        "Refresh the silhouette with a light edge-up as needed."
+      ],
       "recommendedTherapistIds": ["t-lee", "t-zola"],
       "image": "/services/hair-1.jpg"
     },
@@ -49,10 +66,17 @@
       "fromPriceZar": 380,
       "priceRangeZar": [380, 870],
       "durationMins": 75,
-      "outcome": "Fresh cut with a smooth, bouncy finish.",
-      "includes": ["Consultation", "Wash", "Precision cut", "Blow dry finish"],
+      "outcome": "A refreshed cut with smooth, bouncy movement and a camera-ready finish.",
+      "includes": [
+        "Consultation + style planning",
+        "Wash and scalp cleanse",
+        "Precision cut + blow dry finish"
+      ],
       "prepNotes": ["Bring inspiration photos if you have a new look in mind."],
-      "afterCare": ["Use heat protectant for styling at home."],
+      "afterCare": [
+        "Use heat protectant for styling at home.",
+        "Book a trim in 6–8 weeks to keep ends healthy."
+      ],
       "recommendedTherapistIds": ["t-lee", "t-sam"],
       "image": "/services/hair-1.jpg"
     },
@@ -64,10 +88,17 @@
       "fromPriceZar": 450,
       "priceRangeZar": [450, 900],
       "durationMins": 105,
-      "outcome": "Silky, sleek hair with humidity-resistant shine.",
-      "includes": ["Consultation", "Stretch & smooth", "Silk press finish"],
-      "prepNotes": ["Avoid heavy oils before your appointment."],
-      "afterCare": ["Wrap hair at night to preserve the finish."],
+      "outcome": "Silky, sleek hair with humidity-resistant shine and fluid movement.",
+      "includes": [
+        "Consultation + heat-protection plan",
+        "Stretching and smooth blowout",
+        "Silk press finish"
+      ],
+      "prepNotes": ["Avoid heavy oils or butters before your appointment."],
+      "afterCare": [
+        "Wrap hair at night to preserve the finish.",
+        "Use a lightweight anti-humidity spray between washes."
+      ],
       "recommendedTherapistIds": ["t-sam", "t-zola"],
       "image": "/services/hair-1.jpg"
     },
@@ -79,10 +110,17 @@
       "fromPriceZar": 785,
       "priceRangeZar": [785, 1200],
       "durationMins": 95,
-      "outcome": "Even, rich colour coverage with healthy shine.",
-      "includes": ["Colour consultation", "Root tint application", "Gloss rinse"],
+      "outcome": "Even, rich coverage with a seamless blend into existing colour.",
+      "includes": [
+        "Colour consultation",
+        "Root tint application",
+        "Gloss rinse + conditioning"
+      ],
       "prepNotes": ["Skip washing 24 hours before for optimal colour deposit."],
-      "afterCare": ["Use colour-safe shampoo to maintain vibrancy."],
+      "afterCare": [
+        "Use colour-safe shampoo to maintain vibrancy.",
+        "Avoid hot water for the first 48 hours."
+      ],
       "recommendedTherapistIds": ["t-aya", "t-jess"],
       "image": "/services/hair-1.jpg"
     },
@@ -94,8 +132,14 @@
       "fromPriceZar": 895,
       "priceRangeZar": [895, 1500],
       "durationMins": 150,
-      "outcome": "Sun-kissed brightness with strategic dimension.",
-      "includes": ["Custom foil placement", "Tone & gloss", "Blow dry"],
+      "outcome": "Sun-kissed dimension with bright pieces exactly where you want them.",
+      "includes": [
+        "Custom foil placement",
+        "Toning + gloss",
+        "Finish style"
+      ],
+      "prepNotes": ["Bring inspiration images for placement and tone."],
+      "afterCare": ["Use purple or tone-safe products for brightness."],
       "recommendedTherapistIds": ["t-aya", "t-jess"],
       "image": "/services/hair-1.jpg"
     },
@@ -108,7 +152,13 @@
       "priceRangeZar": [1199, 1850],
       "durationMins": 180,
       "outcome": "All-over luminosity with seamless, dimensional tones.",
-      "includes": ["Full foil placement", "Bond builder treatment", "Finish style"],
+      "includes": [
+        "Full foil placement",
+        "Bond builder treatment",
+        "Finish style"
+      ],
+      "prepNotes": ["Arrive with clean, dry hair for the best lift."],
+      "afterCare": ["Use a bond-repair mask weekly."],
       "recommendedTherapistIds": ["t-jess", "t-aya"],
       "image": "/services/hair-1.jpg"
     },
@@ -120,8 +170,14 @@
       "fromPriceZar": 1750,
       "priceRangeZar": [1750, 2600],
       "durationMins": 210,
-      "outcome": "Soft, blended colour that grows out beautifully.",
-      "includes": ["Hand-painted balayage", "Toner", "Moisture seal"],
+      "outcome": "Soft, blended colour that grows out beautifully with low upkeep.",
+      "includes": [
+        "Hand-painted balayage",
+        "Custom toner",
+        "Moisture seal + finish"
+      ],
+      "prepNotes": ["Book a consultation if you want a dramatic lift."],
+      "afterCare": ["Schedule a gloss refresh every 8–10 weeks."],
       "recommendedTherapistIds": ["t-aya", "t-jess"],
       "image": "/services/hair-1.jpg"
     },
@@ -133,8 +189,14 @@
       "fromPriceZar": 2000,
       "priceRangeZar": [2000, 3200],
       "durationMins": 240,
-      "outcome": "Bright dimension with refreshed roots for seamless colour.",
-      "includes": ["Balayage refresh", "Root colour", "Gloss + blow dry"],
+      "outcome": "Bright dimension with refreshed roots for a seamless, multi-tonal blend.",
+      "includes": [
+        "Balayage refresh",
+        "Root colour",
+        "Gloss + blow dry"
+      ],
+      "prepNotes": ["Let us know your last colour service date."],
+      "afterCare": ["Book a trim to keep ends healthy after lightening."],
       "recommendedTherapistIds": ["t-aya", "t-jess"],
       "image": "/services/hair-1.jpg"
     },
@@ -146,8 +208,13 @@
       "fromPriceZar": 300,
       "priceRangeZar": [300, 700],
       "durationMins": 45,
-      "outcome": "Restores moisture, softness, and shine in one session.",
-      "includes": ["Hydrating mask", "Steam infusion", "Scalp massage"],
+      "outcome": "Restores moisture, softness, and shine in one restorative session.",
+      "includes": [
+        "Hydrating mask",
+        "Steam infusion",
+        "Scalp massage"
+      ],
+      "prepNotes": ["Skip heavy oils for 48 hours pre-treatment."],
       "afterCare": ["Continue with a weekly moisture mask at home."],
       "recommendedTherapistIds": ["t-kay", "t-zola"],
       "image": "/services/hair-1.jpg"
@@ -160,8 +227,14 @@
       "fromPriceZar": 350,
       "priceRangeZar": [350, 850],
       "durationMins": 60,
-      "outcome": "A clean, balanced scalp with calm, nourished roots.",
-      "includes": ["Scalp analysis", "Detox cleanse", "Massage ritual"],
+      "outcome": "A clarified, balanced scalp with relaxed, nourished roots.",
+      "includes": [
+        "Scalp analysis",
+        "Detox cleanse",
+        "Massage ritual"
+      ],
+      "prepNotes": ["Avoid styling products the day of your service."],
+      "afterCare": ["Keep the scalp hydrated with a light tonic."],
       "recommendedTherapistIds": ["t-kay", "t-nia"],
       "image": "/services/hair-1.jpg"
     },
@@ -173,9 +246,14 @@
       "fromPriceZar": 489,
       "priceRangeZar": [489, 1200],
       "durationMins": 150,
-      "outcome": "Long-lasting smoothness with reduced frizz and faster styling.",
-      "includes": ["Smoothing treatment", "Heat sealing", "Finish style"],
+      "outcome": "Long-lasting smoothness with reduced frizz and faster styling time.",
+      "includes": [
+        "Smoothing treatment",
+        "Heat sealing",
+        "Finish style"
+      ],
       "prepNotes": ["Avoid colouring hair within two weeks of treatment."],
+      "afterCare": ["Use sulphate-free products for the first month."],
       "recommendedTherapistIds": ["t-kay", "t-sam"],
       "image": "/services/hair-1.jpg"
     },
@@ -187,8 +265,14 @@
       "fromPriceZar": 250,
       "priceRangeZar": [250, 600],
       "durationMins": 45,
-      "outcome": "Clean, moisturised base ready for protective styling.",
-      "includes": ["Consultation", "Scalp cleanse", "Moisture prep"],
+      "outcome": "Clean, hydrated, and ready for long-wear protective styling.",
+      "includes": [
+        "Consultation",
+        "Scalp cleanse",
+        "Moisture prep"
+      ],
+      "prepNotes": ["Let us know your preferred braid size and tension."],
+      "afterCare": ["Schedule a check-in after 4–6 weeks."],
       "recommendedTherapistIds": ["t-nia", "t-kay"],
       "image": "/services/hair-1.jpg"
     },
@@ -200,9 +284,14 @@
       "fromPriceZar": 600,
       "priceRangeZar": [600, 1800],
       "durationMins": 240,
-      "outcome": "Long-lasting braids sized to your lifestyle and comfort.",
-      "includes": ["Sectioning & parting", "Braid install", "Edge finish"],
+      "outcome": "Long-lasting braids sized to your lifestyle, scalp health, and comfort.",
+      "includes": [
+        "Sectioning + parting",
+        "Braid install",
+        "Edge finish"
+      ],
       "prepNotes": ["Allow 3–6 hours depending on braid size."],
+      "afterCare": ["Moisturise scalp weekly with a light oil."],
       "recommendedTherapistIds": ["t-nia", "t-lulu"],
       "image": "/services/hair-1.jpg"
     },
@@ -214,8 +303,14 @@
       "fromPriceZar": 655,
       "priceRangeZar": [655, 1200],
       "durationMins": 120,
-      "outcome": "Secure, natural-looking install with a seamless blend.",
-      "includes": ["Foundation braid down", "Install & trim", "Style finish"],
+      "outcome": "Secure, natural-looking install with a seamless blend and comfortable wear.",
+      "includes": [
+        "Foundation braid down",
+        "Install + trim",
+        "Style finish"
+      ],
+      "prepNotes": ["Bring clean, detangled hair and your unit ready."],
+      "afterCare": ["Use a silk bonnet to protect the install."],
       "recommendedTherapistIds": ["t-lulu", "t-nia"],
       "image": "/services/hair-1.jpg"
     },
@@ -234,6 +329,8 @@
         "Cornrows",
         "Install + style"
       ],
+      "prepNotes": ["Arrive with your bundles ready or purchase in advance."],
+      "afterCare": ["Schedule a maintenance check after 3–4 weeks."],
       "recommendedTherapistIds": ["t-lulu", "t-nia"],
       "image": "/services/hair-1.jpg"
     }
