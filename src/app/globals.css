@@ -223,7 +223,8 @@
    Apply by setting: <body data-theme="hair">
 ----------------------------------------------*/
 @layer base {
-  body[data-theme="hair"] {
+  body[data-theme="hair"],
+  [data-theme="hair"] {
     --accent: 255 61 174; /* pink */
     --ring: 255 61 174;
     --btn-primary:
@@ -234,7 +235,8 @@
       linear-gradient(180deg, rgb(var(--bg-900)) 0%, rgb(var(--bg-900)) 100%);
   }
 
-  body[data-theme="nails"] {
+  body[data-theme="nails"],
+  [data-theme="nails"] {
     --accent: 183 123 255; /* lilac */
     --ring: 183 123 255;
     --btn-primary:
@@ -245,7 +247,8 @@
       linear-gradient(180deg, rgb(var(--bg-900)) 0%, rgb(var(--bg-900)) 100%);
   }
 
-  body[data-theme="wellness"] {
+  body[data-theme="wellness"],
+  [data-theme="wellness"] {
     --accent: 45 226 230; /* teal */
     --ring: 45 226 230;
     --btn-primary:
@@ -256,7 +259,8 @@
       linear-gradient(180deg, rgb(var(--bg-900)) 0%, rgb(var(--bg-900)) 100%);
   }
 
-  body[data-theme="bridal"] {
+  body[data-theme="bridal"],
+  [data-theme="bridal"] {
     --accent: 255 210 63; /* gold */
     --ring: 255 210 63;
     --btn-primary:
