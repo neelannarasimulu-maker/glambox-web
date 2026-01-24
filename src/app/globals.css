@@ -1,224 +1,261 @@
-@config "../../tailwind.config.ts";
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* ---------------------------------------------
+   Glambox Global Theme System
+   - Default = Glambox Landing (multi-accent)
+   - Microsites override variables with [data-theme="hair"] etc.
+----------------------------------------------*/
 
-/* =========================================================
-   Glambox Global Styles (Tailwind v4 + CSS Tokens)
-   Structure:
-   1) Tokens (colors, radii)
-   2) Base (html/body, typography defaults)
-   3) Layout rhythm (page/section spacing)
-   4) Surfaces + effects (bg, glass, sticker, grain)
-   5) Utility typography helpers (optional)
-   6) Theme overrides (nails/hair/wellness)
-   7) Small polish (selection)
-========================================================= */
-
-/* -----------------------------
-   1) Design Tokens
------------------------------- */
-:root {
-  /* Surfaces */
-  --bg: 255 255 255;
-  --surface: 255 255 255;
-  --surface-2: 248 250 252;
-
-  /* Text */
-  --text: 15 23 42;
-  --muted: 71 85 105;
-
-  /* Border */
-  --border: 226 232 240;
-
-  /* Glambox palette: vivid + friendly */
-  --brand: 255 45 149;    /* glam pink */
-  --brand-2: 0 214 255;   /* electric cyan */
-  --brand-3: 255 214 0;   /* golden pop */
-  --brand-4: 124 58 237;  /* playful purple */
-  --brand-ink: 255 255 255;
-
-  /* Radii */
-  --radius: 18px;
-  --radius-sm: 14px;
-  --radius-lg: 26px;
-
-  /* Motion */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Optional dark mode (token-only overrides) */
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --bg: 2 6 23;          /* slate-950 */
-    --surface: 15 23 42;   /* slate-900 */
-    --surface-2: 30 41 59; /* slate-800 */
-    --text: 241 245 249;   /* slate-100 */
-    --muted: 148 163 184;  /* slate-400 */
-    --border: 51 65 85;    /* slate-700 */
-    --brand-ink: 2 6 23;
+    /* Core */
+    --bg-900: 11 11 16;     /* #0B0B10 */
+    --bg-800: 18 18 33;     /* #121221 */
+    --bg-700: 26 26 46;     /* #1A1A2E */
+
+    --text-100: 255 255 255;
+    --text-200: 233 233 242;
+    --text-300: 185 185 204;
+    --text-400: 138 138 163;
+
+    /* Borders */
+    --border-1: 255 255 255 / 0.10;
+    --border-2: 255 255 255 / 0.18;
+
+    /* Landing page accents (multi-colour) */
+    --accent-pink: 255 61 174;   /* #FF3DAE */
+    --accent-coral: 255 91 91;   /* #FF5B5B */
+    --accent-gold: 255 210 63;   /* #FFD23F */
+    --accent-lilac: 183 123 255; /* #B77BFF */
+    --accent-teal: 45 226 230;   /* #2DE2E6 */
+
+    /* Default “active accent” (can be changed per section) */
+    --accent: var(--accent-pink);
+
+    /* Focus ring */
+    --ring: var(--accent-teal);
+
+    /* Radius */
+    --radius-xl: 28px;
+    --radius-lg: 20px;
+
+    /* Hero / ambient glow gradients */
+    --hero-bg:
+      radial-gradient(800px 500px at 20% 20%, rgb(var(--accent-pink) / 0.35), transparent 60%),
+      radial-gradient(900px 600px at 80% 30%, rgb(var(--accent-teal) / 0.25), transparent 55%),
+      radial-gradient(700px 500px at 50% 90%, rgb(var(--accent-gold) / 0.18), transparent 60%),
+      linear-gradient(180deg, rgb(var(--bg-900)) 0%, rgb(var(--bg-900)) 100%);
+
+    --btn-primary:
+      linear-gradient(90deg, rgb(var(--accent-pink)) 0%, rgb(var(--accent-lilac)) 45%, rgb(var(--accent-teal)) 100%);
+
+    --hero-image-overlay:
+      linear-gradient(90deg, rgb(var(--bg-900) / 0.90) 0%, rgb(var(--bg-900) / 0.55) 45%, rgb(var(--bg-900) / 0.15) 100%);
+
+    /* Typography smoothing */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Scroll behavior */
+    scroll-behavior: smooth;
+  }
+
+  html, body {
+    height: 100%;
+    background: rgb(var(--bg-900));
+    color: rgb(var(--text-200));
+  }
+
+  /* Selection highlight (subtle, premium) */
+  ::selection {
+    background: rgb(var(--accent-lilac) / 0.35);
+    color: rgb(var(--text-100));
+  }
+
+  /* Links */
+  a {
+    color: rgb(var(--text-100));
+    text-decoration: none;
+  }
+  a:hover {
+    color: rgb(var(--text-100));
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgb(var(--ring) / 0.28);
+    border-radius: 10px;
   }
 }
 
-/* -----------------------------
-   2) Base (document + typography)
------------------------------- */
-html, body {
-  height: 100%;
-}
+/* ---------------------------------------------
+   Utility classes for Glambox look
+----------------------------------------------*/
+@layer components {
+  .container-glambox {
+    @apply mx-auto w-full max-w-6xl px-4;
+  }
 
-:root {
-  scroll-behavior: smooth;
-}
+  .section-pad {
+    @apply py-16 md:py-24;
+  }
 
-body {
-  background: rgb(var(--bg));
-  color: rgb(var(--text));
-  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  font-feature-settings: "cv02","cv03","cv04","cv11";
-  text-rendering: optimizeLegibility;
-}
+  .glass {
+    background: rgb(var(--bg-800) / 0.55);
+    border: 1px solid rgb(var(--border-1));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--radius-lg);
+  }
 
-h1, h2, h3, .gb-display {
-  font-family: var(--font-display), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-}
+  .card {
+    background: rgb(var(--bg-800));
+    border: 1px solid rgb(var(--border-1));
+    border-radius: var(--radius-lg);
+    box-shadow: 0 18px 60px rgb(0 0 0 / 0.55);
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  .card-hover {
+    transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    border-color: rgb(var(--border-2));
+    box-shadow: 0 26px 90px rgb(0 0 0 / 0.62);
+  }
 
-/* -----------------------------
-   3) Layout rhythm
------------------------------- */
-.gb-page {
-  padding-bottom: 72px;
-}
+  .hero-bg {
+    background: var(--hero-bg);
+  }
 
-.gb-section {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
+  .hero-overlay {
+    background: var(--hero-image-overlay);
+  }
 
-@media (min-width: 768px) {
-  .gb-section {
-    padding-top: 56px;
-    padding-bottom: 56px;
+  .btn-primary {
+    background: var(--btn-primary);
+    color: rgb(var(--text-100));
+    border-radius: 9999px;
+    padding: 12px 18px;
+    font-weight: 600;
+    box-shadow: 0 18px 60px rgb(var(--accent) / 0.20);
+    transition: transform 150ms ease, box-shadow 200ms ease;
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 22px 70px rgb(var(--accent) / 0.26);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: rgb(var(--text-100));
+    border: 1px solid rgb(var(--border-2));
+    border-radius: 9999px;
+    padding: 12px 18px;
+    font-weight: 600;
+    transition: transform 150ms ease, border-color 200ms ease, background 200ms ease;
+  }
+  .btn-secondary:hover {
+    transform: translateY(-1px);
+    border-color: rgb(var(--text-100) / 0.35);
+    background: rgb(var(--bg-800) / 0.35);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 9999px;
+    border: 1px solid rgb(var(--border-1));
+    background: rgb(var(--bg-800) / 0.40);
+    color: rgb(var(--text-200));
+  }
+
+  .headline-gradient {
+    /* subtle premium highlight on H1 */
+    background: linear-gradient(90deg, rgb(var(--text-100)) 0%, rgb(var(--text-200)) 40%, rgb(var(--accent-teal)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .chip {
+    border: 1px solid rgb(var(--border-1));
+    background: rgb(var(--bg-800) / 0.35);
+    border-radius: 9999px;
+    padding: 10px 12px;
+    color: rgb(var(--text-200));
+  }
+
+  .divider-soft {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgb(var(--border-2)), transparent);
   }
 }
 
-/* -----------------------------
-   4) Surfaces + effects
------------------------------- */
+/* ---------------------------------------------
+   Microsite Themes (per popup)
+   Apply by setting: <body data-theme="hair">
+----------------------------------------------*/
+@layer base {
+  body[data-theme="hair"] {
+    --accent: 255 61 174; /* pink */
+    --ring: 255 61 174;
+    --btn-primary:
+      linear-gradient(90deg, rgb(255 61 174) 0%, rgb(255 91 91) 100%);
+    --hero-bg:
+      radial-gradient(800px 500px at 20% 20%, rgb(255 61 174 / 0.30), transparent 60%),
+      radial-gradient(900px 600px at 80% 30%, rgb(255 91 91 / 0.20), transparent 55%),
+      linear-gradient(180deg, rgb(var(--bg-900)) 0%, rgb(var(--bg-900)) 100%);
+  }
 
-/* Signature vibrant background (apply to main wrappers) */
-.gb-bg {
-  background:
-    radial-gradient(900px 420px at 12% -10%, rgba(var(--brand), 0.14), transparent 60%),
-    radial-gradient(780px 360px at 88% 0%, rgba(var(--brand-2), 0.12), transparent 55%),
-    radial-gradient(720px 360px at 50% 105%, rgba(var(--brand-3), 0.12), transparent 60%),
-    radial-gradient(520px 280px at 75% 70%, rgba(var(--brand-4), 0.10), transparent 60%),
-    linear-gradient(to bottom, rgba(255,255,255,0.72), rgba(255,255,255,1));
+  body[data-theme="nails"] {
+    --accent: 183 123 255; /* lilac */
+    --ring: 183 123 255;
+    --btn-primary:
+      linear-gradient(90deg, rgb(183 123 255) 0%, rgb(255 61 174) 100%);
+    --hero-bg:
+      radial-gradient(800px 500px at 20% 20%, rgb(183 123 255 / 0.30), transparent 60%),
+      radial-gradient(900px 600px at 80% 30%, rgb(255 61 174 / 0.20), transparent 55%),
+      linear-gradient(180deg, rgb(var(--bg-900)) 0%, rgb(var(--bg-900)) 100%);
+  }
+
+  body[data-theme="wellness"] {
+    --accent: 45 226 230; /* teal */
+    --ring: 45 226 230;
+    --btn-primary:
+      linear-gradient(90deg, rgb(45 226 230) 0%, rgb(255 210 63) 100%);
+    --hero-bg:
+      radial-gradient(800px 500px at 20% 20%, rgb(45 226 230 / 0.26), transparent 60%),
+      radial-gradient(900px 600px at 80% 30%, rgb(255 210 63 / 0.18), transparent 55%),
+      linear-gradient(180deg, rgb(var(--bg-900)) 0%, rgb(var(--bg-900)) 100%);
+  }
+
+  body[data-theme="bridal"] {
+    --accent: 255 210 63; /* gold */
+    --ring: 255 210 63;
+    --btn-primary:
+      linear-gradient(90deg, rgb(255 210 63) 0%, rgb(183 123 255) 100%);
+    --hero-bg:
+      radial-gradient(800px 500px at 20% 20%, rgb(255 210 63 / 0.22), transparent 60%),
+      radial-gradient(900px 600px at 80% 30%, rgb(183 123 255 / 0.18), transparent 55%),
+      linear-gradient(180deg, rgb(var(--bg-900)) 0%, rgb(var(--bg-900)) 100%);
+  }
 }
 
-/* Glass surface */
-.gb-glass {
-  background: rgba(var(--surface), 0.72);
-  border: 1px solid rgba(var(--border), 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
-}
-
-/* Playful sticker surface (promo chips, callouts) */
-.gb-sticker {
-  background:
-    radial-gradient(14px 14px at 20% 20%, rgba(var(--brand-3), 0.28), transparent 65%),
-    radial-gradient(18px 18px at 80% 30%, rgba(var(--brand-2), 0.22), transparent 65%),
-    rgba(var(--surface), 0.88);
-  border: 1px solid rgba(var(--border), 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
-}
-
-/* Divider */
-.gb-divider {
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    rgba(var(--border), 0),
-    rgba(var(--border), 1),
-    rgba(var(--border), 0)
-  );
-}
-
-/* Focus ring utility (used by Button component via focus-visible:gb-focus) */
-.gb-focus {
-  outline: none;
-  box-shadow:
-    0 0 0 3px rgba(var(--brand-2), 0.25),
-    0 0 0 1px rgba(var(--brand-2), 0.45);
-}
-
-/* Grain overlay for “premium texture” */
-.gb-grain {
-  position: relative;
-}
-
-.gb-grain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.06;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
-}
-
-/* Improve readability on bright backgrounds (optional) */
-.gb-readable {
-  text-shadow: 0 1px 0 rgba(255,255,255,0.35);
-}
-
-/* -----------------------------
-   5) Optional typography helpers
-   (use if you want quick, consistent
-    non-component styles in content)
------------------------------- */
-.gb-h1 { font-size: 2rem; line-height: 2.25rem; font-weight: 650; letter-spacing: -0.02em; }
-.gb-h2 { font-size: 1.5rem; line-height: 1.9rem; font-weight: 650; letter-spacing: -0.015em; }
-.gb-body { font-size: 0.95rem; line-height: 1.5rem; }
-.gb-muted { color: rgb(var(--muted)); }
-
-/* -----------------------------
-   6) Theme overrides (micro-sites)
-   Apply to a wrapper: <main className="theme-hair ...">
------------------------------- */
-
-/* Nails theme */
-.theme-nails {
-  --brand: 255 0 153;
-  --brand-2: 0 224 255;
-  --brand-3: 255 208 0;
-}
-
-/* Hair theme */
-.theme-hair {
-  --brand: 124 58 237;   /* purple */
-  --brand-2: 34 211 238; /* cyan */
-  --brand-3: 16 185 129; /* green */
-}
-
-/* Wellness theme */
-.theme-wellness {
-  --brand: 16 185 129;    /* green */
-  --brand-2: 59 130 246;  /* blue */
-  --brand-3: 244 114 182; /* pink */
-}
-
-/* -----------------------------
-   7) Small polish
------------------------------- */
-::selection {
-  background: rgba(var(--brand), 0.25);
+/* ---------------------------------------------
+   Motion (keep premium, not chaotic)
+----------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
