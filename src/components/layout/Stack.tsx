@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/cn";
 
 export default function Stack({
@@ -5,7 +7,7 @@ export default function Stack({
   className,
   gap = "md",
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   gap?: "sm" | "md" | "lg";
 }) {

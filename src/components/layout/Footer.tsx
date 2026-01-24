@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import Container from "@/components/layout/Container";
 import { cn } from "@/lib/cn";
 import { Badge } from "@/components/ui/Badge";
@@ -10,7 +11,7 @@ function FooterLink({
   className,
 }: {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }) {
   return (

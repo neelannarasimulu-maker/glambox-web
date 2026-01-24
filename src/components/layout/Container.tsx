@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/cn";
 
 export default function Container({
@@ -5,7 +7,7 @@ export default function Container({
   className,
   size = "xl",
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   size?: "md" | "lg" | "xl";
 }) {

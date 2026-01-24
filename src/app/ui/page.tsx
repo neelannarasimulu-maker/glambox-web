@@ -11,9 +11,6 @@ import { Select } from "@/components/ui/Select";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Switch } from "@/components/ui/Switch";
 import { Badge } from "@/components/ui/Badge";
-import { Tabs } from "@/components/ui/Tabs";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { Pagination } from "@/components/ui/Pagination";
 
 import Section from "@/components/layout/Section";
 
