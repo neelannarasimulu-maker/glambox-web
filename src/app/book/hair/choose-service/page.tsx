@@ -9,6 +9,7 @@ import {
   getTherapistById,
   serviceCategories,
   services,
+  viewDetailsLabel,
 } from "@/lib/hair-data";
 import {
   mergePreferences,
@@ -118,7 +119,7 @@ export default function ChooseServicePage() {
                       href={`/explore/hair/services/${service.id}`}
                       className="btn-secondary"
                     >
-                      View details
+                      {viewDetailsLabel}
                     </Link>
                     <Link
                       href={nextStep}

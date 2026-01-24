@@ -8,6 +8,8 @@ import {
   getTherapistsForService as getTherapistsForServiceFromContent,
   priceTiers,
   serviceCategories,
+  viewDetailsLabel,
+  viewProfileLabel,
   type PriceTier,
   type Service,
   type ServiceCategory,
@@ -16,7 +18,7 @@ import {
 
 export type { PriceTier, Service, ServiceCategory, Therapist };
 
-export { formatZar, priceTiers, serviceCategories };
+export { formatZar, priceTiers, serviceCategories, viewDetailsLabel, viewProfileLabel };
 
 export const services = getHairServices();
 export const therapists = getHairTherapists();

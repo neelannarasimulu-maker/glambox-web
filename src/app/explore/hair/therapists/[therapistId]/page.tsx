@@ -4,6 +4,7 @@ import {
   formatZar,
   getHairTherapistById,
   getServicesForTherapist,
+  viewDetailsLabel,
 } from "@/lib/content/hair";
 
 export default function HairTherapistProfilePage({
@@ -103,7 +104,7 @@ export default function HairTherapistProfilePage({
                     href={`/explore/hair/services/${service.id}`}
                     className="btn-secondary"
                   >
-                    View details
+                    {viewDetailsLabel}
                   </Link>
                   <Link
                     href={`/book/hair/choose-time?serviceId=${service.id}&therapistId=${therapist.id}`}

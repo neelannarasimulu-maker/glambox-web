@@ -4,6 +4,7 @@ import {
   getHairServices,
   getHairTherapistById,
   pricingNote,
+  viewDetailsLabel,
 } from "@/lib/content/hair";
 
 const getInitials = (name: string) =>
@@ -95,7 +96,7 @@ export default function HairServicesPage() {
                     href={`/explore/hair/services/${service.id}`}
                     className="btn-secondary"
                   >
-                    View details
+                    {viewDetailsLabel}
                   </Link>
                   <Link
                     href={`/book/hair/choose-therapist?serviceId=${service.id}`}
