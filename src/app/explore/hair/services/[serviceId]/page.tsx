@@ -120,7 +120,7 @@ export default function HairServiceDetailPage({
                         {therapist.name}
                       </p>
                       <p className="text-xs text-[rgb(var(--text-400))]">
-                        Best for {therapist.vibeTags[0] ?? \"thoughtful care\"}
+                        Best for {therapist.vibeTags?.[0] ?? "thoughtful care"}
                       </p>
                     </div>
                     <span className="btn-secondary text-sm">View profile</span>
