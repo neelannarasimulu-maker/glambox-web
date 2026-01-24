@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/cn";
 import Container from "./Container";
 
@@ -8,7 +10,7 @@ export default function Section({
   size = "xl",
   variant = "default",
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   containerClassName?: string;
   size?: "md" | "lg" | "xl";
