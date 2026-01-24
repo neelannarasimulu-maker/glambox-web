@@ -1,0 +1,224 @@
+@config "../../tailwind.config.ts";
+@import "tailwindcss";
+
+
+/* =========================================================
+   Glambox Global Styles (Tailwind v4 + CSS Tokens)
+   Structure:
+   1) Tokens (colors, radii)
+   2) Base (html/body, typography defaults)
+   3) Layout rhythm (page/section spacing)
+   4) Surfaces + effects (bg, glass, sticker, grain)
+   5) Utility typography helpers (optional)
+   6) Theme overrides (nails/hair/wellness)
+   7) Small polish (selection)
+========================================================= */
+
+/* -----------------------------
+   1) Design Tokens
+------------------------------ */
+:root {
+  /* Surfaces */
+  --bg: 255 255 255;
+  --surface: 255 255 255;
+  --surface-2: 248 250 252;
+
+  /* Text */
+  --text: 15 23 42;
+  --muted: 71 85 105;
+
+  /* Border */
+  --border: 226 232 240;
+
+  /* Glambox palette: vivid + friendly */
+  --brand: 255 45 149;    /* glam pink */
+  --brand-2: 0 214 255;   /* electric cyan */
+  --brand-3: 255 214 0;   /* golden pop */
+  --brand-4: 124 58 237;  /* playful purple */
+  --brand-ink: 255 255 255;
+
+  /* Radii */
+  --radius: 18px;
+  --radius-sm: 14px;
+  --radius-lg: 26px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Optional dark mode (token-only overrides) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: 2 6 23;          /* slate-950 */
+    --surface: 15 23 42;   /* slate-900 */
+    --surface-2: 30 41 59; /* slate-800 */
+    --text: 241 245 249;   /* slate-100 */
+    --muted: 148 163 184;  /* slate-400 */
+    --border: 51 65 85;    /* slate-700 */
+    --brand-ink: 2 6 23;
+  }
+}
+
+/* -----------------------------
+   2) Base (document + typography)
+------------------------------ */
+html, body {
+  height: 100%;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  font-feature-settings: "cv02","cv03","cv04","cv11";
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, .gb-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* -----------------------------
+   3) Layout rhythm
+------------------------------ */
+.gb-page {
+  padding-bottom: 72px;
+}
+
+.gb-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .gb-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
+
+/* -----------------------------
+   4) Surfaces + effects
+------------------------------ */
+
+/* Signature vibrant background (apply to main wrappers) */
+.gb-bg {
+  background:
+    radial-gradient(900px 420px at 12% -10%, rgba(var(--brand), 0.14), transparent 60%),
+    radial-gradient(780px 360px at 88% 0%, rgba(var(--brand-2), 0.12), transparent 55%),
+    radial-gradient(720px 360px at 50% 105%, rgba(var(--brand-3), 0.12), transparent 60%),
+    radial-gradient(520px 280px at 75% 70%, rgba(var(--brand-4), 0.10), transparent 60%),
+    linear-gradient(to bottom, rgba(255,255,255,0.72), rgba(255,255,255,1));
+}
+
+/* Glass surface */
+.gb-glass {
+  background: rgba(var(--surface), 0.72);
+  border: 1px solid rgba(var(--border), 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+}
+
+/* Playful sticker surface (promo chips, callouts) */
+.gb-sticker {
+  background:
+    radial-gradient(14px 14px at 20% 20%, rgba(var(--brand-3), 0.28), transparent 65%),
+    radial-gradient(18px 18px at 80% 30%, rgba(var(--brand-2), 0.22), transparent 65%),
+    rgba(var(--surface), 0.88);
+  border: 1px solid rgba(var(--border), 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+}
+
+/* Divider */
+.gb-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(var(--border), 0),
+    rgba(var(--border), 1),
+    rgba(var(--border), 0)
+  );
+}
+
+/* Focus ring utility (used by Button component via focus-visible:gb-focus) */
+.gb-focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(var(--brand-2), 0.25),
+    0 0 0 1px rgba(var(--brand-2), 0.45);
+}
+
+/* Grain overlay for “premium texture” */
+.gb-grain {
+  position: relative;
+}
+
+.gb-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
+}
+
+/* Improve readability on bright backgrounds (optional) */
+.gb-readable {
+  text-shadow: 0 1px 0 rgba(255,255,255,0.35);
+}
+
+/* -----------------------------
+   5) Optional typography helpers
+   (use if you want quick, consistent
+    non-component styles in content)
+------------------------------ */
+.gb-h1 { font-size: 2rem; line-height: 2.25rem; font-weight: 650; letter-spacing: -0.02em; }
+.gb-h2 { font-size: 1.5rem; line-height: 1.9rem; font-weight: 650; letter-spacing: -0.015em; }
+.gb-body { font-size: 0.95rem; line-height: 1.5rem; }
+.gb-muted { color: rgb(var(--muted)); }
+
+/* -----------------------------
+   6) Theme overrides (micro-sites)
+   Apply to a wrapper: <main className="theme-hair ...">
+------------------------------ */
+
+/* Nails theme */
+.theme-nails {
+  --brand: 255 0 153;
+  --brand-2: 0 224 255;
+  --brand-3: 255 208 0;
+}
+
+/* Hair theme */
+.theme-hair {
+  --brand: 124 58 237;   /* purple */
+  --brand-2: 34 211 238; /* cyan */
+  --brand-3: 16 185 129; /* green */
+}
+
+/* Wellness theme */
+.theme-wellness {
+  --brand: 16 185 129;    /* green */
+  --brand-2: 59 130 246;  /* blue */
+  --brand-3: 244 114 182; /* pink */
+}
+
+/* -----------------------------
+   7) Small polish
+------------------------------ */
+::selection {
+  background: rgba(var(--brand), 0.25);
+}
