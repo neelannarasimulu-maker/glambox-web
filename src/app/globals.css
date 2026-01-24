@@ -15,14 +15,23 @@
     --bg-800: 18 18 33;     /* #121221 */
     --bg-700: 26 26 46;     /* #1A1A2E */
 
+    /* Tailwind theme tokens */
+    --bg: var(--bg-900);
+    --surface: var(--bg-800);
+    --surface-2: var(--bg-700);
+
     --text-100: 255 255 255;
     --text-200: 233 233 242;
     --text-300: 185 185 204;
     --text-400: 138 138 163;
 
+    --text: var(--text-200);
+    --muted: var(--text-300);
+
     /* Borders */
     --border-1: 255 255 255 / 0.10;
     --border-2: 255 255 255 / 0.18;
+    --border: 255 255 255;
 
     /* Landing page accents (multi-colour) */
     --accent-pink: 255 61 174;   /* #FF3DAE */
@@ -30,6 +39,12 @@
     --accent-gold: 255 210 63;   /* #FFD23F */
     --accent-lilac: 183 123 255; /* #B77BFF */
     --accent-teal: 45 226 230;   /* #2DE2E6 */
+
+    --brand: var(--accent-pink);
+    --brand-2: var(--accent-lilac);
+    --brand-3: var(--accent-teal);
+    --brand-4: var(--accent-gold);
+    --brand-ink: var(--bg-900);
 
     /* Default “active accent” (can be changed per section) */
     --accent: var(--accent-pink);
@@ -40,6 +55,8 @@
     /* Radius */
     --radius-xl: 28px;
     --radius-lg: 20px;
+    --radius: var(--radius-lg);
+    --radius-sm: 14px;
 
     /* Hero / ambient glow gradients */
     --hero-bg:
