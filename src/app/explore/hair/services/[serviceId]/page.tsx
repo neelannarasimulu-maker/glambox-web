@@ -2,16 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   formatZar,
-  getServiceById,
+  getHairServiceById,
   getTherapistsForService,
-} from "@/lib/hair-data";
+  pricingNote,
+} from "@/lib/content/hair";
 
 export default function HairServiceDetailPage({
   params,
 }: {
   params: { serviceId: string };
 }) {
-  const service = getServiceById(params.serviceId);
+  const service = getHairServiceById(params.serviceId);
 
   if (!service) {
     return (
@@ -47,9 +48,7 @@ export default function HairServiceDetailPage({
                   {formatZar(service.priceRangeZar[1])}
                 </p>
               )}
-              <p className="text-xs text-[rgb(var(--text-400))]">
-                Varies by hair length, thickness &amp; consultation.
-              </p>
+              <p className="text-xs text-[rgb(var(--text-400))]">{pricingNote}</p>
             </div>
             <div className="card p-4">
               <p className="text-xs uppercase text-[rgb(var(--text-400))]">Duration</p>
@@ -101,32 +100,37 @@ export default function HairServiceDetailPage({
           <div className="card p-6">
             <h3 className="text-xl font-semibold text-white">Recommended therapists</h3>
             <div className="mt-4 space-y-4">
-              {therapists.map((therapist) => (
-                <div key={therapist.id} className="flex items-center gap-4">
-                  <div className="relative h-14 w-14 overflow-hidden rounded-full">
-                    <Image
-                      src={therapist.photo}
-                      alt={therapist.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-white">
-                      {therapist.name}
-                    </p>
-                    <p className="text-xs text-[rgb(var(--text-400))]">
-                      Best for {therapist.vibeTags[0]}
-                    </p>
-                  </div>
+              {therapists.length > 0 ? (
+                therapists.map((therapist) => (
                   <Link
-                    href={`/book/hair/choose-time?serviceId=${service.id}&therapistId=${therapist.id}`}
-                    className="btn-secondary text-sm"
+                    key={therapist.id}
+                    href={`/explore/hair/therapists/${therapist.id}`}
+                    className="flex items-center gap-4 rounded-2xl border border-white/5 bg-white/5 p-4 transition hover:border-white/15"
                   >
-                    Select
+                    <div className="relative h-14 w-14 overflow-hidden rounded-full">
+                      <Image
+                        src={therapist.photo}
+                        alt={therapist.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-white">
+                        {therapist.name}
+                      </p>
+                      <p className="text-xs text-[rgb(var(--text-400))]">
+                        Best for {therapist.vibeTags[0] ?? \"thoughtful care\"}
+                      </p>
+                    </div>
+                    <span className="btn-secondary text-sm">View profile</span>
                   </Link>
-                </div>
-              ))}
+                ))
+              ) : (
+                <p className="text-sm text-[rgb(var(--text-400))]">
+                  Therapist recommendations are coming soon.
+                </p>
+              )}
             </div>
           </div>
           <Link
