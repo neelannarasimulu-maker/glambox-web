@@ -5,7 +5,6 @@ const trustCues = [
   "Premium professionals",
   "Carefully curated products",
   "Personalised experiences",
-  "Effortless booking",
 ];
 
 const pillars = [
@@ -56,54 +55,10 @@ const signatureExperiences = [
   },
 ];
 
-const testimonials = [
-  "Every visit feels considered and special.",
-  "The quality shows—in the space, the people, and the results.",
-  "It’s not just a service. It’s an experience.",
-];
-
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[rgb(var(--bg-900))] text-[rgb(var(--text-200))]">
-      <header className="glass sticky top-0 z-50">
-        <div className="container-glambox flex flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center justify-between gap-4">
-            <Link href="/" className="text-lg font-semibold tracking-wide text-white">
-              Glambox
-            </Link>
-            <div className="flex items-center gap-2 md:hidden">
-              <Link href="/book" className="btn-primary text-sm">
-                Book Now
-              </Link>
-            </div>
-          </div>
-          <nav className="flex flex-wrap items-center gap-4 text-sm text-[rgb(var(--text-300))]">
-            <Link href="#experiences" className="hover:text-white">
-              Experiences
-            </Link>
-            <Link href="#gallery" className="hover:text-white">
-              Gallery
-            </Link>
-            <Link href="#locations" className="hover:text-white">
-              Locations
-            </Link>
-            <Link href="#about" className="hover:text-white">
-              About
-            </Link>
-            <Link href="#contact" className="hover:text-white">
-              Contact
-            </Link>
-          </nav>
-          <div className="hidden items-center gap-3 md:flex">
-            <Link href="/book" className="btn-primary">
-              Book Now
-            </Link>
-            <Link href="/experiences" className="btn-secondary">
-              Explore the Glambox World
-            </Link>
-          </div>
-        </div>
-      </header>
+
 
       <section className="hero-bg relative overflow-hidden">
         <div className="absolute inset-0">
@@ -168,7 +123,7 @@ export default function HomePage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--bg-900))] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-[rgb(var(--bg-900))] via-transparent to-transparent" />
           </div>
         </div>
       </section>
@@ -206,7 +161,7 @@ export default function HomePage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[rgb(var(--bg-900))] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-[rgb(var(--bg-900))] via-transparent to-transparent" />
           </div>
           <div>
             <p className="badge text-sm">Designed for Every Woman</p>
@@ -259,45 +214,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="gallery" className="section-pad">
-        <div className="container-glambox">
-          <div className="flex flex-col gap-3">
-            <h2 className="text-3xl font-semibold text-white md:text-4xl">Real women. Real glow.</h2>
-            <p className="text-[rgb(var(--text-300))]">
-              A glimpse into recent looks, textures, and transformations.
-            </p>
-          </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {["/gallery/g-1.jpg", "/gallery/g-2.jpg", "/gallery/g-3.jpg"].map((src, index) => (
-              <div key={src} className="relative h-64 overflow-hidden rounded-[24px]">
-                <Image
-                  src={src}
-                  alt={`Glambox gallery highlight ${index + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mt-8">
-            <Link href="/gallery" className="btn-secondary">
-              View Gallery
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-pad">
-        <div className="container-glambox grid gap-6 md:grid-cols-3">
-          {testimonials.map((quote) => (
-            <article key={quote} className="card card-hover p-6">
-              <p className="text-lg text-white">“{quote}”</p>
-              <p className="mt-4 text-sm text-[rgb(var(--text-400))]">— Glambox Guest</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section id="locations" className="section-pad">
         <div className="container-glambox">
           <div className="card overflow-hidden">
@@ -309,7 +225,7 @@ export default function HomePage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[rgb(var(--bg-900))] via-[rgb(var(--bg-900))/0.7] to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-r from-[rgb(var(--bg-900))] via-[rgb(var(--bg-900))/0.7] to-transparent" />
               </div>
               <div className="relative p-10 md:p-14">
                 <h2 className="text-3xl font-semibold text-white md:text-4xl">Your moment starts here.</h2>
@@ -330,47 +246,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer id="contact" className="section-pad">
-        <div className="container-glambox">
-          <div className="divider-soft mb-10" />
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-lg font-semibold text-white">Glambox</p>
-              <p className="mt-2 text-sm text-[rgb(var(--text-400))]">
-                Premium beauty, wellness, and experiences for every woman.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4 text-sm text-[rgb(var(--text-300))]">
-              <Link href="/about" className="hover:text-white">
-                About Glambox
-              </Link>
-              <Link href="/experiences" className="hover:text-white">
-                Experiences
-              </Link>
-              <Link href="/gallery" className="hover:text-white">
-                Gallery
-              </Link>
-              <Link href="/locations" className="hover:text-white">
-                Locations
-              </Link>
-              <Link href="/contact" className="hover:text-white">
-                Contact
-              </Link>
-            </div>
-            <div className="flex gap-3 text-[rgb(var(--text-300))]">
-              <Link href="https://instagram.com" aria-label="Instagram" className="chip text-xs">
-                IG
-              </Link>
-              <Link href="https://www.tiktok.com" aria-label="TikTok" className="chip text-xs">
-                TT
-              </Link>
-              <Link href="https://www.pinterest.com" aria-label="Pinterest" className="chip text-xs">
-                PT
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }

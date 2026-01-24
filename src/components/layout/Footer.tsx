@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import Container from "@/components/layout/Container";
 import { cn } from "@/lib/cn";
-import { Badge } from "@/components/ui/Badge";
 import { Heading, Text } from "@/components/ui/Typography";
 
 function FooterLink({
@@ -49,22 +48,10 @@ export default function Footer() {
                       Glambox
                     </Heading>
                     <Text tone="muted" size="sm">
-                      Vibrant, premium booking for hair, nails and wellness.
+                      Vibrant health, beauty and wellness portal.
                     </Text>
                   </div>
                 </div>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <Badge variant="brand">Bookable</Badge>
-                  <Badge>Trusted</Badge>
-                  <Badge variant="muted">Boutique</Badge>
-                  <Badge variant="outline">Pop-ups</Badge>
-                </div>
-
-                <Text tone="muted" className="mt-4">
-                  Designed to feel effortless: clean spacing, confident colour,
-                  and a little sparkle where it counts ✨
-                </Text>
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   <a
@@ -112,11 +99,6 @@ export default function Footer() {
                     Wellness
                   </FooterLink>
                 </div>
-                <Text tone="muted" size="sm" className="mt-3">
-                  Each micro-site can apply <span className="font-medium">theme-hair</span>,{" "}
-                  <span className="font-medium">theme-nails</span> or{" "}
-                  <span className="font-medium">theme-wellness</span>.
-                </Text>
               </div>
 
               <div>
