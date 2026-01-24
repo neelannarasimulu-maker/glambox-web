@@ -6,10 +6,19 @@ import Container from "./Container";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 
-function TopLink({ href, children }: { href: string; children: React.ReactNode }) {
+function TopLink({
+  href,
+  children,
+  onClick,
+}: {
+  href: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}) {
   return (
     <Link
       href={href}
+      onClick={onClick}
       className="rounded-xl px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition"
     >
       {children}
@@ -19,6 +28,8 @@ function TopLink({ href, children }: { href: string; children: React.ReactNode }
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+
+  const closeMobile = () => setOpen(false);
 
   return (
     <header className="sticky top-0 z-50">
@@ -32,7 +43,7 @@ export default function Header() {
       <Container>
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3" onClick={closeMobile}>
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-white text-black font-bold shadow-lg">
               G
             </span>
@@ -93,7 +104,6 @@ export default function Header() {
                 >
                   Wellness
                 </Link>
-
               </div>
             </div>
 
@@ -103,11 +113,13 @@ export default function Header() {
 
           {/* Desktop actions */}
           <div className="hidden md:flex items-center gap-2">
-            <Button variant="ghost" className="text-white hover:bg-white/10">
-              Sign in
+            {/* IMPORTANT: route to auth entry (which fans out to sign-in/sign-up) */}
+            <Button asChild variant="ghost" className="text-white hover:bg-white/10">
+              <Link href="/auth">Sign in</Link>
             </Button>
-            <Button className="bg-black text-white hover:bg-neutral-900">
-              Book now
+
+            <Button asChild className="bg-black text-white hover:bg-neutral-900">
+              <Link href="/book">Book now</Link>
             </Button>
           </div>
 
@@ -118,9 +130,10 @@ export default function Header() {
               "hover:bg-white/10"
             )}
             onClick={() => setOpen((v) => !v)}
-            aria-label="Open menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
           >
-            Menu
+            {open ? "Close" : "Menu"}
           </button>
         </div>
 
@@ -128,34 +141,70 @@ export default function Header() {
         {open && (
           <div className="md:hidden mt-3 rounded-2xl bg-white text-black shadow-xl p-4">
             <div className="flex flex-col gap-2">
-              <Link href="/explore" className="font-semibold hover:underline">
+              <Link
+                href="/explore"
+                className="font-semibold hover:underline"
+                onClick={closeMobile}
+              >
                 Explore (Microsites)
               </Link>
-              <Link href="/explore/hair" className="pl-3 text-sm hover:underline">
+
+              <Link
+                href="/explore/hair"
+                className="pl-3 text-sm hover:underline"
+                onClick={closeMobile}
+              >
                 Hair
               </Link>
-              <Link href="/explore/nails" className="pl-3 text-sm hover:underline">
+
+              <Link
+                href="/explore/nails"
+                className="pl-3 text-sm hover:underline"
+                onClick={closeMobile}
+              >
                 Nails
               </Link>
-              <Link href="/explore/wellness" className="pl-3 text-sm hover:underline">
+
+              <Link
+                href="/explore/wellness"
+                className="pl-3 text-sm hover:underline"
+                onClick={closeMobile}
+              >
                 Wellness
               </Link>
 
               <div className="h-px bg-neutral-200 my-2" />
 
-              <Link href="/book" className="text-sm font-medium hover:underline">
+              <Link
+                href="/book"
+                className="text-sm font-medium hover:underline"
+                onClick={closeMobile}
+              >
                 Book
               </Link>
-              <Link href="/ui" className="text-sm font-medium hover:underline">
+
+              <Link
+                href="/ui"
+                className="text-sm font-medium hover:underline"
+                onClick={closeMobile}
+              >
                 UI Kit
               </Link>
             </div>
 
             <div className="mt-4 flex gap-2">
-              <Button className="flex-1" variant="secondary">
-                Sign in
+              {/* Mobile Sign in routes to auth entry */}
+              <Button asChild className="flex-1" variant="secondary">
+                <Link href="/auth" onClick={closeMobile}>
+                  Sign in
+                </Link>
               </Button>
-              <Button className="flex-1">Book</Button>
+
+              <Button asChild className="flex-1">
+                <Link href="/book" onClick={closeMobile}>
+                  Book
+                </Link>
+              </Button>
             </div>
           </div>
         )}

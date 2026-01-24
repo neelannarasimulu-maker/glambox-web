@@ -22,7 +22,7 @@ export default function NavLink({
         "relative rounded-xl px-3 py-2 text-sm font-medium transition",
         "hover:bg-surface-2",
         active && "text-brand",
-        active && "after:absolute after:left-3 after:right-3 after:-bottom-1 after:h-[2px] after:rounded-full after:bg-brand"
+        active && "after:absolute after:left-3 after:right-3 after:-bottom-1 after:h-05[2px] after:rounded-full after:bg-brand"
       )}
     >
       {children}
