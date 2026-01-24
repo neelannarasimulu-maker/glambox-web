@@ -1,0 +1,16 @@
+{
+  "microsite": "wellness",
+  "currency": "ZAR",
+  "products": [
+    {
+      "id": "prod-calm-balm",
+      "name": "Calm Balm",
+      "brand": "Glambox Select",
+      "priceZar": 190,
+      "image": "/services/wellness-1.jpg",
+      "shortDesc": "Soothing blend for post-treatment care.",
+      "details": ["Lavender", "Soft finish", "Travel friendly"],
+      "tags": ["calm", "recovery"]
+    }
+  ]
+}

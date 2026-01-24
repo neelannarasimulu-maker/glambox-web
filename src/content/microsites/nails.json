@@ -1,0 +1,14 @@
+{
+  "id": "nails",
+  "name": "Nail Atelier",
+  "tagline": "Expressive, clean, and long-wear nail artistry.",
+  "themeKey": "nails",
+  "heroImage": "/hero/landing-hero.jpg",
+  "about": {
+    "headline": "Polish with personality.",
+    "body": "From classic care to bold designs, our nail rituals are designed to protect, strengthen, and elevate." 
+  },
+  "nav": ["services", "therapists", "gallery", "shop", "book"],
+  "featuredServiceIds": ["signature-mani"],
+  "featuredTherapistIds": ["t-lee"]
+}

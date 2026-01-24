@@ -1,0 +1,14 @@
+{
+  "id": "wellness",
+  "name": "Wellness Lounge",
+  "tagline": "Reset rituals for body and mind.",
+  "themeKey": "wellness",
+  "heroImage": "/hero/landing-hero.jpg",
+  "about": {
+    "headline": "Feel restored from the inside out.",
+    "body": "Therapeutic touch and intentional rituals designed to bring balance back to your day." 
+  },
+  "nav": ["services", "therapists", "gallery", "shop", "book"],
+  "featuredServiceIds": ["reset-massage"],
+  "featuredTherapistIds": ["t-sam"]
+}

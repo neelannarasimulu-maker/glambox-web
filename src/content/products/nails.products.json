@@ -1,0 +1,16 @@
+{
+  "microsite": "nails",
+  "currency": "ZAR",
+  "products": [
+    {
+      "id": "prod-cuticle-oil",
+      "name": "Cuticle Oil",
+      "brand": "Glambox Select",
+      "priceZar": 120,
+      "image": "/services/nails-1.jpg",
+      "shortDesc": "Daily nourishment for healthy cuticles.",
+      "details": ["Vitamin E", "Quick absorb", "Travel size"],
+      "tags": ["care", "hydration"]
+    }
+  ]
+}

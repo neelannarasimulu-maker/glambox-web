@@ -1,0 +1,8 @@
+{
+  "microsite": "hair",
+  "items": [
+    { "id": "g1", "image": "/gallery/g-1.jpg", "caption": "Soft glam blowout", "tags": ["blowdry", "gloss"] },
+    { "id": "g2", "image": "/gallery/g-2.jpg", "caption": "Sunlit balayage", "tags": ["colour", "balayage"] },
+    { "id": "g3", "image": "/gallery/g-3.jpg", "caption": "Silk press finish", "tags": ["silk-press", "smooth"] }
+  ]
+}

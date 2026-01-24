@@ -1,0 +1,6 @@
+{
+  "microsite": "wellness",
+  "items": [
+    { "id": "wg1", "image": "/gallery/g-2.jpg", "caption": "Reset rituals", "tags": ["massage", "calm"] }
+  ]
+}

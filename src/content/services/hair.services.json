@@ -1,0 +1,65 @@
+{
+  "microsite": "hair",
+  "currency": "ZAR",
+  "pricingNote": "Final price varies by length/thickness and consultation. Prices shown are from.",
+  "categories": ["Cuts & Styling", "Colour", "Treatments", "Protective Styles"],
+  "tiers": ["Essential", "Signature", "Luxe"],
+  "services": [
+    {
+      "id": "wash-cut-blow",
+      "name": "Wash • Cut • Blow Dry",
+      "category": "Cuts & Styling",
+      "tier": "Signature",
+      "fromPriceZar": 450,
+      "priceRangeZar": [450, 870],
+      "durationMins": 75,
+      "outcome": "A clean, polished finish that feels instantly refreshed.",
+      "includes": ["Consultation", "Wash", "Precision cut", "Blow dry finish"],
+      "prepNotes": ["Arrive with detangled hair if possible."],
+      "afterCare": ["Avoid tight styles for 24 hours."],
+      "image": "/services/hair-1.jpg"
+    },
+    {
+      "id": "balayage",
+      "name": "Sunlit Balayage",
+      "category": "Colour",
+      "tier": "Luxe",
+      "fromPriceZar": 1200,
+      "priceRangeZar": [1200, 2100],
+      "durationMins": 180,
+      "outcome": "Soft, dimensional colour that grows out seamlessly.",
+      "includes": ["Consultation", "Custom lightening", "Gloss", "Style finish"],
+      "prepNotes": ["Bring reference photos if you have them."],
+      "afterCare": ["Use a colour-safe cleanser."],
+      "image": "/services/hair-1.jpg"
+    },
+    {
+      "id": "deep-repair",
+      "name": "Deep Repair Ritual",
+      "category": "Treatments",
+      "tier": "Essential",
+      "fromPriceZar": 380,
+      "priceRangeZar": [380, 600],
+      "durationMins": 50,
+      "outcome": "Moisture and strength restored with a glossy finish.",
+      "includes": ["Scalp analysis", "Bond repair mask", "Steam infusion"],
+      "prepNotes": ["Arrive with clean hair if possible."],
+      "afterCare": ["Limit heat for 48 hours."],
+      "image": "/services/hair-1.jpg"
+    },
+    {
+      "id": "silk-press",
+      "name": "Silk Press Finish",
+      "category": "Protective Styles",
+      "tier": "Signature",
+      "fromPriceZar": 520,
+      "priceRangeZar": [520, 880],
+      "durationMins": 90,
+      "outcome": "Smooth, movement-rich press with heat protection built in.",
+      "includes": ["Heat protect", "Silk press", "Finish polish"],
+      "prepNotes": ["Let us know if you have heat sensitivities."],
+      "afterCare": ["Wrap hair at night to preserve."],
+      "image": "/services/hair-1.jpg"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "microsite": "nails",
+  "currency": "ZAR",
+  "pricingNote": "Pricing depends on design complexity. Prices shown are from.",
+  "categories": ["Manicure", "Pedicure", "Design"],
+  "tiers": ["Essential", "Signature", "Luxe"],
+  "services": [
+    {
+      "id": "signature-mani",
+      "name": "Signature Manicure",
+      "category": "Manicure",
+      "tier": "Signature",
+      "fromPriceZar": 320,
+      "priceRangeZar": [320, 480],
+      "durationMins": 60,
+      "outcome": "Clean shaping, nourishing care, and a glossy finish.",
+      "includes": ["Cuticle care", "Hydration treatment", "Polish"],
+      "prepNotes": ["Remove existing gel if possible."],
+      "afterCare": ["Apply cuticle oil daily."],
+      "image": "/services/nails-1.jpg"
+    }
+  ]
+}
