@@ -1,0 +1,6 @@
+{
+  "microsite": "nails",
+  "items": [
+    { "id": "ng1", "image": "/gallery/g-1.jpg", "caption": "Glossed nude set", "tags": ["manicure", "neutral"] }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "therapists": [
+    {
+      "id": "t-aya",
+      "name": "Ayanda M.",
+      "roles": ["Colour Specialist", "Hair Artist"],
+      "photo": "/services/hair-1.jpg",
+      "bio": "Warm, precise, and trend-aware. Ayanda blends technical colour theory with healthy hair priorities.",
+      "specialties": ["Balayage", "Gloss treatments", "Healthy hair outcomes"],
+      "vibeTags": ["Calm energy", "Bold colour", "Bridal-ready"],
+      "rating": 4.8,
+      "reviewsCount": 128,
+      "locations": ["Cape Town", "Johannesburg"]
+    },
+    {
+      "id": "t-lee",
+      "name": "Lee K.",
+      "roles": ["Texture Specialist", "Nail Artist"],
+      "photo": "/services/nails-1.jpg",
+      "bio": "Detail-obsessed with a gentle approach. Lee focuses on protective styling and precision nail care.",
+      "specialties": ["Silk press", "Protective styles", "Minimalist nail art"],
+      "vibeTags": ["Meticulous", "Soft glam", "Design-led"],
+      "rating": 4.7,
+      "reviewsCount": 96,
+      "locations": ["Cape Town"]
+    },
+    {
+      "id": "t-sam",
+      "name": "Samira N.",
+      "roles": ["Treatment Specialist", "Wellness Therapist"],
+      "photo": "/services/wellness-1.jpg",
+      "bio": "A grounding presence focused on repair and recovery. Samira blends scalp care with relaxation rituals.",
+      "specialties": ["Deep repair", "Scalp care", "Massage therapy"],
+      "vibeTags": ["Restorative", "Gentle", "Wellness-first"],
+      "rating": 4.9,
+      "reviewsCount": 142,
+      "locations": ["Johannesburg", "Durban"]
+    }
+  ]
+}

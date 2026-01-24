@@ -1,0 +1,34 @@
+{
+  "assignments": [
+    {
+      "therapistId": "t-aya",
+      "microsite": "hair",
+      "serviceIds": ["balayage", "wash-cut-blow"]
+    },
+    {
+      "therapistId": "t-aya",
+      "microsite": "nails",
+      "serviceIds": []
+    },
+    {
+      "therapistId": "t-lee",
+      "microsite": "hair",
+      "serviceIds": ["silk-press", "wash-cut-blow"]
+    },
+    {
+      "therapistId": "t-lee",
+      "microsite": "nails",
+      "serviceIds": ["signature-mani"]
+    },
+    {
+      "therapistId": "t-sam",
+      "microsite": "hair",
+      "serviceIds": ["deep-repair"]
+    },
+    {
+      "therapistId": "t-sam",
+      "microsite": "wellness",
+      "serviceIds": ["reset-massage"]
+    }
+  ]
+}

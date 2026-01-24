@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { getMicrosites } from "@/lib/content/microsite";
 
 export default function BookPage() {
+  const microsites = getMicrosites();
+
   return (
     <main className="section-pad">
       <div className="container-glambox">
@@ -12,25 +15,19 @@ export default function BookPage() {
           Start with a microsite to book the right service and therapist for you.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="card card-hover p-6">
-            <h2 className="text-xl font-semibold text-white">Hair Studio</h2>
-            <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
-              Cuts, colour, treatments, and protective styles with therapist-first
-              booking.
-            </p>
-            <Link href="/book/hair" className="btn-primary mt-6">
-              Book hair
-            </Link>
-          </div>
-          <div className="card p-6">
-            <h2 className="text-xl font-semibold text-white">More coming soon</h2>
-            <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
-              Nail and wellness booking flows are on the way.
-            </p>
-            <Link href="/explore" className="btn-secondary mt-6">
-              Explore microsites
-            </Link>
-          </div>
+          {microsites.map((microsite) => (
+            <div key={microsite.id} className="card card-hover p-6">
+              <h2 className="text-xl font-semibold text-white">
+                {microsite.name}
+              </h2>
+              <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
+                {microsite.tagline}
+              </p>
+              <Link href={`/book/${microsite.id}`} className="btn-primary mt-6">
+                Book {microsite.name}
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </main>

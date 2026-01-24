@@ -1,0 +1,36 @@
+{
+  "microsite": "hair",
+  "currency": "ZAR",
+  "products": [
+    {
+      "id": "prod-argan-oil",
+      "name": "Argan Shine Oil",
+      "brand": "Glambox Select",
+      "priceZar": 249,
+      "image": "/services/hair-1.jpg",
+      "shortDesc": "Lightweight shine + heat support.",
+      "details": ["Smooth finish", "Non-greasy", "Best for blowouts"],
+      "tags": ["shine", "heat", "finish"]
+    },
+    {
+      "id": "prod-bond-mask",
+      "name": "Bond Repair Mask",
+      "brand": "Glambox Select",
+      "priceZar": 310,
+      "image": "/services/hair-1.jpg",
+      "shortDesc": "Weekly strength reset for stressed strands.",
+      "details": ["Deep repair", "Adds softness", "Colour-safe"],
+      "tags": ["repair", "treatment"]
+    },
+    {
+      "id": "prod-silk-spray",
+      "name": "Silk Press Mist",
+      "brand": "Glambox Select",
+      "priceZar": 180,
+      "image": "/services/hair-1.jpg",
+      "shortDesc": "Heat protectant with a light hold.",
+      "details": ["Heat shield", "Lightweight", "Gloss finish"],
+      "tags": ["heat", "style"]
+    }
+  ]
+}

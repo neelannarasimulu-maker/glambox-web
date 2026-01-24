@@ -1,0 +1,23 @@
+{
+  "microsite": "wellness",
+  "currency": "ZAR",
+  "pricingNote": "Pricing varies by therapist and add-ons. Prices shown are from.",
+  "categories": ["Massage", "Recovery"],
+  "tiers": ["Essential", "Signature", "Luxe"],
+  "services": [
+    {
+      "id": "reset-massage",
+      "name": "Reset Massage",
+      "category": "Massage",
+      "tier": "Signature",
+      "fromPriceZar": 650,
+      "priceRangeZar": [650, 900],
+      "durationMins": 60,
+      "outcome": "A full-body reset focused on tension release and calm.",
+      "includes": ["Breathwork", "Targeted massage", "Aromatherapy"],
+      "prepNotes": ["Arrive hydrated."],
+      "afterCare": ["Plan a quiet 30 minutes after."],
+      "image": "/services/wellness-1.jpg"
+    }
+  ]
+}

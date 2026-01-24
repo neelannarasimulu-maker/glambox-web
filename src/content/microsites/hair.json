@@ -1,0 +1,14 @@
+{
+  "id": "hair",
+  "name": "Hair Studio",
+  "tagline": "Modern hair artistry, delivered as an experience.",
+  "themeKey": "hair",
+  "heroImage": "/hero/glambox-hero.jpg",
+  "about": {
+    "headline": "Hair that feels like you.",
+    "body": "Premium without pretence. From everyday refresh to statement moments, we tailor each service to your texture, lifestyle, and goals."
+  },
+  "nav": ["services", "therapists", "gallery", "shop", "book"],
+  "featuredServiceIds": ["wash-cut-blow", "balayage", "deep-repair", "silk-press"],
+  "featuredTherapistIds": ["t-aya", "t-lee", "t-sam"]
+}
