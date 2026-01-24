@@ -1,14 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
-import { services, therapists, formatZar } from "@/lib/hair-data";
+import {
+  formatZar,
+  getHairServiceById,
+  getHairTherapists,
+  pricingNote,
+} from "@/lib/content/hair";
 
-const signatureServices = services.filter((service) =>
-  ["wash-cut-blow", "balayage", "deep-conditioning", "wig-install"].includes(
-    service.id
-  )
-);
+const signatureServiceIds = [
+  "wash-blow-dry",
+  "wash-cut-blow",
+  "silk-press",
+  "root-tint",
+  "balayage",
+  "full-house-weave",
+];
 
-const featuredTherapists = therapists.slice(0, 3);
+const signatureServices = signatureServiceIds
+  .map((id) => getHairServiceById(id))
+  .filter((service): service is NonNullable<typeof service> => Boolean(service));
+
+const featuredTherapists = getHairTherapists().slice(0, 5);
 
 export default function HairHomePage() {
   return (
@@ -34,8 +46,7 @@ export default function HairHomePage() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-[rgb(var(--text-400))]">
-              Pricing shown as “from” and varies by hair length, thickness, and
-              consultation.
+              {pricingNote}
             </p>
           </div>
         </div>

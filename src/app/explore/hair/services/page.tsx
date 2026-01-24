@@ -1,72 +1,22 @@
-"use client";
-
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
 import {
   formatZar,
-  getTherapistById,
-  priceTiers,
-  serviceCategories,
-  services,
-  type Therapist,
-} from "@/lib/hair-data";
-import {
-  mergePreferences,
-  rankServices,
-  scoreService,
-  type HairQuestionnaire,
-} from "@/lib/hair-recommendations";
+  getHairServices,
+  getHairTherapistById,
+  pricingNote,
+} from "@/lib/content/hair";
 
-const durations = [
-  { label: "Under 60 min", value: "short" },
-  { label: "60–120 min", value: "medium" },
-  { label: "120+ min", value: "long" },
-];
+const getInitials = (name: string) =>
+  name
+    .split(" ")
+    .map((part) => part[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
 
 export default function HairServicesPage() {
-  const [category, setCategory] = useState<string | null>(null);
-  const [tier, setTier] = useState<string | null>(null);
-  const [duration, setDuration] = useState<string | null>(null);
-  const [recommendedOnly, setRecommendedOnly] = useState(false);
-  const [questionnaire, setQuestionnaire] = useState<HairQuestionnaire | undefined>(
-    undefined
-  );
-
-  useEffect(() => {
-    const stored = window.localStorage.getItem("glambox.questionnaire");
-    const profile = window.localStorage.getItem("glambox.profile");
-    let parsedQuestionnaire: HairQuestionnaire | undefined;
-    let parsedProfile: HairQuestionnaire | undefined;
-    try {
-      parsedQuestionnaire = stored ? (JSON.parse(stored) as HairQuestionnaire) : undefined;
-    } catch {
-      parsedQuestionnaire = undefined;
-    }
-    try {
-      parsedProfile = profile ? (JSON.parse(profile) as HairQuestionnaire) : undefined;
-    } catch {
-      parsedProfile = undefined;
-    }
-    setQuestionnaire(mergePreferences(parsedQuestionnaire, parsedProfile));
-  }, []);
-
-  const filtered = useMemo(() => {
-    let list = [...services];
-    if (category) list = list.filter((item) => item.category === category);
-    if (tier) list = list.filter((item) => item.tier === tier);
-    if (duration === "short") list = list.filter((item) => item.durationMins < 60);
-    if (duration === "medium")
-      list = list.filter((item) => item.durationMins >= 60 && item.durationMins <= 120);
-    if (duration === "long") list = list.filter((item) => item.durationMins > 120);
-
-    const ranked = rankServices(list, questionnaire);
-    if (recommendedOnly) {
-      return ranked.filter((item) => scoreService(item, questionnaire) > 0);
-    }
-
-    return ranked;
-  }, [category, tier, duration, recommendedOnly, questionnaire]);
+  const services = getHairServices();
 
   return (
     <main className="section-pad">
@@ -75,70 +25,29 @@ export default function HairServicesPage() {
           <div>
             <p className="badge text-xs">Hair Services</p>
             <h1 className="mt-4 text-3xl font-semibold text-white">Service catalogue</h1>
-            <p className="mt-3 text-[rgb(var(--text-300))]">
-              Pricing shown as “from” and varies by hair length, thickness, and location.
-            </p>
+            <p className="mt-3 text-[rgb(var(--text-300))]">{pricingNote}</p>
           </div>
           <Link href="/book/hair" className="btn-primary">
             Book Hair
           </Link>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          {serviceCategories.map((item) => (
-            <button
-              key={item}
-              type="button"
-              className={`chip text-sm ${category === item ? "bg-white/10" : ""}`}
-              onClick={() => setCategory(category === item ? null : item)}
-            >
-              {item}
-            </button>
-          ))}
-          {priceTiers.map((item) => (
-            <button
-              key={item}
-              type="button"
-              className={`chip text-sm ${tier === item ? "bg-white/10" : ""}`}
-              onClick={() => setTier(tier === item ? null : item)}
-            >
-              {item}
-            </button>
-          ))}
-          {durations.map((item) => (
-            <button
-              key={item.value}
-              type="button"
-              className={`chip text-sm ${duration === item.value ? "bg-white/10" : ""}`}
-              onClick={() => setDuration(duration === item.value ? null : item.value)}
-            >
-              {item.label}
-            </button>
-          ))}
-          <button
-            type="button"
-            className={`chip text-sm ${recommendedOnly ? "bg-white/10" : ""}`}
-            onClick={() => setRecommendedOnly((prev) => !prev)}
-          >
-            Recommended for you
-          </button>
-        </div>
-
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          {filtered.map((service) => {
+          {services.map((service) => {
             const recommendedTherapists = service.recommendedTherapistIds
-              .map((id) => getTherapistById(id))
-              .filter((therapist): therapist is Therapist => Boolean(therapist))
+              .map((id) => getHairTherapistById(id))
+              .filter((therapist): therapist is NonNullable<typeof therapist> =>
+                Boolean(therapist)
+              )
               .slice(0, 2);
-            const isRecommended = scoreService(service, questionnaire) > 0;
 
             return (
               <div key={service.id} className="card card-hover p-6">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="badge text-xs">{service.tier}</span>
-                  {isRecommended && (
-                    <span className="badge text-xs">Recommended for you</span>
-                  )}
+                  <span className="text-xs text-[rgb(var(--text-400))]">
+                    {service.durationMins} mins
+                  </span>
                 </div>
                 <div className="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -153,28 +62,33 @@ export default function HairServicesPage() {
                     <div className="text-lg font-semibold text-white">
                       From {formatZar(service.fromPriceZar)}
                     </div>
-                    <div className="text-sm text-[rgb(var(--text-400))]">
-                      {service.durationMins} mins
-                    </div>
+                    {service.priceRangeZar && (
+                      <div className="text-xs text-[rgb(var(--text-400))]">
+                        {formatZar(service.priceRangeZar[0])}–
+                        {formatZar(service.priceRangeZar[1])}
+                      </div>
+                    )}
                   </div>
                 </div>
-                <div className="mt-4 flex items-center gap-2">
+                <div className="mt-4 flex items-center gap-3">
                   {recommendedTherapists.map((therapist) => (
                     <div
                       key={therapist.id}
-                      className="relative h-8 w-8 overflow-hidden rounded-full border border-white/10"
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-white"
+                      aria-label={`Recommended therapist ${therapist.name}`}
                     >
-                      <Image
-                        src={therapist.photo}
-                        alt={therapist.name}
-                        fill
-                        className="object-cover"
-                      />
+                      {getInitials(therapist.name)}
                     </div>
                   ))}
-                  <span className="text-xs text-[rgb(var(--text-400))]">
-                    Recommended therapists
-                  </span>
+                  {recommendedTherapists.length > 0 ? (
+                    <span className="text-xs text-[rgb(var(--text-400))]">
+                      Recommended therapists
+                    </span>
+                  ) : (
+                    <span className="text-xs text-[rgb(var(--text-400))]">
+                      Recommended therapists to be announced
+                    </span>
+                  )}
                 </div>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link

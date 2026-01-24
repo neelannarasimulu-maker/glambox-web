@@ -2,16 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   formatZar,
-  getServicesByTherapist,
-  getTherapistById,
-} from "@/lib/hair-data";
+  getHairTherapistById,
+  getServicesForTherapist,
+} from "@/lib/content/hair";
 
 export default function HairTherapistProfilePage({
   params,
 }: {
   params: { therapistId: string };
 }) {
-  const therapist = getTherapistById(params.therapistId);
+  const therapist = getHairTherapistById(params.therapistId);
 
   if (!therapist) {
     return (
@@ -21,7 +21,7 @@ export default function HairTherapistProfilePage({
     );
   }
 
-  const therapistServices = getServicesByTherapist(therapist.id);
+  const therapistServices = getServicesForTherapist(therapist.id);
 
   return (
     <main className="section-pad">
