@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getHairTherapists } from "@/lib/content/hair";
+import { getHairTherapists, viewProfileLabel } from "@/lib/content/hair";
 
 export default function HairTherapistsPage() {
   const therapists = getHairTherapists();
@@ -70,7 +70,7 @@ export default function HairTherapistsPage() {
                   href={`/explore/hair/therapists/${therapist.id}`}
                   className="btn-secondary"
                 >
-                  View profile
+                  {viewProfileLabel}
                 </Link>
                 <Link
                   href={`/book/hair/choose-service?therapistId=${therapist.id}`}

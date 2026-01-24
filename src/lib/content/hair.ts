@@ -1,5 +1,7 @@
 import servicesContent from "@/content/hair/services.json";
 import therapistsContent from "@/content/hair/therapists.json";
+import viewDetailsContent from "@/content/hair/view-details.json";
+import viewProfileContent from "@/content/hair/view-profile.json";
 
 export type PriceTier = "Essential" | "Signature" | "Luxe";
 
@@ -149,6 +151,16 @@ export const pricingNote =
 
 export const currency =
   typeof servicesContent.currency === "string" ? servicesContent.currency : "ZAR";
+
+export const viewDetailsLabel =
+  typeof viewDetailsContent.label === "string"
+    ? viewDetailsContent.label
+    : "View details";
+
+export const viewProfileLabel =
+  typeof viewProfileContent.label === "string"
+    ? viewProfileContent.label
+    : "View profile";
 
 export const formatZar = (value: number) =>
   new Intl.NumberFormat("en-ZA", {

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import BookingSummary from "@/components/hair/BookingSummary";
-import { getServiceById, therapists } from "@/lib/hair-data";
+import { getServiceById, therapists, viewProfileLabel } from "@/lib/hair-data";
 import {
   mergePreferences,
   rankTherapists,
@@ -125,7 +125,7 @@ export default function ChooseTherapistPage() {
                       href={`/explore/hair/therapists/${therapist.id}`}
                       className="btn-secondary"
                     >
-                      View profile
+                      {viewProfileLabel}
                     </Link>
                     <Link
                       href={nextStep}

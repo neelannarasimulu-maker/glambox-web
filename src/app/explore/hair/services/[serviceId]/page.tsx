@@ -5,6 +5,7 @@ import {
   getHairServiceById,
   getTherapistsForService,
   pricingNote,
+  viewProfileLabel,
 } from "@/lib/content/hair";
 
 export default function HairServiceDetailPage({
@@ -123,7 +124,9 @@ export default function HairServiceDetailPage({
                         Best for {therapist.vibeTags?.[0] ?? "thoughtful care"}
                       </p>
                     </div>
-                    <span className="btn-secondary text-sm">View profile</span>
+                    <span className="btn-secondary text-sm">
+                      {viewProfileLabel}
+                    </span>
                   </Link>
                 ))
               ) : (

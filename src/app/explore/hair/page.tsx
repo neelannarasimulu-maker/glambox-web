@@ -5,6 +5,8 @@ import {
   getHairServiceById,
   getHairTherapists,
   pricingNote,
+  viewDetailsLabel,
+  viewProfileLabel,
 } from "@/lib/content/hair";
 
 const signatureServiceIds = [
@@ -89,7 +91,7 @@ export default function HairHomePage() {
                   href={`/explore/hair/services/${service.id}`}
                   className="btn-primary mt-6 inline-flex"
                 >
-                  View details
+                  {viewDetailsLabel}
                 </Link>
               </div>
             ))}
@@ -146,7 +148,7 @@ export default function HairHomePage() {
                   href={`/explore/hair/therapists/${therapist.id}`}
                   className="btn-primary mt-5 inline-flex"
                 >
-                  View profile
+                  {viewProfileLabel}
                 </Link>
               </div>
             ))}

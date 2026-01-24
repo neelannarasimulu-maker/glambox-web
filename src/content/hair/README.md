@@ -15,3 +15,7 @@ This folder is the single source of truth for the hair microsite. All services a
 
 ## Pricing note
 The `pricingNote` in `services.json` explains that prices are “from” values and may vary by hair length/thickness, consultation, or location. Update the note if the pricing policy changes.
+
+## Call-to-action labels
+- `view-details.json` stores the label for service detail CTAs.
+- `view-profile.json` stores the label for therapist profile CTAs.
