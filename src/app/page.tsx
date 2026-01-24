@@ -1,342 +1,376 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Section from "@/components/layout/Section";
-import Container from "@/components/layout/Container";
+const trustCues = [
+  "Premium professionals",
+  "Carefully curated products",
+  "Personalised experiences",
+  "Effortless booking",
+];
 
-import { Button } from "@/components/ui/Button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
-import { Heading, Text } from "@/components/ui/Typography";
+const pillars = [
+  {
+    title: "Beauty",
+    description:
+      "Hair, nails, skin, and finishing touches delivered by skilled professionals who understand modern style and timeless elegance.",
+    image: "/services/hair-1.jpg",
+  },
+  {
+    title: "Wellness",
+    description:
+      "Moments of pause, recovery, and renewal—because looking good starts with feeling good.",
+    image: "/services/wellness-1.jpg",
+  },
+  {
+    title: "Experiences",
+    description:
+      "Curated pop-ups, themed days, collaborations, and limited-edition moments that turn routine appointments into something memorable.",
+    image: "/gallery/g-2.jpg",
+  },
+];
+
+const inclusivityHighlights = [
+  "Thoughtfully curated options",
+  "Clear, honest experiences",
+  "Beauty that fits real lives",
+];
+
+const signatureExperiences = [
+  {
+    title: "The Glow Edit",
+    description:
+      "A curated combination of services designed to work together for a complete look.",
+    image: "/gallery/g-1.jpg",
+  },
+  {
+    title: "Pop-Up Weekends",
+    description:
+      "Limited-time themes, guest artists, and trend-forward beauty moments.",
+    image: "/gallery/g-3.jpg",
+  },
+  {
+    title: "Bridal & Celebration",
+    description:
+      "Calm, confident preparation for life’s most photographed days.",
+    image: "/services/nails-1.jpg",
+  },
+];
+
+const testimonials = [
+  "Every visit feels considered and special.",
+  "The quality shows—in the space, the people, and the results.",
+  "It’s not just a service. It’s an experience.",
+];
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen gb-bg gb-page gb-grain">
-      {/* HERO */}
-      <section className="gb-bg">
-        <Container className="py-10 md:py-14">
-          <div className="grid items-center gap-10 md:grid-cols-2">
-            {/* Copy */}
-            <div>
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge variant="brand">New</Badge>
-                <Badge>Hair</Badge>
-                <Badge variant="muted">Nails</Badge>
-                <Badge variant="outline">Wellness</Badge>
-              </div>
-
-              <h1 className="gb-display mt-5 text-4xl font-semibold leading-[1.05] tracking-tight text-text md:text-6xl">
-                Your next{" "}
-                <span className="text-brand">glow-up</span>{" "}
-                <span className="text-brand-2">booked</span> in minutes.
-              </h1>
-
-              <p className="mt-4 max-w-xl text-base leading-7 text-muted md:text-lg">
-                Glambox is a vibrant, premium booking experience for hair, nails,
-                wellness and boutique pop-ups. Clean UI, bold accents, smooth flows.
-              </p>
-
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Button>
-                  Book now
-                </Button>
-                <Button variant="secondary">
-                  Explore services
-                </Button>
-                <Button variant="ghost">
-                  View gallery
-                </Button>
-              </div>
-
-              {/* Trust row */}
-              <div className="mt-7 flex flex-wrap items-center gap-2 text-sm text-muted">
-                <span className="gb-sticker rounded-full px-3 py-1 shadow-soft ring-1 ring-brand/20">
-                  Fast booking
-                </span>
-                <span className="gb-sticker rounded-full px-3 py-1 shadow-soft ring-1 ring-brand-2/20">
-                  Verified pros
-                </span>
-                <span className="gb-sticker rounded-full px-3 py-1 shadow-soft ring-1 ring-brand-3/20">
-                  Beautiful results
-                </span>
-              </div>
-            </div>
-
-            {/* Hero imagery */}
-            <div className="relative">
-              <div className="gb-glass overflow-hidden rounded-[28px] border border-border shadow-soft">
-                <div className="relative aspect-[4/3] w-full">
-                  <Image
-                    src="/hero/landing-hero.jpg"
-                    alt="Glambox hero"
-                    fill
-                    priority
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Floating promo sticker */}
-              <div className="absolute -bottom-4 -left-3 hidden rounded-2xl border border-border bg-white/40 px-4 py-3 shadow-soft backdrop-blur md:block">
-                <div className="flex items-center gap-2">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-brand text-brand-ink shadow-glow">
-                    ✨
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-text">Specials drop weekly</p>
-                    <p className="text-sm text-muted">Save, glow, repeat.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Quirky corner highlight */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-3 -top-3 h-16 w-16 rounded-[22px] border border-border bg-white/40 shadow-soft backdrop-blur"
-              />
+    <main className="min-h-screen bg-[rgb(var(--bg-900))] text-[rgb(var(--text-200))]">
+      <header className="glass sticky top-0 z-50">
+        <div className="container-glambox flex flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center justify-between gap-4">
+            <Link href="/" className="text-lg font-semibold tracking-wide text-white">
+              Glambox
+            </Link>
+            <div className="flex items-center gap-2 md:hidden">
+              <Link href="/book" className="btn-primary text-sm">
+                Book Now
+              </Link>
             </div>
           </div>
-        </Container>
+          <nav className="flex flex-wrap items-center gap-4 text-sm text-[rgb(var(--text-300))]">
+            <Link href="#experiences" className="hover:text-white">
+              Experiences
+            </Link>
+            <Link href="#gallery" className="hover:text-white">
+              Gallery
+            </Link>
+            <Link href="#locations" className="hover:text-white">
+              Locations
+            </Link>
+            <Link href="#about" className="hover:text-white">
+              About
+            </Link>
+            <Link href="#contact" className="hover:text-white">
+              Contact
+            </Link>
+          </nav>
+          <div className="hidden items-center gap-3 md:flex">
+            <Link href="/book" className="btn-primary">
+              Book Now
+            </Link>
+            <Link href="/experiences" className="btn-secondary">
+              Explore the Glambox World
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <section className="hero-bg relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/hero/landing-hero.jpg"
+            alt="Diverse women in a premium beauty lounge"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="hero-overlay absolute inset-0" />
+        </div>
+        <div className="container-glambox section-pad relative">
+          <div className="max-w-2xl">
+            <span className="badge text-sm">Beauty • Wellness • Experiences</span>
+            <h1 className="mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
+              <span className="block">Glow up, show up.</span>
+              <span className="headline-gradient block">Self-care, styled as an experience.</span>
+            </h1>
+            <p className="mt-6 text-lg text-[rgb(var(--text-300))]">
+              Glambox brings together premium beauty, wellness, and curated pop-up experiences—designed for modern women who value confidence, care, and a little magic in the everyday.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/book" className="btn-primary">
+                Book Your Moment
+              </Link>
+              <Link href="/experiences" className="btn-secondary">
+                Explore the Glambox World
+              </Link>
+            </div>
+            <div className="mt-10 flex flex-wrap gap-3">
+              {trustCues.map((item) => (
+                <span key={item} className="chip text-sm">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
-      <div className="gb-divider" />
+      <div className="divider-soft" />
 
-      {/* FEATURE STRIP */}
-      <Section>
-        <div className="grid gap-6 lg:grid-cols-3">
-          <Card className="gb-glass">
-            <CardHeader>
-              <CardTitle>Book in minutes</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <Text tone="muted">
-                Choose service, pick a time, confirm. Designed to feel effortless.
-              </Text>
-              <div className="flex flex-wrap gap-2">
-                <Badge>Smart flow</Badge>
-                <Badge variant="muted">Quick steps</Badge>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="gb-glass">
-            <CardHeader>
-              <CardTitle>Bold, premium visuals</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <Text tone="muted">
-                Large typography, clean spacing, and vibrant accents that feel modern.
-              </Text>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">Big type</Badge>
-                <Badge variant="muted">Clean spacing</Badge>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="gb-glass">
-            <CardHeader>
-              <CardTitle>Micro-sites per category</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <Text tone="muted">
-                Hair, Nails and Wellness can each have a distinct theme, with shared components.
-              </Text>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="brand">Themes</Badge>
-                <Badge>Reusable UI</Badge>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </Section>
-
-      {/* SERVICES PREVIEW */}
-      <Section>
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <section id="about" className="section-pad">
+        <div className="container-glambox grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <Heading as="h2">Featured services</Heading>
-            <Text tone="muted" className="mt-2 max-w-2xl">
-              A clean grid that scales across categories. Swap imagery + theme class per micro-site.
-            </Text>
+            <p className="badge text-sm">The Glambox Promise</p>
+            <h2 className="mt-5 text-3xl font-semibold text-white md:text-4xl">
+              More than beauty. A feeling.
+            </h2>
+            <p className="mt-4 text-[rgb(var(--text-300))]">
+              Glambox is where beauty meets intention. Every detail—space, service, and experience—is designed to help you feel confident, seen, and restored. From everyday self-care to special-occasion glow, Glambox adapts to your rhythm and your lifestyle.
+            </p>
+            <p className="mt-6 text-lg font-semibold text-white">
+              Luxury that feels welcoming. Quality that feels worth it.
+            </p>
           </div>
-          <div className="flex gap-2">
-            <Button variant="secondary">See all</Button>
-            <Button>Book now</Button>
+          <div className="relative overflow-hidden rounded-[28px]">
+            <Image
+              src="/services/hair-1.jpg"
+              alt="Close-up moments of hair texture and glow"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--bg-900))] via-transparent to-transparent" />
           </div>
         </div>
+      </section>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          <ServiceCard
-            title="Silk Press + Finish"
-            meta="Hair • 60 min"
-            price="From R450"
-            imageSrc="/services/hair-1.jpg"
-            badge="Popular"
-          />
-          <ServiceCard
-            title="Signature Gel Set"
-            meta="Nails • 50 min"
-            price="From R300"
-            imageSrc="/services/nails-1.jpg"
-            badge="New"
-          />
-          <ServiceCard
-            title="Glow Facial Reset"
-            meta="Wellness • 45 min"
-            price="From R520"
-            imageSrc="/services/wellness-1.jpg"
-            badge="Trending"
-          />
+      <section id="experiences" className="section-pad">
+        <div className="container-glambox">
+          <div className="flex flex-col gap-3">
+            <h2 className="text-3xl font-semibold text-white md:text-4xl">Pillars of Glambox</h2>
+            <p className="text-[rgb(var(--text-300))]">
+              Signature care across beauty, wellness, and curated moments that feel like events.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {pillars.map((pillar) => (
+              <article key={pillar.title} className="card card-hover overflow-hidden">
+                <div className="relative h-48">
+                  <Image src={pillar.image} alt={pillar.title} fill className="object-cover" />
+                </div>
+                <div className="space-y-3 p-6">
+                  <h3 className="text-xl font-semibold text-white">{pillar.title}</h3>
+                  <p className="text-sm text-[rgb(var(--text-300))]">{pillar.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
 
-      {/* GALLERY STRIP */}
-      <Section>
-        <div className="grid gap-8 lg:grid-cols-2">
+      <section className="section-pad">
+        <div className="container-glambox grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="relative overflow-hidden rounded-[28px]">
+            <Image
+              src="/gallery/g-1.jpg"
+              alt="Diverse women enjoying premium beauty experiences"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[rgb(var(--bg-900))] via-transparent to-transparent" />
+          </div>
           <div>
-            <Heading as="h2">Gallery that sells the feeling</Heading>
-            <Text tone="muted" className="mt-2">
-              Bold images, minimal UI, and just enough sparkle to trigger the “I want that” moment.
-            </Text>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              <Badge variant="brand">Before/After</Badge>
-              <Badge>Trending</Badge>
-              <Badge variant="muted">Creators</Badge>
-              <Badge variant="outline">Locations</Badge>
-            </div>
-
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Button>View gallery</Button>
-              <Button variant="secondary">Become a partner</Button>
-            </div>
-
-            <div className="mt-6 inline-flex items-center rounded-2xl px-4 py-3 gb-sticker shadow-soft ring-1 ring-brand/20">
-              <span className="text-sm font-medium">✨ Designed to feel effortless</span>
-              <span className="ml-2 text-sm text-muted">Clean spacing, confident colour</span>
-            </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            <GalleryTile src="/gallery/g-1.jpg" label="Hair" className="theme-hair" />
-            <GalleryTile src="/gallery/g-2.jpg" label="Nails" className="theme-nails" />
-            <GalleryTile src="/gallery/g-3.jpg" label="Wellness" className="theme-wellness sm:col-span-2" />
+            <p className="badge text-sm">Designed for Every Woman</p>
+            <h2 className="mt-5 text-3xl font-semibold text-white md:text-4xl">
+              Premium without pretence.
+            </h2>
+            <p className="mt-4 text-[rgb(var(--text-300))]">
+              Glambox is intentionally inclusive. Whether you visit often or occasionally, for essentials or indulgence, you’ll find the same attention to detail, respect, and care. This is modern luxury—flexible, welcoming, and never intimidating.
+            </p>
+            <ul className="mt-6 space-y-3 text-[rgb(var(--text-200))]">
+              {inclusivityHighlights.map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-[rgb(var(--accent-teal))]" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </Section>
+      </section>
 
-      {/* CTA */}
-      <Section>
-        <div className="gb-glass rounded-[28px] border border-border p-7 shadow-soft md:p-10">
+      <section className="section-pad" aria-labelledby="signature-experiences">
+        <div className="container-glambox">
+          <div className="flex flex-col gap-3">
+            <h2 id="signature-experiences" className="text-3xl font-semibold text-white md:text-4xl">
+              Moments worth making time for.
+            </h2>
+            <p className="text-[rgb(var(--text-300))]">
+              Signature experiences curated to deliver polished, memorable glow-ups.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {signatureExperiences.map((item) => (
+              <article key={item.title} className="card card-hover overflow-hidden">
+                <div className="relative h-56">
+                  <Image src={item.image} alt={item.title} fill className="object-cover" />
+                </div>
+                <div className="space-y-3 p-6">
+                  <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-[rgb(var(--text-300))]">{item.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="mt-10">
+            <Link href="/experiences" className="btn-primary">
+              Discover Experiences
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" className="section-pad">
+        <div className="container-glambox">
+          <div className="flex flex-col gap-3">
+            <h2 className="text-3xl font-semibold text-white md:text-4xl">Real women. Real glow.</h2>
+            <p className="text-[rgb(var(--text-300))]">
+              A glimpse into recent looks, textures, and transformations.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {["/gallery/g-1.jpg", "/gallery/g-2.jpg", "/gallery/g-3.jpg"].map((src, index) => (
+              <div key={src} className="relative h-64 overflow-hidden rounded-[24px]">
+                <Image
+                  src={src}
+                  alt={`Glambox gallery highlight ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link href="/gallery" className="btn-secondary">
+              View Gallery
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad">
+        <div className="container-glambox grid gap-6 md:grid-cols-3">
+          {testimonials.map((quote) => (
+            <article key={quote} className="card card-hover p-6">
+              <p className="text-lg text-white">“{quote}”</p>
+              <p className="mt-4 text-sm text-[rgb(var(--text-400))]">— Glambox Guest</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="locations" className="section-pad">
+        <div className="container-glambox">
+          <div className="card overflow-hidden">
+            <div className="relative">
+              <div className="absolute inset-0">
+                <Image
+                  src="/services/wellness-1.jpg"
+                  alt="Soft editorial background"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[rgb(var(--bg-900))] via-[rgb(var(--bg-900))/0.7] to-transparent" />
+              </div>
+              <div className="relative p-10 md:p-14">
+                <h2 className="text-3xl font-semibold text-white md:text-4xl">Your moment starts here.</h2>
+                <p className="mt-4 max-w-2xl text-[rgb(var(--text-300))]">
+                  Step into the Glambox world and choose how you want to feel today.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Link href="/book" className="btn-primary">
+                    Book Now
+                  </Link>
+                  <Link href="/locations" className="btn-secondary">
+                    Explore Locations &amp; Experiences
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer id="contact" className="section-pad">
+        <div className="container-glambox">
+          <div className="divider-soft mb-10" />
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
-              <Heading as="h2" className="text-2xl md:text-3xl">
-                Ready to book your next glow?
-              </Heading>
-              <Text tone="muted" className="mt-2 max-w-2xl">
-                One account. Multiple categories. Clean experience. Bold aesthetic.
-              </Text>
+              <p className="text-lg font-semibold text-white">Glambox</p>
+              <p className="mt-2 text-sm text-[rgb(var(--text-400))]">
+                Premium beauty, wellness, and experiences for every woman.
+              </p>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Button>Book now</Button>
-              <Button variant="secondary">Explore services</Button>
+            <div className="flex flex-wrap gap-4 text-sm text-[rgb(var(--text-300))]">
+              <Link href="/about" className="hover:text-white">
+                About Glambox
+              </Link>
+              <Link href="/experiences" className="hover:text-white">
+                Experiences
+              </Link>
+              <Link href="/gallery" className="hover:text-white">
+                Gallery
+              </Link>
+              <Link href="/locations" className="hover:text-white">
+                Locations
+              </Link>
+              <Link href="/contact" className="hover:text-white">
+                Contact
+              </Link>
+            </div>
+            <div className="flex gap-3 text-[rgb(var(--text-300))]">
+              <Link href="https://instagram.com" aria-label="Instagram" className="chip text-xs">
+                IG
+              </Link>
+              <Link href="https://www.tiktok.com" aria-label="TikTok" className="chip text-xs">
+                TT
+              </Link>
+              <Link href="https://www.pinterest.com" aria-label="Pinterest" className="chip text-xs">
+                PT
+              </Link>
             </div>
           </div>
         </div>
-      </Section>
+      </footer>
     </main>
-  );
-}
-
-/* ---------------------------------------------------------
-   Helpers used by the landing page
---------------------------------------------------------- */
-
-function ServiceCard({
-  title,
-  meta,
-  price,
-  imageSrc,
-  badge,
-}: {
-  title: string;
-  meta: string;
-  price: string;
-  imageSrc: string;
-  badge?: string;
-}) {
-  return (
-    <Card className="gb-glass overflow-hidden">
-      <div className="relative aspect-[4/3] w-full">
-        <Image src={imageSrc} alt={title} fill className="object-cover" />
-        {badge ? (
-          <div className="absolute left-3 top-3">
-            <span className="gb-sticker rounded-full px-3 py-1 text-xs font-medium shadow-soft ring-1 ring-brand/20">
-              {badge}
-            </span>
-          </div>
-        ) : null}
-      </div>
-
-      <CardContent className="space-y-2 p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="gb-display text-base font-semibold text-text">{title}</p>
-            <p className="text-sm text-muted">{meta}</p>
-          </div>
-          <span className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-text">
-            {price}
-          </span>
-        </div>
-
-        <div className="pt-2 flex gap-2">
-          <Button className="w-full">Book</Button>
-          <Button variant="secondary" className="w-full">
-            Details
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
-function GalleryTile({
-  src,
-  label,
-  className,
-}: {
-  src: string;
-  label: string;
-  className?: string;
-}) {
-  return (
-    <div className={className}>
-      <div className="gb-glass group relative overflow-hidden rounded-[26px] border border-border shadow-soft">
-        <div className="relative aspect-[4/3] w-full">
-          <Image src={src} alt={label} fill className="object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
-        </div>
-
-        <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
-
-        <div className="absolute left-3 top-3">
-          <span className="gb-sticker rounded-full px-3 py-1 text-xs font-medium shadow-soft ring-1 ring-brand/20">
-            {label}
-          </span>
-        </div>
-
-        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-          <span className="text-sm font-medium text-white drop-shadow">
-            {label} highlights
-          </span>
-          <Link
-            href="/gallery"
-            className="rounded-full bg-white/85 px-3 py-1 text-xs font-medium text-text shadow-soft backdrop-blur hover:bg-white transition focus-visible:gb-focus"
-          >
-            View
-          </Link>
-        </div>
-      </div>
-    </div>
   );
 }
