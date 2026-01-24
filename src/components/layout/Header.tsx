@@ -3,49 +3,119 @@
 import Link from "next/link";
 import { useState } from "react";
 import Container from "./Container";
-import NavLink from "./NavLink";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
+
+function TopLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="rounded-xl px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition"
+    >
+      {children}
+    </Link>
+  );
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-surface/80 backdrop-blur">
+    <header className="sticky top-0 z-50">
+      {/* REAL colourful background (gradient variable) */}
+      <div className="absolute inset-0 -z-10 [background:var(--btn-primary)]" />
+      {/* subtle glass layer */}
+      <div className="absolute inset-0 -z-10 bg-black/10 backdrop-blur-xl" />
+      {/* bottom border to separate from hero */}
+      <div className="absolute inset-x-0 bottom-0 h-px -z-10 bg-white/15" />
+
       <Container>
         <div className="flex h-16 items-center justify-between">
-          {/* Logo / Wordmark */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-brand text-brand-ink shadow-glow">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-white text-black font-bold shadow-lg">
               G
             </span>
-            <span className="gb-display text-sm font-semibold tracking-tight">
+            <span className="text-sm font-semibold tracking-tight text-white">
               Glambox
-            </span>
-            <span className="hidden sm:inline rounded-full border border-border bg-surface px-2 py-1 text-xs text-muted">
-              vibrant • premium
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-2 md:flex">
-            <NavLink href="/services">Services</NavLink>
-            <NavLink href="/gallery">Gallery</NavLink>
-            <NavLink href="/book">Book</NavLink>
-            <NavLink href="/ui">UI Kit</NavLink>
+          <nav className="hidden md:flex items-center gap-2">
+            {/* Explore dropdown (CSS-based, no flicker) */}
+            <div className="group relative">
+              <button
+                className="rounded-xl px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition"
+                type="button"
+              >
+                Explore
+              </button>
+
+              {/* hover bridge to prevent popup disappearing */}
+              <div className="absolute left-0 top-full h-3 w-56" />
+
+              <div
+                className={cn(
+                  "absolute left-0 top-[calc(100%+0.5rem)] w-64 overflow-hidden rounded-2xl",
+                  "bg-white text-black shadow-2xl ring-1 ring-black/10",
+                  "opacity-0 translate-y-1 pointer-events-none",
+                  "group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto",
+                  "transition duration-150"
+                )}
+              >
+                <Link
+                  href="/explore"
+                  className="block px-4 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-100"
+                >
+                  Explore All (Microsites)
+                </Link>
+
+                <div className="h-px bg-neutral-200" />
+
+                <Link
+                  href="/explore/hair"
+                  className="block px-4 py-3 text-sm text-neutral-800 hover:bg-neutral-100"
+                >
+                  Hair
+                </Link>
+
+                <Link
+                  href="/explore/nails"
+                  className="block px-4 py-3 text-sm text-neutral-800 hover:bg-neutral-100"
+                >
+                  Nails
+                </Link>
+
+                <Link
+                  href="/explore/wellness"
+                  className="block px-4 py-3 text-sm text-neutral-800 hover:bg-neutral-100"
+                >
+                  Wellness
+                </Link>
+
+              </div>
+            </div>
+
+            <TopLink href="/book">Book</TopLink>
+            <TopLink href="/ui">UI Kit</TopLink>
           </nav>
 
           {/* Desktop actions */}
           <div className="hidden md:flex items-center gap-2">
-            <Button variant="ghost">Sign in</Button>
-            <Button>Book now</Button>
+            <Button variant="ghost" className="text-white hover:bg-white/10">
+              Sign in
+            </Button>
+            <Button className="bg-black text-white hover:bg-neutral-900">
+              Book now
+            </Button>
           </div>
 
           {/* Mobile toggle */}
           <button
             className={cn(
-              "md:hidden rounded-xl border border-border bg-surface px-3 py-2 text-sm",
-              "hover:bg-surface-2 focus-visible:gb-focus"
+              "md:hidden rounded-xl border border-white/25 px-3 py-2 text-sm text-white",
+              "hover:bg-white/10"
             )}
             onClick={() => setOpen((v) => !v)}
             aria-label="Open menu"
@@ -56,16 +126,32 @@ export default function Header() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden pb-4">
-            <div className="gb-divider mb-3" />
-            <div className="flex flex-col gap-1">
-              <NavLink href="/services">Services</NavLink>
-              <NavLink href="/gallery">Gallery</NavLink>
-              <NavLink href="/book">Book</NavLink>
-              <NavLink href="/ui">UI Kit</NavLink>
+          <div className="md:hidden mt-3 rounded-2xl bg-white text-black shadow-xl p-4">
+            <div className="flex flex-col gap-2">
+              <Link href="/explore" className="font-semibold hover:underline">
+                Explore (Microsites)
+              </Link>
+              <Link href="/explore/hair" className="pl-3 text-sm hover:underline">
+                Hair
+              </Link>
+              <Link href="/explore/nails" className="pl-3 text-sm hover:underline">
+                Nails
+              </Link>
+              <Link href="/explore/wellness" className="pl-3 text-sm hover:underline">
+                Wellness
+              </Link>
+
+              <div className="h-px bg-neutral-200 my-2" />
+
+              <Link href="/book" className="text-sm font-medium hover:underline">
+                Book
+              </Link>
+              <Link href="/ui" className="text-sm font-medium hover:underline">
+                UI Kit
+              </Link>
             </div>
 
-            <div className="mt-3 flex gap-2">
+            <div className="mt-4 flex gap-2">
               <Button className="flex-1" variant="secondary">
                 Sign in
               </Button>
