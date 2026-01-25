@@ -1,0 +1,20 @@
+{
+  "microsite": "hair",
+  "title": "Hair therapists",
+  "subtitle": "Choose a hair specialist matched to your service goals.",
+  "therapistIds": [
+    "t-aya",
+    "t-lee",
+    "t-sam",
+    "t-nia",
+    "t-zahra",
+    "t-thando",
+    "t-mariam",
+    "t-jade"
+  ],
+  "emptyState": {
+    "title": "No Hair therapists available yet",
+    "body": "We’re finalising schedules for the Hair Studio. Browse services or check back soon.",
+    "cta": { "label": "Browse services", "href": "/explore/hair/services" }
+  }
+}
