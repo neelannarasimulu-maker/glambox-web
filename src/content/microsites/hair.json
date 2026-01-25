@@ -10,7 +10,7 @@
   },
   "nav": [
     { "key": "services", "label": "Services", "href": "/explore/hair/services" },
-    { "key": "therapists", "label": "Therapists", "href": "/explore/hair/therapists" },
+    { "key": "therapists", "label": "Therapists", "href": "/therapists" },
     { "key": "gallery", "label": "Gallery", "href": "/explore/hair/gallery" },
     { "key": "shop", "label": "Shop", "href": "/explore/hair/shop" },
     { "key": "book", "label": "Book Hair", "href": "/book/hair" }
