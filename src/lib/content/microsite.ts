@@ -12,6 +12,10 @@ export type MicrositeConfig = {
     headline: string;
     body: string;
   };
+  highlights?: Array<{
+    title: string;
+    body: string;
+  }>;
   nav: Array<
     | string
     | {
@@ -22,6 +26,20 @@ export type MicrositeConfig = {
   >;
   featuredServiceIds: string[];
   featuredTherapistIds: string[];
+  galleryTeaserIds?: string[];
+  shopTeaserProductIds?: string[];
+  cta?: {
+    headline: string;
+    body: string;
+    primaryCta: {
+      label: string;
+      href: string;
+    };
+    secondaryCta?: {
+      label: string;
+      href: string;
+    };
+  };
 };
 
 const microsites = [hair, nails, wellness] as MicrositeConfig[];
