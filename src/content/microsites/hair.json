@@ -4,11 +4,27 @@
   "tagline": "Modern hair artistry, delivered as an experience.",
   "themeKey": "hair",
   "heroImage": "/hero/hair-hero.jpg",
+
+  "hero": {
+      "badge": "Hair • Style • Finish",
+      "headline": "Hair that feels like you.",
+      "subheadline": "Premium without pretence. From everyday refresh to statement moments, we focus on healthy outcomes, thoughtful consultation, and results that look as good in real life as they do in photos.",
+      "primaryCta": { "label": "Book Hair", "href": "/book/hair" },
+      "secondaryCta": { "label": "Browse Services", "href": "/explore/hair/services" },
+      "trustCues": [
+        "Premium professionals",
+        "Consultation-led results",
+        "Comfort-first approach",
+        "Beautiful finishes"
+      ]
+    },
+
   "about": {
-    "headline": "Hair that feels like you.",
-    "body": "Premium without pretence. From everyday refresh to statement moments, we tailor each service to your texture, lifestyle, and goals."
+    "headline": "Hair artistry, grounded in care.",
+    "body": "Glambox Hair Studio blends premium technique with warm, welcoming energy. Whether you visit often or occasionally, you’ll get the same attention to detail, respect, and care."
   },
-    "highlights": [
+
+  "highlights": [
     {
       "title": "Premium without pretence",
       "body": "Same attention to detail, whether you’re here for maintenance or a full transformation."
@@ -22,9 +38,10 @@
       "body": "Match your goals, vibe, and sensitivities to the right service and therapist."
     }
   ],
+  
   "nav": [
     { "key": "services", "label": "Services", "href": "/explore/hair/services" },
-    { "key": "therapists", "label": "Therapists", "href": "/therapists" },
+    { "key": "therapists", "label": "Therapists", "href": "/explore/hair/therapists" },
     { "key": "gallery", "label": "Gallery", "href": "/explore/hair/gallery" },
     { "key": "shop", "label": "Shop", "href": "/explore/hair/shop" },
     { "key": "book", "label": "Book Hair", "href": "/book/hair" }
@@ -34,12 +51,99 @@
     "wash-cut-blow",
     "balayage",
     "deep-repair",
-    "scalp-care",
-    "wig-weave-install"
+    "scalp-care"
   ],
-  "featuredTherapistIds": ["t-aya", "t-lee", "t-sam", "t-nia", "t-jade"],
-  "galleryTeaserIds": ["hair-g1", "hair-g2", "hair-g3","hair-g4"] ,
+  "featuredTherapistIds": ["t-aya", "t-lee", "t-sam", "t-nia"],
+  "galleryTeaserIds": ["hair-g2", "hair-g3","hair-g4"] ,
   "shopTeaserProductIds": ["prod-argan-shine-oil","prod-heat-protect-mist","prod-moisture-mask", "prod-edge-control"],
+  
+  "sections": {
+    "services": {
+      "title": "Signature services",
+      "subtitle": "Curated options across Essentials, Signature, and Luxe.",
+      "viewAllLabel": "View all services",
+      "viewAllHref": "/explore/hair/services",
+      "featuredServiceIds": [
+        "wash-blow",
+        "wash-cut-blow",
+        "balayage",
+        "deep-repair",
+        "scalp-care",
+        "install-wig-weave"
+      ],
+      "emptyState": {
+        "title": "No services available yet",
+        "body": "We’re curating the Hair menu. Check back soon or explore another microsite.",
+        "cta": { "label": "Explore microsites", "href": "/explore" }
+      }
+    },
+
+    "therapists": {
+      "title": "Meet the Hair Artists",
+      "subtitle": "Choose your therapist or let Glambox recommend the best match.",
+      "viewAllLabel": "View all therapists",
+      "viewAllHref": "/explore/hair/therapists",
+      "featuredTherapists": {
+        "therapistIds": ["t-aya", "t-lee", "t-sam", "t-nia", "t-zoe"],
+        "note": "GLOBAL therapist IDs. Availability for this microsite is validated via therapist-services.json assignments for microsite='hair'."
+      },
+      "emptyState": {
+        "title": "No Hair therapists available yet",
+        "body": "We’re finalising schedules for this pop-up. Browse services or check back soon.",
+        "cta": { "label": "Browse services", "href": "/explore/hair/services" }
+      }
+    },
+
+    "gallery": {
+      "title": "Results gallery",
+      "subtitle": "Real women. Real glow. Premium lighting, confident energy.",
+      "viewAllLabel": "View gallery",
+      "viewAllHref": "/explore/hair/gallery",
+      "teaserIds": ["hair-g1", "hair-g2", "hair-g3"],
+      "emptyState": {
+        "title": "Gallery coming soon",
+        "body": "We’re preparing a fresh set of results and looks for the Hair Studio.",
+        "cta": { "label": "Browse services", "href": "/explore/hair/services" }
+      }
+    },
+
+    "shop": {
+      "title": "Shop Hair essentials",
+      "subtitle": "Curated products that support your results at home.",
+      "viewAllLabel": "Shop all products",
+      "viewAllHref": "/explore/hair/shop",
+      "teaserProductIds": [
+        "prod-argan-shine-oil",
+        "prod-heat-protect-mist",
+        "prod-moisture-mask"
+      ],
+      "emptyState": {
+        "title": "Shop coming soon",
+        "body": "Hair products are being curated. For now, explore services and book your moment.",
+        "cta": { "label": "Book Hair", "href": "/book/hair" }
+      }
+    },
+
+    "standards": {
+      "title": "Our standards",
+      "subtitle": "The details that make it feel premium, every time.",
+      "items": [
+        {
+          "title": "Consultation-led",
+          "body": "We align on your goal, lifestyle, and hair history before we start."
+        },
+        {
+          "title": "Comfort-first",
+          "body": "Gentle handling, thoughtful pacing, and products that respect your scalp."
+        },
+        {
+          "title": "Clean + consistent",
+          "body": "Hygiene practices you can see, and results you can trust."
+        }
+      ]
+    }
+  },
+
   "cta": {
     "headline": "Ready for your next hair moment?",
     "body": "Choose a service, match with a therapist, and book a time that fits your rhythm.",
@@ -47,3 +151,5 @@
     "secondaryCta": { "label": "Browse Services", "href": "/explore/hair/services" }
   }
 }
+
+
