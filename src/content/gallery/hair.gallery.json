@@ -1,8 +1,41 @@
 {
   "microsite": "hair",
   "items": [
-    { "id": "g1", "image": "/gallery/g-1.jpg", "caption": "Soft glam blowout", "tags": ["blowdry", "gloss"] },
-    { "id": "g2", "image": "/gallery/g-2.jpg", "caption": "Sunlit balayage", "tags": ["colour", "balayage"] },
-    { "id": "g3", "image": "/gallery/g-3.jpg", "caption": "Silk press finish", "tags": ["silk-press", "smooth"] }
+    {
+      "id": "hair-g1",
+      "image": "/gallery/hair/g-1.jpg",
+      "caption": "Soft glam blowout with natural shine.",
+      "tags": ["blowdry", "shine", "everyday"]
+    },
+    {
+      "id": "hair-g2",
+      "image": "/gallery/hair/g-2.jpg",
+      "caption": "Balayage dimension with a warm tone blend.",
+      "tags": ["balayage", "colour", "glow"]
+    },
+    {
+      "id": "hair-g3",
+      "image": "/gallery/hair/g-3.jpg",
+      "caption": "Protective style finished with comfort-first edges.",
+      "tags": ["protective", "braids", "longwear"]
+    },
+    {
+      "id": "hair-g4",
+      "image": "/gallery/hair/g-4.jpg",
+      "caption": "Sleek silk press with glassy finish.",
+      "tags": ["silkpress", "sleek", "luxe"]
+    },
+    {
+      "id": "hair-g5",
+      "image": "/gallery/hair/g-5.jpg",
+      "caption": "Full head foils for bright, blended dimension.",
+      "tags": ["foils", "highlights", "colour"]
+    },
+    {
+      "id": "hair-g6",
+      "image": "/gallery/hair/g-6.jpg",
+      "caption": "Wig install with seamless hairline and natural blend.",
+      "tags": ["wigs", "install", "photo-ready"]
+    }
   ]
 }

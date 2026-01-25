@@ -1,34 +1,12 @@
 {
   "assignments": [
-    {
-      "therapistId": "t-aya",
-      "microsite": "hair",
-      "serviceIds": ["balayage", "wash-cut-blow"]
-    },
-    {
-      "therapistId": "t-aya",
-      "microsite": "nails",
-      "serviceIds": []
-    },
-    {
-      "therapistId": "t-lee",
-      "microsite": "hair",
-      "serviceIds": ["silk-press", "wash-cut-blow"]
-    },
-    {
-      "therapistId": "t-lee",
-      "microsite": "nails",
-      "serviceIds": ["signature-mani"]
-    },
-    {
-      "therapistId": "t-sam",
-      "microsite": "hair",
-      "serviceIds": ["deep-repair"]
-    },
-    {
-      "therapistId": "t-sam",
-      "microsite": "wellness",
-      "serviceIds": ["reset-massage"]
-    }
+    { "therapistId": "t-aya", "microsite": "hair", "serviceIds": ["root-tint", "half-foils", "full-foils", "balayage", "balayage-root"] },
+    { "therapistId": "t-lee", "microsite": "hair", "serviceIds": ["ladies-cut", "wash-blow", "wash-cut-blow", "silk-press"] },
+    { "therapistId": "t-sam", "microsite": "hair", "serviceIds": ["protective-prep", "braids-starter", "wig-weave-install", "full-house-weave"] },
+    { "therapistId": "t-nia", "microsite": "hair", "serviceIds": ["deep-repair", "scalp-care", "smoothing", "wash-blow"] },
+    { "therapistId": "t-zahra", "microsite": "hair", "serviceIds": ["half-foils", "full-foils", "balayage", "balayage-root"] },
+    { "therapistId": "t-thando", "microsite": "hair", "serviceIds": ["wig-weave-install", "full-house-weave"] },
+    { "therapistId": "t-mariam", "microsite": "hair", "serviceIds": ["wash-blow", "wash-cut-blow", "silk-press"] },
+    { "therapistId": "t-jade", "microsite": "hair", "serviceIds": ["ladies-cut", "wash-cut-blow"] }
   ]
 }

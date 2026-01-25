@@ -114,13 +114,13 @@ export default function Header() {
           {/* Desktop actions */}
           <div className="hidden md:flex items-center gap-2">
             {/* IMPORTANT: route to auth entry (which fans out to sign-in/sign-up) */}
-            <Button asChild variant="ghost" className="text-white hover:bg-white/10">
-              <Link href="/auth">Sign in</Link>
-            </Button>
+            <Link href="/auth" className="rounded-xl px-3 py-2 text-sm font-medium text-white hover:bg-white/10 transition">
+              Sign in
+            </Link>
 
-            <Button asChild className="bg-black text-white hover:bg-neutral-900">
-              <Link href="/book">Book now</Link>
-            </Button>
+            <Link href="/book" className="rounded-xl px-3 py-2 text-sm font-medium bg-black text-white hover:bg-neutral-900 transition">
+              Book now
+            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -194,13 +194,14 @@ export default function Header() {
 
             <div className="mt-4 flex gap-2">
               {/* Mobile Sign in routes to auth entry */}
-              <Button asChild className="flex-1" variant="secondary">
-                <Link href="/auth" onClick={closeMobile}>
+
+              <Button className="flex-1" variant="secondary" onClick={closeMobile}>
+                <Link href="/auth">
                   Sign in
                 </Link>
               </Button>
 
-              <Button asChild className="flex-1">
+              <Button className="flex-1">
                 <Link href="/book" onClick={closeMobile}>
                   Book
                 </Link>

@@ -3,34 +3,64 @@
   "currency": "ZAR",
   "products": [
     {
-      "id": "prod-argan-oil",
+      "id": "prod-argan-shine-oil",
       "name": "Argan Shine Oil",
       "brand": "Glambox Select",
       "priceZar": 249,
-      "image": "/services/hair-1.jpg",
-      "shortDesc": "Lightweight shine + heat support.",
-      "details": ["Smooth finish", "Non-greasy", "Best for blowouts"],
-      "tags": ["shine", "heat", "finish"]
+      "image": "/shop/hair/argan-shine-oil.jpg",
+      "shortDesc": "Lightweight shine and a polished finish without heaviness.",
+      "details": ["Non-greasy finish", "Adds gloss", "Ideal for blowouts and sleek styles"],
+      "tags": ["shine", "finish", "smooth"]
     },
     {
-      "id": "prod-bond-mask",
-      "name": "Bond Repair Mask",
+      "id": "prod-heat-protect-mist",
+      "name": "Heat Protect Mist",
       "brand": "Glambox Select",
-      "priceZar": 310,
-      "image": "/services/hair-1.jpg",
-      "shortDesc": "Weekly strength reset for stressed strands.",
-      "details": ["Deep repair", "Adds softness", "Colour-safe"],
-      "tags": ["repair", "treatment"]
+      "priceZar": 199,
+      "image": "/shop/hair/heat-protect-mist.jpg",
+      "shortDesc": "Everyday heat protection for silk press, blow dry, and styling tools.",
+      "details": ["Light mist", "Helps reduce breakage", "Smooth styling support"],
+      "tags": ["heat", "protect", "styling"]
     },
     {
-      "id": "prod-silk-spray",
-      "name": "Silk Press Mist",
+      "id": "prod-moisture-mask",
+      "name": "Moisture Repair Mask",
       "brand": "Glambox Select",
-      "priceZar": 180,
-      "image": "/services/hair-1.jpg",
-      "shortDesc": "Heat protectant with a light hold.",
-      "details": ["Heat shield", "Lightweight", "Gloss finish"],
-      "tags": ["heat", "style"]
+      "priceZar": 289,
+      "image": "/shop/hair/moisture-repair-mask.jpg",
+      "shortDesc": "Deep conditioning for softness, slip, and manageability.",
+      "details": ["Weekly treatment", "Improves softness", "Great for dry or colour-treated hair"],
+      "tags": ["repair", "moisture", "treatment"]
+    },
+    {
+      "id": "prod-scalp-serum",
+      "name": "Scalp Calm Serum",
+      "brand": "Glambox Select",
+      "priceZar": 229,
+      "image": "/shop/hair/scalp-calm-serum.jpg",
+      "shortDesc": "Comfort-first care for scalp balance and freshness.",
+      "details": ["Soothes dryness", "Lightweight", "Works well between wash days"],
+      "tags": ["scalp", "calm", "care"]
+    },
+    {
+      "id": "prod-colour-safe-shampoo",
+      "name": "Colour-Safe Shampoo",
+      "brand": "Glambox Select",
+      "priceZar": 179,
+      "image": "/shop/hair/colour-safe-shampoo.jpg",
+      "shortDesc": "Gentle cleanse designed to protect colour vibrancy.",
+      "details": ["Colour-friendly", "Soft cleanse", "Pairs well with repair mask"],
+      "tags": ["colour", "cleanse", "care"]
+    },
+    {
+      "id": "prod-edge-control",
+      "name": "Edge Control (Soft Hold)",
+      "brand": "Glambox Select",
+      "priceZar": 129,
+      "image": "/shop/hair/edge-control-soft-hold.jpg",
+      "shortDesc": "Neat edges with a soft, touchable hold.",
+      "details": ["Non-flaky", "Soft hold", "Great for protective styles"],
+      "tags": ["edges", "protective", "finish"]
     }
   ]
 }
