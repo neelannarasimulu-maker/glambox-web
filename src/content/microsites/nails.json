@@ -4,10 +4,28 @@
   "tagline": "Expressive, clean, and long-wear nail artistry.",
   "themeKey": "nails",
   "heroImage": "/hero/landing-hero.jpg",
+  "hero": {
+    "badge": "Nails • Care • Design",
+    "headline": "Polished details, lasting confidence.",
+    "subheadline": "From everyday elegance to bold statement sets, our nail rituals blend hygiene-first care with expressive design.",
+    "primaryCta": { "label": "Book Nails", "href": "/book/nails" },
+    "secondaryCta": { "label": "Browse Services", "href": "/explore/nails/services" },
+    "trustCues": ["Long-wear finishes", "Clean tools", "Design-led artistry"]
+  },
   "about": {
     "headline": "Polish with personality.",
     "body": "From classic care to bold designs, our nail rituals are designed to protect, strengthen, and elevate." 
   },
+  "highlights": [
+    {
+      "title": "Design-forward",
+      "body": "From minimalist to maximalist sets, we shape every detail with intention."
+    },
+    {
+      "title": "Nail health first",
+      "body": "Cuticle care and safe removal practices are built into every appointment."
+    }
+  ],
   "nav": [
     { "key": "services", "label": "Services", "href": "/explore/nails/services" },
     { "key": "therapists", "label": "Therapists", "href": "/explore/nails/therapists" },
@@ -15,6 +33,84 @@
     { "key": "shop", "label": "Shop", "href": "/explore/nails/shop" },
     { "key": "book", "label": "Book Nails", "href": "/book/nails" }
   ],
-  "featuredServiceIds": ["signature-mani"],
-  "featuredTherapistIds": ["t-lee"]
+  "sections": {
+    "services": {
+      "title": "Signature nail services",
+      "subtitle": "Manicures and design work tailored to your vibe.",
+      "viewAllLabel": "View all services",
+      "viewAllHref": "/explore/nails/services",
+      "featuredServiceIds": ["signature-mani"],
+      "cardCtaLabel": "View details",
+      "emptyState": {
+        "title": "No nail services available yet",
+        "body": "We’re preparing the Nail Atelier menu. Check back soon or explore another microsite.",
+        "cta": { "label": "Explore microsites", "href": "/explore" }
+      }
+    },
+    "therapists": {
+      "title": "Meet the Nail Artists",
+      "subtitle": "Select your artist or let Glambox match you to the right hands.",
+      "viewAllLabel": "View all therapists",
+      "viewAllHref": "/explore/nails/therapists",
+      "featuredTherapists": {
+        "therapistIds": [],
+        "note": "Therapists will be added once schedules are finalised."
+      },
+      "cardCtaLabel": "View profile",
+      "emptyState": {
+        "title": "No Nail artists available yet",
+        "body": "We’re finalising the roster. Browse services or check back soon.",
+        "cta": { "label": "Browse services", "href": "/explore/nails/services" }
+      }
+    },
+    "gallery": {
+      "title": "Design gallery",
+      "subtitle": "Fresh sets and clean finishes from recent appointments.",
+      "viewAllLabel": "View gallery",
+      "viewAllHref": "/explore/nails/gallery",
+      "teaserIds": ["ng1"],
+      "emptyState": {
+        "title": "Gallery coming soon",
+        "body": "We’re capturing new looks for the Nail Atelier.",
+        "cta": { "label": "Browse services", "href": "/explore/nails/services" }
+      }
+    },
+    "shop": {
+      "title": "Shop nail essentials",
+      "subtitle": "Take-home care for glossy, long-lasting sets.",
+      "viewAllLabel": "Shop all products",
+      "viewAllHref": "/explore/nails/shop",
+      "teaserProductIds": ["prod-cuticle-oil"],
+      "cardCtaLabel": "View product",
+      "emptyState": {
+        "title": "Shop coming soon",
+        "body": "Nail care products are being curated. For now, explore services and book your moment.",
+        "cta": { "label": "Book Nails", "href": "/book/nails" }
+      }
+    },
+    "standards": {
+      "title": "Our standards",
+      "subtitle": "Intentional, hygienic, and design-led every visit.",
+      "items": [
+        {
+          "title": "Clean tools",
+          "body": "Single-use files and sanitised tools keep every service safe."
+        },
+        {
+          "title": "Detail-focused",
+          "body": "We shape, polish, and finish with precision for long wear."
+        },
+        {
+          "title": "Comfort-first",
+          "body": "Gentle prep and aftercare guidance keep nails healthy." 
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Ready for a fresh set?",
+    "body": "Choose your service, pair with an artist, and lock in a time that suits you.",
+    "primaryCta": { "label": "Book Nails", "href": "/book/nails" },
+    "secondaryCta": { "label": "Browse Services", "href": "/explore/nails/services" }
+  }
 }

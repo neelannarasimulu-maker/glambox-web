@@ -8,6 +8,20 @@ export type MicrositeConfig = {
   tagline: string;
   themeKey: string;
   heroImage: string;
+  hero: {
+    badge: string;
+    headline: string;
+    subheadline: string;
+    primaryCta: {
+      label: string;
+      href: string;
+    };
+    secondaryCta?: {
+      label: string;
+      href: string;
+    };
+    trustCues?: string[];
+  };
   about: {
     headline: string;
     body: string;
@@ -24,10 +38,82 @@ export type MicrositeConfig = {
         href: string;
       }
   >;
-  featuredServiceIds: string[];
-  featuredTherapistIds: string[];
-  galleryTeaserIds?: string[];
-  shopTeaserProductIds?: string[];
+  sections: {
+    services: {
+      title: string;
+      subtitle: string;
+      viewAllLabel: string;
+      viewAllHref: string;
+      featuredServiceIds: string[];
+      cardCtaLabel: string;
+      emptyState?: {
+        title: string;
+        body: string;
+        cta?: {
+          label: string;
+          href: string;
+        };
+      };
+    };
+    therapists: {
+      title: string;
+      subtitle: string;
+      viewAllLabel: string;
+      viewAllHref: string;
+      featuredTherapists: {
+        therapistIds: string[];
+        note?: string;
+      };
+      cardCtaLabel: string;
+      emptyState?: {
+        title: string;
+        body: string;
+        cta?: {
+          label: string;
+          href: string;
+        };
+      };
+    };
+    gallery: {
+      title: string;
+      subtitle: string;
+      viewAllLabel: string;
+      viewAllHref: string;
+      teaserIds: string[];
+      emptyState?: {
+        title: string;
+        body: string;
+        cta?: {
+          label: string;
+          href: string;
+        };
+      };
+    };
+    shop: {
+      title: string;
+      subtitle: string;
+      viewAllLabel: string;
+      viewAllHref: string;
+      teaserProductIds: string[];
+      cardCtaLabel: string;
+      emptyState?: {
+        title: string;
+        body: string;
+        cta?: {
+          label: string;
+          href: string;
+        };
+      };
+    };
+    standards?: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        body: string;
+      }>;
+    };
+  };
   cta?: {
     headline: string;
     body: string;

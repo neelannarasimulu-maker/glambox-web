@@ -24,38 +24,29 @@ export default async function MicrositeHomePage({
     notFound();
   }
 
-  const featuredServices = config.featuredServiceIds
+  const servicesSection = config.sections.services;
+  const therapistsSection = config.sections.therapists;
+  const gallerySection = config.sections.gallery;
+  const shopSection = config.sections.shop;
+  const standardsSection = config.sections.standards;
+
+  const featuredServices = servicesSection.featuredServiceIds
     .map((id) => servicesData.services.find((service) => service.id === id))
     .filter((service): service is NonNullable<typeof service> => Boolean(service));
 
-  const featuredTherapists = config.featuredTherapistIds
+  const featuredTherapists = therapistsSection.featuredTherapists.therapistIds
     .map((id) => getTherapistById(id))
     .filter((therapist): therapist is NonNullable<typeof therapist> => Boolean(therapist));
 
   const highlights = config.highlights ?? [];
 
-  const galleryTeasers = (
-    config.galleryTeaserIds?.length
-      ? config.galleryTeaserIds
-          .map((id) => galleryData.items.find((item) => item.id === id))
-          .filter((item): item is NonNullable<typeof item> => Boolean(item))
-      : galleryData.items.slice(0, 3)
-  ).slice(0, 3);
+  const galleryTeasers = gallerySection.teaserIds
+    .map((id) => galleryData.items.find((item) => item.id === id))
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
-  const shopTeasers = (
-    config.shopTeaserProductIds?.length
-      ? config.shopTeaserProductIds
-          .map((id) => productsData.products.find((product) => product.id === id))
-          .filter((product): product is NonNullable<typeof product> => Boolean(product))
-      : productsData.products.slice(0, 3)
-  ).slice(0, 3);
-
-  const cta = config.cta ?? {
-    headline: "Ready when you are.",
-    body: `Launch a booking journey tailored to ${config.name}.`,
-    primaryCta: { label: `Book ${config.name}`, href: `/book/${config.id}` },
-    secondaryCta: { label: "Browse Services", href: `/explore/${config.id}/services` },
-  };
+  const shopTeasers = shopSection.teaserProductIds
+    .map((id) => productsData.products.find((product) => product.id === id))
+    .filter((product): product is NonNullable<typeof product> => Boolean(product));
 
   return (
     <main>
@@ -71,24 +62,35 @@ export default async function MicrositeHomePage({
         </div>
         <div className="container-glambox section-pad relative">
           <div className="max-w-2xl">
-            <span className="badge text-sm">{config.name}</span>
+            <span className="badge text-sm">{config.hero.badge}</span>
             <h1 className="mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
-              {config.tagline}
+              {config.hero.headline}
             </h1>
             <p className="mt-5 text-lg text-[rgb(var(--text-300))]">
-              {config.about.headline}
+              {config.hero.subheadline}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href={`/book/${config.id}`} className="btn-primary">
-                Book {config.name}
+              <Link href={config.hero.primaryCta.href} className="btn-primary">
+                {config.hero.primaryCta.label}
               </Link>
-              <Link
-                href={`/explore/${config.id}/services`}
-                className="btn-secondary"
-              >
-                Browse Services
-              </Link>
+              {config.hero.secondaryCta ? (
+                <Link
+                  href={config.hero.secondaryCta.href}
+                  className="btn-secondary"
+                >
+                  {config.hero.secondaryCta.label}
+                </Link>
+              ) : null}
             </div>
+            {config.hero.trustCues?.length ? (
+              <div className="mt-8 flex flex-wrap gap-2 text-sm text-[rgb(var(--text-300))]">
+                {config.hero.trustCues.map((cue) => (
+                  <span key={cue} className="badge text-xs">
+                    {cue}
+                  </span>
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
       </section>
@@ -98,9 +100,8 @@ export default async function MicrositeHomePage({
       <section className="section-pad">
         <div className="container-glambox grid gap-10 lg:grid-cols-[1.15fr_1fr]">
           <div>
-            <p className="badge text-xs">About</p>
             <h2 className="mt-4 text-3xl font-semibold text-white">
-              About {config.name}
+              {config.about.headline}
             </h2>
             <p className="mt-4 text-[rgb(var(--text-300))]">
               {config.about.body}
@@ -127,45 +128,68 @@ export default async function MicrositeHomePage({
         <div className="container-glambox">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="badge text-xs">Featured Services</p>
-              <h2 className="mt-4 text-3xl font-semibold text-white">
-                Tailored outcomes, beautifully priced.
+              <h2 className="text-3xl font-semibold text-white">
+                {servicesSection.title}
               </h2>
+              <p className="mt-3 text-[rgb(var(--text-300))]">
+                {servicesSection.subtitle}
+              </p>
             </div>
             <Link
-              href={`/explore/${config.id}/services`}
+              href={servicesSection.viewAllHref}
               className="btn-secondary"
             >
-              View all
+              {servicesSection.viewAllLabel}
             </Link>
           </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {featuredServices.map((service) => (
-              <div key={service.id} className="card card-hover p-6">
-                <div className="flex items-center justify-between">
-                  <span className="badge text-xs">{service.tier}</span>
-                  <span className="text-sm text-[rgb(var(--text-300))]">
-                    {service.durationMins} mins
-                  </span>
+          {featuredServices.length > 0 ? (
+            <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {featuredServices.map((service) => (
+                <div key={service.id} className="card card-hover p-6">
+                  <div className="flex items-center justify-between">
+                    <span className="badge text-xs">{service.tier}</span>
+                    <span className="text-sm text-[rgb(var(--text-300))]">
+                      {service.durationMins} mins
+                    </span>
+                  </div>
+                  <h3 className="mt-4 text-xl font-semibold text-white">
+                    {service.name}
+                  </h3>
+                  <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
+                    {service.outcome}
+                  </p>
+                  <div className="mt-4 text-lg font-semibold text-white">
+                    From {formatZar(service.fromPriceZar)}
+                  </div>
+                  <Link
+                    href={`/explore/${config.id}/services/${service.id}`}
+                    className="btn-primary mt-6 inline-flex"
+                  >
+                    {servicesSection.cardCtaLabel}
+                  </Link>
                 </div>
-                <h3 className="mt-4 text-xl font-semibold text-white">
-                  {service.name}
+              ))}
+            </div>
+          ) : servicesSection.emptyState ? (
+            <div className="mt-8">
+              <div className="card p-6 text-center">
+                <h3 className="text-xl font-semibold text-white">
+                  {servicesSection.emptyState.title}
                 </h3>
                 <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
-                  {service.outcome}
+                  {servicesSection.emptyState.body}
                 </p>
-                <div className="mt-4 text-lg font-semibold text-white">
-                  From {formatZar(service.fromPriceZar)}
-                </div>
-                <Link
-                  href={`/explore/${config.id}/services/${service.id}`}
-                  className="btn-primary mt-6 inline-flex"
-                >
-                  View details
-                </Link>
+                {servicesSection.emptyState.cta ? (
+                  <Link
+                    href={servicesSection.emptyState.cta.href}
+                    className="btn-secondary mt-5 inline-flex"
+                  >
+                    {servicesSection.emptyState.cta.label}
+                  </Link>
+                ) : null}
               </div>
-            ))}
-          </div>
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -173,56 +197,79 @@ export default async function MicrositeHomePage({
         <div className="container-glambox">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="badge text-xs">Meet the Team</p>
-              <h2 className="mt-4 text-3xl font-semibold text-white">
-                Therapists with warmth, skill, and range.
+              <h2 className="text-3xl font-semibold text-white">
+                {therapistsSection.title}
               </h2>
+              <p className="mt-3 text-[rgb(var(--text-300))]">
+                {therapistsSection.subtitle}
+              </p>
             </div>
-            <Link href="/therapists" className="btn-secondary">
-              Browse directory
+            <Link href={therapistsSection.viewAllHref} className="btn-secondary">
+              {therapistsSection.viewAllLabel}
             </Link>
           </div>
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
-            {featuredTherapists.map((therapist) => (
-              <div key={therapist.id} className="card card-hover p-6">
-                <div className="relative h-56 w-full overflow-hidden rounded-2xl">
-                  <Image
-                    src={therapist.photo}
-                    alt={therapist.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="mt-4 flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">
-                      {therapist.name}
-                    </h3>
-                    <p className="text-sm text-[rgb(var(--text-300))]">
-                      {therapist.roles.join(" • ")}
-                    </p>
+          {featuredTherapists.length > 0 ? (
+            <div className="mt-8 grid gap-6 lg:grid-cols-3">
+              {featuredTherapists.map((therapist) => (
+                <div key={therapist.id} className="card card-hover p-6">
+                  <div className="relative h-56 w-full overflow-hidden rounded-2xl">
+                    <Image
+                      src={therapist.photo}
+                      alt={therapist.name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                  <span className="badge text-xs">{therapist.rating}★</span>
+                  <div className="mt-4 flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">
+                        {therapist.name}
+                      </h3>
+                      <p className="text-sm text-[rgb(var(--text-300))]">
+                        {therapist.roles.join(" • ")}
+                      </p>
+                    </div>
+                    <span className="badge text-xs">{therapist.rating}★</span>
+                  </div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {therapist.specialties.slice(0, 3).map((specialty) => (
+                      <span key={specialty} className="chip text-xs">
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-4 text-sm text-[rgb(var(--text-300))]">
+                    {therapist.locations.join(", ")}
+                  </div>
+                  <Link
+                    href={`/therapists/${therapist.id}`}
+                    className="btn-primary mt-5 inline-flex"
+                  >
+                    {therapistsSection.cardCtaLabel}
+                  </Link>
                 </div>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {therapist.specialties.slice(0, 3).map((specialty) => (
-                    <span key={specialty} className="chip text-xs">
-                      {specialty}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-4 text-sm text-[rgb(var(--text-300))]">
-                  Locations: {therapist.locations.join(", ")}
-                </div>
-                <Link
-                  href={`/therapists/${therapist.id}`}
-                  className="btn-primary mt-5 inline-flex"
-                >
-                  View profile
-                </Link>
+              ))}
+            </div>
+          ) : therapistsSection.emptyState ? (
+            <div className="mt-8">
+              <div className="card p-6 text-center">
+                <h3 className="text-xl font-semibold text-white">
+                  {therapistsSection.emptyState.title}
+                </h3>
+                <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
+                  {therapistsSection.emptyState.body}
+                </p>
+                {therapistsSection.emptyState.cta ? (
+                  <Link
+                    href={therapistsSection.emptyState.cta.href}
+                    className="btn-secondary mt-5 inline-flex"
+                  >
+                    {therapistsSection.emptyState.cta.label}
+                  </Link>
+                ) : null}
               </div>
-            ))}
-          </div>
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -230,35 +277,58 @@ export default async function MicrositeHomePage({
         <div className="container-glambox">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="badge text-xs">Gallery</p>
-              <h2 className="mt-4 text-3xl font-semibold text-white">
-                A peek at the latest results.
+              <h2 className="text-3xl font-semibold text-white">
+                {gallerySection.title}
               </h2>
+              <p className="mt-3 text-[rgb(var(--text-300))]">
+                {gallerySection.subtitle}
+              </p>
             </div>
             <Link
-              href={`/explore/${config.id}/gallery`}
+              href={gallerySection.viewAllHref}
               className="btn-secondary"
             >
-              View gallery
+              {gallerySection.viewAllLabel}
             </Link>
           </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {galleryTeasers.map((item) => (
-              <div key={item.id} className="card overflow-hidden">
-                <div className="relative h-56 w-full">
-                  <Image
-                    src={item.image}
-                    alt={item.caption}
-                    fill
-                    className="object-cover"
-                  />
+          {galleryTeasers.length > 0 ? (
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {galleryTeasers.map((item) => (
+                <div key={item.id} className="card overflow-hidden">
+                  <div className="relative h-56 w-full">
+                    <Image
+                      src={item.image}
+                      alt={item.caption}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-4 text-sm text-[rgb(var(--text-300))]">
+                    {item.caption}
+                  </div>
                 </div>
-                <div className="p-4 text-sm text-[rgb(var(--text-300))]">
-                  {item.caption}
-                </div>
+              ))}
+            </div>
+          ) : gallerySection.emptyState ? (
+            <div className="mt-8">
+              <div className="card p-6 text-center">
+                <h3 className="text-xl font-semibold text-white">
+                  {gallerySection.emptyState.title}
+                </h3>
+                <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
+                  {gallerySection.emptyState.body}
+                </p>
+                {gallerySection.emptyState.cta ? (
+                  <Link
+                    href={gallerySection.emptyState.cta.href}
+                    className="btn-secondary mt-5 inline-flex"
+                  >
+                    {gallerySection.emptyState.cta.label}
+                  </Link>
+                ) : null}
               </div>
-            ))}
-          </div>
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -266,63 +336,115 @@ export default async function MicrositeHomePage({
         <div className="container-glambox">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="badge text-xs">Shop</p>
-              <h2 className="mt-4 text-3xl font-semibold text-white">
-                Products curated for this microsite.
+              <h2 className="text-3xl font-semibold text-white">
+                {shopSection.title}
               </h2>
+              <p className="mt-3 text-[rgb(var(--text-300))]">
+                {shopSection.subtitle}
+              </p>
             </div>
-            <Link href={`/explore/${config.id}/shop`} className="btn-secondary">
-              Shop all
+            <Link href={shopSection.viewAllHref} className="btn-secondary">
+              {shopSection.viewAllLabel}
             </Link>
           </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {shopTeasers.map((product) => (
-              <div key={product.id} className="card card-hover p-6">
-                <div className="relative h-40 w-full overflow-hidden rounded-2xl">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                  />
+          {shopTeasers.length > 0 ? (
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {shopTeasers.map((product) => (
+                <div key={product.id} className="card card-hover p-6">
+                  <div className="relative h-40 w-full overflow-hidden rounded-2xl">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-white">
+                    {product.name}
+                  </h3>
+                  <p className="text-sm text-[rgb(var(--text-300))]">
+                    {product.shortDesc}
+                  </p>
+                  <div className="mt-3 text-white">
+                    {formatZar(product.priceZar)}
+                  </div>
+                  <Link
+                    href={`/explore/${config.id}/shop/${product.id}`}
+                    className="btn-primary mt-4 inline-flex"
+                  >
+                    {shopSection.cardCtaLabel}
+                  </Link>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-white">
-                  {product.name}
+              ))}
+            </div>
+          ) : shopSection.emptyState ? (
+            <div className="mt-8">
+              <div className="card p-6 text-center">
+                <h3 className="text-xl font-semibold text-white">
+                  {shopSection.emptyState.title}
                 </h3>
-                <p className="text-sm text-[rgb(var(--text-300))]">
-                  {product.shortDesc}
+                <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
+                  {shopSection.emptyState.body}
                 </p>
-                <div className="mt-3 text-white">
-                  {formatZar(product.priceZar)}
-                </div>
-                <Link
-                  href={`/explore/${config.id}/shop/${product.id}`}
-                  className="btn-primary mt-4 inline-flex"
-                >
-                  View product
-                </Link>
+                {shopSection.emptyState.cta ? (
+                  <Link
+                    href={shopSection.emptyState.cta.href}
+                    className="btn-secondary mt-5 inline-flex"
+                  >
+                    {shopSection.emptyState.cta.label}
+                  </Link>
+                ) : null}
               </div>
-            ))}
-          </div>
+            </div>
+          ) : null}
         </div>
       </section>
+
+      {standardsSection?.items?.length ? (
+        <section className="section-pad">
+          <div className="container-glambox">
+            <div>
+              <h2 className="text-3xl font-semibold text-white">
+                {standardsSection.title}
+              </h2>
+              <p className="mt-3 text-[rgb(var(--text-300))]">
+                {standardsSection.subtitle}
+              </p>
+            </div>
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {standardsSection.items.map((item) => (
+                <div key={item.title} className="card p-6">
+                  <h3 className="text-lg font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="section-pad">
         <div className="container-glambox">
           <div className="card p-8 text-center">
             <h2 className="text-3xl font-semibold text-white">
-              {cta.headline}
+              {config.cta?.headline}
             </h2>
             <p className="mt-3 text-[rgb(var(--text-300))]">
-              {cta.body}
+              {config.cta?.body}
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href={cta.primaryCta.href} className="btn-primary">
-                {cta.primaryCta.label}
-              </Link>
-              {cta.secondaryCta ? (
-                <Link href={cta.secondaryCta.href} className="btn-secondary">
-                  {cta.secondaryCta.label}
+              {config.cta?.primaryCta ? (
+                <Link href={config.cta.primaryCta.href} className="btn-primary">
+                  {config.cta.primaryCta.label}
+                </Link>
+              ) : null}
+              {config.cta?.secondaryCta ? (
+                <Link href={config.cta.secondaryCta.href} className="btn-secondary">
+                  {config.cta.secondaryCta.label}
                 </Link>
               ) : null}
             </div>

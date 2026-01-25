@@ -46,17 +46,6 @@
     { "key": "shop", "label": "Shop", "href": "/explore/hair/shop" },
     { "key": "book", "label": "Book Hair", "href": "/book/hair" }
   ],
-   "featuredServiceIds": [
-    "wash-blow",
-    "wash-cut-blow",
-    "balayage",
-    "deep-repair",
-    "scalp-care"
-  ],
-  "featuredTherapistIds": ["t-aya", "t-lee", "t-sam", "t-nia"],
-  "galleryTeaserIds": ["hair-g2", "hair-g3","hair-g4"] ,
-  "shopTeaserProductIds": ["prod-argan-shine-oil","prod-heat-protect-mist","prod-moisture-mask", "prod-edge-control"],
-  
   "sections": {
     "services": {
       "title": "Signature services",
@@ -69,8 +58,9 @@
         "balayage",
         "deep-repair",
         "scalp-care",
-        "install-wig-weave"
+        "wig-weave-install"
       ],
+      "cardCtaLabel": "View details",
       "emptyState": {
         "title": "No services available yet",
         "body": "We’re curating the Hair menu. Check back soon or explore another microsite.",
@@ -87,6 +77,7 @@
         "therapistIds": ["t-aya", "t-lee", "t-sam", "t-nia", "t-zoe"],
         "note": "GLOBAL therapist IDs. Availability for this microsite is validated via therapist-services.json assignments for microsite='hair'."
       },
+      "cardCtaLabel": "View profile",
       "emptyState": {
         "title": "No Hair therapists available yet",
         "body": "We’re finalising schedules for this pop-up. Browse services or check back soon.",
@@ -117,6 +108,7 @@
         "prod-heat-protect-mist",
         "prod-moisture-mask"
       ],
+      "cardCtaLabel": "View product",
       "emptyState": {
         "title": "Shop coming soon",
         "body": "Hair products are being curated. For now, explore services and book your moment.",
@@ -151,5 +143,3 @@
     "secondaryCta": { "label": "Browse Services", "href": "/explore/hair/services" }
   }
 }
-
-

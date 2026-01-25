@@ -4,10 +4,28 @@
   "tagline": "Reset rituals for body and mind.",
   "themeKey": "wellness",
   "heroImage": "/hero/landing-hero.jpg",
+  "hero": {
+    "badge": "Wellness • Recovery • Calm",
+    "headline": "Reset rituals for body and mind.",
+    "subheadline": "Therapeutic touch, breath-led care, and rituals designed to restore balance to your day.",
+    "primaryCta": { "label": "Book Wellness", "href": "/book/wellness" },
+    "secondaryCta": { "label": "Browse Services", "href": "/explore/wellness/services" },
+    "trustCues": ["Restorative touch", "Mindful pacing", "Recovery-led rituals"]
+  },
   "about": {
     "headline": "Feel restored from the inside out.",
     "body": "Therapeutic touch and intentional rituals designed to bring balance back to your day." 
   },
+  "highlights": [
+    {
+      "title": "Recovery-focused",
+      "body": "Sessions that target tension release, circulation, and calm."
+    },
+    {
+      "title": "Slow, mindful pace",
+      "body": "We tailor pressure and rhythm to your body’s needs."
+    }
+  ],
   "nav": [
     { "key": "services", "label": "Services", "href": "/explore/wellness/services" },
     { "key": "therapists", "label": "Therapists", "href": "/explore/wellness/therapists" },
@@ -15,6 +33,84 @@
     { "key": "shop", "label": "Shop", "href": "/explore/wellness/shop" },
     { "key": "book", "label": "Book Wellness", "href": "/book/wellness" }
   ],
-  "featuredServiceIds": ["reset-massage"],
-  "featuredTherapistIds": ["t-sam"]
+  "sections": {
+    "services": {
+      "title": "Signature wellness rituals",
+      "subtitle": "Massage and recovery care curated to reset your energy.",
+      "viewAllLabel": "View all services",
+      "viewAllHref": "/explore/wellness/services",
+      "featuredServiceIds": ["reset-massage"],
+      "cardCtaLabel": "View details",
+      "emptyState": {
+        "title": "No wellness services available yet",
+        "body": "We’re finalising the Wellness Lounge menu. Check back soon or explore another microsite.",
+        "cta": { "label": "Explore microsites", "href": "/explore" }
+      }
+    },
+    "therapists": {
+      "title": "Meet the Wellness Therapists",
+      "subtitle": "Find a therapist who matches your pace and recovery goals.",
+      "viewAllLabel": "View all therapists",
+      "viewAllHref": "/explore/wellness/therapists",
+      "featuredTherapists": {
+        "therapistIds": [],
+        "note": "Therapists will be added once schedules are finalised."
+      },
+      "cardCtaLabel": "View profile",
+      "emptyState": {
+        "title": "No Wellness therapists available yet",
+        "body": "We’re preparing schedules. Browse services or check back soon.",
+        "cta": { "label": "Browse services", "href": "/explore/wellness/services" }
+      }
+    },
+    "gallery": {
+      "title": "Wellness gallery",
+      "subtitle": "Restorative moments and spaces that feel calm and grounded.",
+      "viewAllLabel": "View gallery",
+      "viewAllHref": "/explore/wellness/gallery",
+      "teaserIds": ["wg1"],
+      "emptyState": {
+        "title": "Gallery coming soon",
+        "body": "We’re capturing new wellness moments for the lounge.",
+        "cta": { "label": "Browse services", "href": "/explore/wellness/services" }
+      }
+    },
+    "shop": {
+      "title": "Shop wellness essentials",
+      "subtitle": "Products that extend your recovery ritual at home.",
+      "viewAllLabel": "Shop all products",
+      "viewAllHref": "/explore/wellness/shop",
+      "teaserProductIds": ["prod-calm-balm"],
+      "cardCtaLabel": "View product",
+      "emptyState": {
+        "title": "Shop coming soon",
+        "body": "Wellness products are being curated. For now, explore services and book your moment.",
+        "cta": { "label": "Book Wellness", "href": "/book/wellness" }
+      }
+    },
+    "standards": {
+      "title": "Our standards",
+      "subtitle": "Thoughtful care that respects your body and pace.",
+      "items": [
+        {
+          "title": "Consultation-led",
+          "body": "We align on pressure, focus areas, and recovery goals."
+        },
+        {
+          "title": "Calm-first",
+          "body": "Lighting, sound, and pacing are designed to help you unwind."
+        },
+        {
+          "title": "Consistent care",
+          "body": "Every visit follows the same restorative, hygiene-first rituals." 
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Ready to reset?",
+    "body": "Choose a ritual, match with a therapist, and book your restorative moment.",
+    "primaryCta": { "label": "Book Wellness", "href": "/book/wellness" },
+    "secondaryCta": { "label": "Browse Services", "href": "/explore/wellness/services" }
+  }
 }
