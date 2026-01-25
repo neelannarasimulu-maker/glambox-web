@@ -8,7 +8,13 @@
     "headline": "Polish with personality.",
     "body": "From classic care to bold designs, our nail rituals are designed to protect, strengthen, and elevate." 
   },
-  "nav": ["services", "therapists", "gallery", "shop", "book"],
+  "nav": [
+    { "key": "services", "label": "Services", "href": "/explore/nails/services" },
+    { "key": "therapists", "label": "Therapists", "href": "/explore/nails/therapists" },
+    { "key": "gallery", "label": "Gallery", "href": "/explore/nails/gallery" },
+    { "key": "shop", "label": "Shop", "href": "/explore/nails/shop" },
+    { "key": "book", "label": "Book Nails", "href": "/book/nails" }
+  ],
   "featuredServiceIds": ["signature-mani"],
   "featuredTherapistIds": ["t-lee"]
 }

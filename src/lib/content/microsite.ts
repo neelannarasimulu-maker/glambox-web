@@ -12,7 +12,14 @@ export type MicrositeConfig = {
     headline: string;
     body: string;
   };
-  nav: string[];
+  nav: Array<
+    | string
+    | {
+        key: string;
+        label: string;
+        href: string;
+      }
+  >;
   featuredServiceIds: string[];
   featuredTherapistIds: string[];
 };
