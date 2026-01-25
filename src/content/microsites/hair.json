@@ -8,6 +8,20 @@
     "headline": "Hair that feels like you.",
     "body": "Premium without pretence. From everyday refresh to statement moments, we tailor each service to your texture, lifestyle, and goals."
   },
+    "highlights": [
+    {
+      "title": "Premium without pretence",
+      "body": "Same attention to detail, whether you’re here for maintenance or a full transformation."
+    },
+    {
+      "title": "Hygiene-first standards",
+      "body": "Clean tools, fresh stations, and a comfort-first approach you can trust."
+    },
+    {
+      "title": "Personalised recommendations",
+      "body": "Match your goals, vibe, and sensitivities to the right service and therapist."
+    }
+  ],
   "nav": [
     { "key": "services", "label": "Services", "href": "/explore/hair/services" },
     { "key": "therapists", "label": "Therapists", "href": "/therapists" },
@@ -15,6 +29,21 @@
     { "key": "shop", "label": "Shop", "href": "/explore/hair/shop" },
     { "key": "book", "label": "Book Hair", "href": "/book/hair" }
   ],
-  "featuredServiceIds": ["wash-cut-blow", "balayage", "deep-repair", "silk-press"],
-  "featuredTherapistIds": ["t-aya", "t-lee", "t-sam"]
+   "featuredServiceIds": [
+    "wash-blow",
+    "wash-cut-blow",
+    "balayage",
+    "deep-repair",
+    "scalp-care",
+    "wig-weave-install"
+  ],
+  "featuredTherapistIds": ["t-aya", "t-lee", "t-sam", "t-nia", "t-jade"],
+  "galleryTeaserIds": ["hair-g1", "hair-g2", "hair-g3","hair-g4"] ,
+  "shopTeaserProductIds": ["prod-argan-shine-oil","prod-heat-protect-mist","prod-moisture-mask", "prod-edge-control"],
+  "cta": {
+    "headline": "Ready for your next hair moment?",
+    "body": "Choose a service, match with a therapist, and book a time that fits your rhythm.",
+    "primaryCta": { "label": "Book Hair", "href": "/book/hair" },
+    "secondaryCta": { "label": "Browse Services", "href": "/explore/hair/services" }
+  }
 }
