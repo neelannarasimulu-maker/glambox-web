@@ -8,7 +8,13 @@
     "headline": "Feel restored from the inside out.",
     "body": "Therapeutic touch and intentional rituals designed to bring balance back to your day." 
   },
-  "nav": ["services", "therapists", "gallery", "shop", "book"],
+  "nav": [
+    { "key": "services", "label": "Services", "href": "/explore/wellness/services" },
+    { "key": "therapists", "label": "Therapists", "href": "/explore/wellness/therapists" },
+    { "key": "gallery", "label": "Gallery", "href": "/explore/wellness/gallery" },
+    { "key": "shop", "label": "Shop", "href": "/explore/wellness/shop" },
+    { "key": "book", "label": "Book Wellness", "href": "/book/wellness" }
+  ],
   "featuredServiceIds": ["reset-massage"],
   "featuredTherapistIds": ["t-sam"]
 }

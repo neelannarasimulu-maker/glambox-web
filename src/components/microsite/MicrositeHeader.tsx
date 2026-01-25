@@ -28,15 +28,24 @@ export default function MicrositeHeader({ config }: { config: MicrositeConfig })
           <p className="text-sm text-[rgb(var(--text-300))]">{config.tagline}</p>
         </div>
         <nav className="flex flex-wrap gap-3 text-sm">
-          {config.nav.map((item) => (
-            <Link
-              key={item}
-              href={navPaths[item]?.(config.id) ?? `/explore/${config.id}`}
-              className="rounded-full border border-white/10 px-4 py-2 text-[rgb(var(--text-200))] hover:border-white/30"
-            >
-              {navLabels[item] ?? item}
-            </Link>
-          ))}
+          {config.nav.map((item) => {
+            const isObject = typeof item === "object";
+            const key = isObject ? item.key : item;
+            const label = isObject ? item.label : navLabels[item] ?? item;
+            const href = isObject
+              ? item.href
+              : navPaths[item]?.(config.id) ?? `/explore/${config.id}`;
+
+            return (
+              <Link
+                key={key}
+                href={href}
+                className="rounded-full border border-white/10 px-4 py-2 text-[rgb(var(--text-200))] hover:border-white/30"
+              >
+                {label}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </div>
