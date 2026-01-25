@@ -32,6 +32,31 @@ export default async function MicrositeHomePage({
     .map((id) => getTherapistById(id))
     .filter((therapist): therapist is NonNullable<typeof therapist> => Boolean(therapist));
 
+  const highlights = config.highlights ?? [];
+
+  const galleryTeasers = (
+    config.galleryTeaserIds?.length
+      ? config.galleryTeaserIds
+          .map((id) => galleryData.items.find((item) => item.id === id))
+          .filter((item): item is NonNullable<typeof item> => Boolean(item))
+      : galleryData.items.slice(0, 3)
+  ).slice(0, 3);
+
+  const shopTeasers = (
+    config.shopTeaserProductIds?.length
+      ? config.shopTeaserProductIds
+          .map((id) => productsData.products.find((product) => product.id === id))
+          .filter((product): product is NonNullable<typeof product> => Boolean(product))
+      : productsData.products.slice(0, 3)
+  ).slice(0, 3);
+
+  const cta = config.cta ?? {
+    headline: "Ready when you are.",
+    body: `Launch a booking journey tailored to ${config.name}.`,
+    primaryCta: { label: `Book ${config.name}`, href: `/book/${config.id}` },
+    secondaryCta: { label: "Browse Services", href: `/explore/${config.id}/services` },
+  };
+
   return (
     <main>
       <section className="relative overflow-hidden">
@@ -51,7 +76,7 @@ export default async function MicrositeHomePage({
               {config.tagline}
             </h1>
             <p className="mt-5 text-lg text-[rgb(var(--text-300))]">
-              {config.about.body}
+              {config.about.headline}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href={`/book/${config.id}`} className="btn-primary">
@@ -69,6 +94,34 @@ export default async function MicrositeHomePage({
       </section>
 
       <div className="divider-soft" />
+
+      <section className="section-pad">
+        <div className="container-glambox grid gap-10 lg:grid-cols-[1.15fr_1fr]">
+          <div>
+            <p className="badge text-xs">About</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white">
+              About {config.name}
+            </h2>
+            <p className="mt-4 text-[rgb(var(--text-300))]">
+              {config.about.body}
+            </p>
+          </div>
+          {highlights.length > 0 ? (
+            <div className="grid gap-4">
+              {highlights.map((highlight) => (
+                <div key={highlight.title} className="card p-6">
+                  <h3 className="text-lg font-semibold text-white">
+                    {highlight.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
+                    {highlight.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      </section>
 
       <section className="section-pad">
         <div className="container-glambox">
@@ -190,7 +243,7 @@ export default async function MicrositeHomePage({
             </Link>
           </div>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {galleryData.items.slice(0, 3).map((item) => (
+            {galleryTeasers.map((item) => (
               <div key={item.id} className="card overflow-hidden">
                 <div className="relative h-56 w-full">
                   <Image
@@ -223,7 +276,7 @@ export default async function MicrositeHomePage({
             </Link>
           </div>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {productsData.products.slice(0, 3).map((product) => (
+            {shopTeasers.map((product) => (
               <div key={product.id} className="card card-hover p-6">
                 <div className="relative h-40 w-full overflow-hidden rounded-2xl">
                   <Image
@@ -258,14 +311,21 @@ export default async function MicrositeHomePage({
         <div className="container-glambox">
           <div className="card p-8 text-center">
             <h2 className="text-3xl font-semibold text-white">
-              Ready when you are.
+              {cta.headline}
             </h2>
             <p className="mt-3 text-[rgb(var(--text-300))]">
-              Launch a booking journey tailored to {config.name}.
+              {cta.body}
             </p>
-            <Link href={`/book/${config.id}`} className="btn-primary mt-6">
-              Book now
-            </Link>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link href={cta.primaryCta.href} className="btn-primary">
+                {cta.primaryCta.label}
+              </Link>
+              {cta.secondaryCta ? (
+                <Link href={cta.secondaryCta.href} className="btn-secondary">
+                  {cta.secondaryCta.label}
+                </Link>
+              ) : null}
+            </div>
           </div>
         </div>
       </section>
