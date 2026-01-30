@@ -29,6 +29,7 @@ export default async function MicrositeHomePage({
   const gallerySection = config.sections.gallery;
   const shopSection = config.sections.shop;
   const standardsSection = config.sections.standards;
+  const isHairTheme = config.themeKey === "hair";
 
   const featuredServices = servicesSection.featuredServiceIds
     .map((id) => servicesData.services.find((service) => service.id === id))
@@ -145,7 +146,10 @@ export default async function MicrositeHomePage({
           {featuredServices.length > 0 ? (
             <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {featuredServices.map((service) => (
-                <div key={service.id} className="card-nails card-hover p-6">
+                <div
+                  key={service.id}
+                  className={`${isHairTheme ? "card-hair" : "card-nails"} card-hover p-6`}
+                >
                   <div className="flex items-center justify-between">
                     <span className="pill-accent text-xs">{service.tier}</span>
                     <span className="text-sm text-[rgb(var(--text-300))]">
@@ -211,7 +215,10 @@ export default async function MicrositeHomePage({
           {featuredTherapists.length > 0 ? (
             <div className="mt-8 grid gap-6 lg:grid-cols-3">
               {featuredTherapists.map((therapist) => (
-                <div key={therapist.id} className="card-nails card-hover p-6">
+                <div
+                  key={therapist.id}
+                  className={`${isHairTheme ? "card-artist-hair" : "card-nails"} card-hover p-6`}
+                >
                   <div className="image-frame relative h-56 w-full">
                     <Image
                       src={therapist.photo}
@@ -350,7 +357,10 @@ export default async function MicrositeHomePage({
           {shopTeasers.length > 0 ? (
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {shopTeasers.map((product) => (
-                <div key={product.id} className="card-nails card-hover p-6">
+                <div
+                  key={product.id}
+                  className={`${isHairTheme ? "card-product-hair" : "card-nails"} card-hover p-6`}
+                >
                   <div className="image-frame relative h-40 w-full">
                     <Image
                       src={product.image}

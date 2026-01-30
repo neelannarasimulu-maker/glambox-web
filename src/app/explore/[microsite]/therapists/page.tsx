@@ -27,6 +27,7 @@ export default async function MicrositeTherapistsPage({
     <TherapistDirectory
       therapists={therapists}
       worksIn={worksIn}
+      themeKey={config.themeKey}
       badgeLabel={`${config.name} therapists`}
       title={`Meet the ${config.name} team`}
       subtitle={`Browse therapists who specialize in ${config.name.toLowerCase()}.`}

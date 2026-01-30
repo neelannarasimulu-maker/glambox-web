@@ -285,27 +285,29 @@
     pointer-events: none;
   }
 
-  .card-hair {
+  [data-theme="hair"] .card-hair,
+  [data-theme="hair"] .card-product-hair,
+  [data-theme="hair"] .card-artist-hair {
     background: rgba(255,255,255,0.045);
     border: 1px solid rgb(var(--accent) / 0.22);
     border-radius: 22px;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 12px 36px rgba(0,0,0,0.38);
-    position: relative;
-    overflow: hidden;
+    transition:
+      border-color 160ms ease,
+      box-shadow 160ms ease,
+      transform 160ms ease;
   }
 
-  .card-hair::before {
-    content: "";
-    position: absolute;
-    inset: -40%;
-    background: radial-gradient(
-      circle at 30% 20%,
-      rgb(var(--accent) / 0.18),
-      transparent 55%
-    );
-    pointer-events: none;
+  [data-theme="hair"] .card-hair:hover,
+  [data-theme="hair"] .card-product-hair:hover,
+  [data-theme="hair"] .card-artist-hair:hover {
+    border-color: rgb(var(--accent) / 0.55);
+    box-shadow:
+      0 18px 44px rgba(0,0,0,0.45),
+      0 0 22px rgb(var(--accent) / 0.25);
+    transform: translateY(-2px);
   }
 
   .btn-hair {
