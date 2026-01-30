@@ -63,14 +63,14 @@ export default async function MicrositeHomePage({
         <div className="container-glambox section-pad relative">
           <div className="max-w-2xl">
             <span className="badge text-sm">{config.hero.badge}</span>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
+            <h1 className="mt-6 text-4xl font-semibold leading-tight heading-accent md:text-6xl">
               {config.hero.headline}
             </h1>
             <p className="mt-5 text-lg text-[rgb(var(--text-300))]">
               {config.hero.subheadline}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href={config.hero.primaryCta.href} className="btn-primary">
+              <Link href={config.hero.primaryCta.href} className="btn-accent">
                 {config.hero.primaryCta.label}
               </Link>
               {config.hero.secondaryCta ? (
@@ -100,7 +100,7 @@ export default async function MicrositeHomePage({
       <section className="section-pad">
         <div className="container-glambox grid gap-10 lg:grid-cols-[1.15fr_1fr]">
           <div>
-            <h2 className="mt-4 text-3xl font-semibold text-white">
+            <h2 className="mt-4 text-3xl font-semibold heading-accent">
               {config.about.headline}
             </h2>
             <p className="mt-4 text-[rgb(var(--text-300))]">
@@ -110,8 +110,8 @@ export default async function MicrositeHomePage({
           {highlights.length > 0 ? (
             <div className="grid gap-4">
               {highlights.map((highlight) => (
-                <div key={highlight.title} className="card p-6">
-                  <h3 className="text-lg font-semibold text-white">
+                <div key={highlight.title} className="card-nails p-6">
+                  <h3 className="text-lg font-semibold heading-accent">
                     {highlight.title}
                   </h3>
                   <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
@@ -128,7 +128,7 @@ export default async function MicrositeHomePage({
         <div className="container-glambox">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <h2 className="text-3xl font-semibold text-white">
+              <h2 className="text-3xl font-semibold heading-accent">
                 {servicesSection.title}
               </h2>
               <p className="mt-3 text-[rgb(var(--text-300))]">
@@ -137,7 +137,7 @@ export default async function MicrositeHomePage({
             </div>
             <Link
               href={servicesSection.viewAllHref}
-              className="btn-secondary"
+              className="btn-accent-outline"
             >
               {servicesSection.viewAllLabel}
             </Link>
@@ -145,14 +145,14 @@ export default async function MicrositeHomePage({
           {featuredServices.length > 0 ? (
             <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {featuredServices.map((service) => (
-                <div key={service.id} className="card card-hover p-6">
+                <div key={service.id} className="card-nails card-hover p-6">
                   <div className="flex items-center justify-between">
-                    <span className="badge text-xs">{service.tier}</span>
+                    <span className="pill-accent text-xs">{service.tier}</span>
                     <span className="text-sm text-[rgb(var(--text-300))]">
                       {service.durationMins} mins
                     </span>
                   </div>
-                  <h3 className="mt-4 text-xl font-semibold text-white">
+                  <h3 className="mt-4 text-xl font-semibold heading-accent">
                     {service.name}
                   </h3>
                   <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
@@ -163,7 +163,7 @@ export default async function MicrositeHomePage({
                   </div>
                   <Link
                     href={`/explore/${config.id}/services/${service.id}`}
-                    className="btn-primary mt-6 inline-flex"
+                    className="btn-accent mt-6 inline-flex"
                   >
                     {servicesSection.cardCtaLabel}
                   </Link>
@@ -172,8 +172,8 @@ export default async function MicrositeHomePage({
             </div>
           ) : servicesSection.emptyState ? (
             <div className="mt-8">
-              <div className="card p-6 text-center">
-                <h3 className="text-xl font-semibold text-white">
+              <div className="card-nails p-6 text-center">
+                <h3 className="text-xl font-semibold heading-accent">
                   {servicesSection.emptyState.title}
                 </h3>
                 <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
@@ -182,7 +182,7 @@ export default async function MicrositeHomePage({
                 {servicesSection.emptyState.cta ? (
                   <Link
                     href={servicesSection.emptyState.cta.href}
-                    className="btn-secondary mt-5 inline-flex"
+                    className="btn-accent-outline mt-5 inline-flex"
                   >
                     {servicesSection.emptyState.cta.label}
                   </Link>
@@ -197,22 +197,22 @@ export default async function MicrositeHomePage({
         <div className="container-glambox">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <h2 className="text-3xl font-semibold text-white">
+              <h2 className="text-3xl font-semibold heading-accent">
                 {therapistsSection.title}
               </h2>
               <p className="mt-3 text-[rgb(var(--text-300))]">
                 {therapistsSection.subtitle}
               </p>
             </div>
-            <Link href={therapistsSection.viewAllHref} className="btn-secondary">
+            <Link href={therapistsSection.viewAllHref} className="btn-accent-outline">
               {therapistsSection.viewAllLabel}
             </Link>
           </div>
           {featuredTherapists.length > 0 ? (
             <div className="mt-8 grid gap-6 lg:grid-cols-3">
               {featuredTherapists.map((therapist) => (
-                <div key={therapist.id} className="card card-hover p-6">
-                  <div className="relative h-56 w-full overflow-hidden rounded-2xl">
+                <div key={therapist.id} className="card-nails card-hover p-6">
+                  <div className="image-frame relative h-56 w-full">
                     <Image
                       src={therapist.photo}
                       alt={therapist.name}
@@ -222,18 +222,18 @@ export default async function MicrositeHomePage({
                   </div>
                   <div className="mt-4 flex items-center justify-between">
                     <div>
-                      <h3 className="text-xl font-semibold text-white">
+                      <h3 className="text-xl font-semibold heading-accent">
                         {therapist.name}
                       </h3>
                       <p className="text-sm text-[rgb(var(--text-300))]">
                         {therapist.roles.join(" • ")}
                       </p>
                     </div>
-                    <span className="badge text-xs">{therapist.rating}★</span>
+                    <span className="pill-accent text-xs">{therapist.rating}★</span>
                   </div>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {therapist.specialties.slice(0, 3).map((specialty) => (
-                      <span key={specialty} className="chip text-xs">
+                      <span key={specialty} className="pill-accent text-xs">
                         {specialty}
                       </span>
                     ))}
@@ -243,7 +243,7 @@ export default async function MicrositeHomePage({
                   </div>
                   <Link
                     href={`/therapists/${therapist.id}`}
-                    className="btn-primary mt-5 inline-flex"
+                    className="btn-accent mt-5 inline-flex"
                   >
                     {therapistsSection.cardCtaLabel}
                   </Link>
@@ -252,8 +252,8 @@ export default async function MicrositeHomePage({
             </div>
           ) : therapistsSection.emptyState ? (
             <div className="mt-8">
-              <div className="card p-6 text-center">
-                <h3 className="text-xl font-semibold text-white">
+              <div className="card-nails p-6 text-center">
+                <h3 className="text-xl font-semibold heading-accent">
                   {therapistsSection.emptyState.title}
                 </h3>
                 <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
@@ -262,7 +262,7 @@ export default async function MicrositeHomePage({
                 {therapistsSection.emptyState.cta ? (
                   <Link
                     href={therapistsSection.emptyState.cta.href}
-                    className="btn-secondary mt-5 inline-flex"
+                    className="btn-accent-outline mt-5 inline-flex"
                   >
                     {therapistsSection.emptyState.cta.label}
                   </Link>
@@ -277,7 +277,7 @@ export default async function MicrositeHomePage({
         <div className="container-glambox">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <h2 className="text-3xl font-semibold text-white">
+              <h2 className="text-3xl font-semibold heading-accent">
                 {gallerySection.title}
               </h2>
               <p className="mt-3 text-[rgb(var(--text-300))]">
@@ -286,7 +286,7 @@ export default async function MicrositeHomePage({
             </div>
             <Link
               href={gallerySection.viewAllHref}
-              className="btn-secondary"
+              className="btn-accent-outline"
             >
               {gallerySection.viewAllLabel}
             </Link>
@@ -294,8 +294,8 @@ export default async function MicrositeHomePage({
           {galleryTeasers.length > 0 ? (
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {galleryTeasers.map((item) => (
-                <div key={item.id} className="card overflow-hidden">
-                  <div className="relative h-56 w-full">
+                <div key={item.id} className="card-nails overflow-hidden">
+                  <div className="image-frame relative h-56 w-full">
                     <Image
                       src={item.image}
                       alt={item.caption}
@@ -311,8 +311,8 @@ export default async function MicrositeHomePage({
             </div>
           ) : gallerySection.emptyState ? (
             <div className="mt-8">
-              <div className="card p-6 text-center">
-                <h3 className="text-xl font-semibold text-white">
+              <div className="card-nails p-6 text-center">
+                <h3 className="text-xl font-semibold heading-accent">
                   {gallerySection.emptyState.title}
                 </h3>
                 <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
@@ -321,7 +321,7 @@ export default async function MicrositeHomePage({
                 {gallerySection.emptyState.cta ? (
                   <Link
                     href={gallerySection.emptyState.cta.href}
-                    className="btn-secondary mt-5 inline-flex"
+                    className="btn-accent-outline mt-5 inline-flex"
                   >
                     {gallerySection.emptyState.cta.label}
                   </Link>
@@ -336,22 +336,22 @@ export default async function MicrositeHomePage({
         <div className="container-glambox">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <h2 className="text-3xl font-semibold text-white">
+              <h2 className="text-3xl font-semibold heading-accent">
                 {shopSection.title}
               </h2>
               <p className="mt-3 text-[rgb(var(--text-300))]">
                 {shopSection.subtitle}
               </p>
             </div>
-            <Link href={shopSection.viewAllHref} className="btn-secondary">
+            <Link href={shopSection.viewAllHref} className="btn-accent-outline">
               {shopSection.viewAllLabel}
             </Link>
           </div>
           {shopTeasers.length > 0 ? (
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {shopTeasers.map((product) => (
-                <div key={product.id} className="card card-hover p-6">
-                  <div className="relative h-40 w-full overflow-hidden rounded-2xl">
+                <div key={product.id} className="card-nails card-hover p-6">
+                  <div className="image-frame relative h-40 w-full">
                     <Image
                       src={product.image}
                       alt={product.name}
@@ -359,7 +359,7 @@ export default async function MicrositeHomePage({
                       className="object-cover"
                     />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-white">
+                  <h3 className="mt-4 text-lg font-semibold heading-accent">
                     {product.name}
                   </h3>
                   <p className="text-sm text-[rgb(var(--text-300))]">
@@ -370,7 +370,7 @@ export default async function MicrositeHomePage({
                   </div>
                   <Link
                     href={`/explore/${config.id}/shop/${product.id}`}
-                    className="btn-primary mt-4 inline-flex"
+                    className="btn-accent mt-4 inline-flex"
                   >
                     {shopSection.cardCtaLabel}
                   </Link>
@@ -379,8 +379,8 @@ export default async function MicrositeHomePage({
             </div>
           ) : shopSection.emptyState ? (
             <div className="mt-8">
-              <div className="card p-6 text-center">
-                <h3 className="text-xl font-semibold text-white">
+              <div className="card-nails p-6 text-center">
+                <h3 className="text-xl font-semibold heading-accent">
                   {shopSection.emptyState.title}
                 </h3>
                 <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
@@ -389,7 +389,7 @@ export default async function MicrositeHomePage({
                 {shopSection.emptyState.cta ? (
                   <Link
                     href={shopSection.emptyState.cta.href}
-                    className="btn-secondary mt-5 inline-flex"
+                    className="btn-accent-outline mt-5 inline-flex"
                   >
                     {shopSection.emptyState.cta.label}
                   </Link>
@@ -404,7 +404,7 @@ export default async function MicrositeHomePage({
         <section className="section-pad">
           <div className="container-glambox">
             <div>
-              <h2 className="text-3xl font-semibold text-white">
+              <h2 className="text-3xl font-semibold heading-accent">
                 {standardsSection.title}
               </h2>
               <p className="mt-3 text-[rgb(var(--text-300))]">
@@ -413,8 +413,8 @@ export default async function MicrositeHomePage({
             </div>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {standardsSection.items.map((item) => (
-                <div key={item.title} className="card p-6">
-                  <h3 className="text-lg font-semibold text-white">
+                <div key={item.title} className="card-nails p-6">
+                  <h3 className="text-lg font-semibold heading-accent">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
@@ -429,8 +429,8 @@ export default async function MicrositeHomePage({
 
       <section className="section-pad">
         <div className="container-glambox">
-          <div className="card p-8 text-center">
-            <h2 className="text-3xl font-semibold text-white">
+          <div className="card-nails p-8 text-center">
+            <h2 className="text-3xl font-semibold heading-accent">
               {config.cta?.headline}
             </h2>
             <p className="mt-3 text-[rgb(var(--text-300))]">
@@ -438,12 +438,12 @@ export default async function MicrositeHomePage({
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               {config.cta?.primaryCta ? (
-                <Link href={config.cta.primaryCta.href} className="btn-primary">
+                <Link href={config.cta.primaryCta.href} className="btn-accent">
                   {config.cta.primaryCta.label}
                 </Link>
               ) : null}
               {config.cta?.secondaryCta ? (
-                <Link href={config.cta.secondaryCta.href} className="btn-secondary">
+                <Link href={config.cta.secondaryCta.href} className="btn-accent-outline">
                   {config.cta.secondaryCta.label}
                 </Link>
               ) : null}

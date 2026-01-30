@@ -23,7 +23,7 @@ export default function GalleryGrid({ data }: { data: GalleryData }) {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="badge text-xs">Gallery</p>
-          <h1 className="mt-4 text-3xl font-semibold text-white">Latest looks</h1>
+          <h1 className="mt-4 text-3xl font-semibold heading-accent">Latest looks</h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">
             Browse by tag to explore the aesthetic.
           </p>
@@ -60,8 +60,8 @@ export default function GalleryGrid({ data }: { data: GalleryData }) {
       <div className="mt-10 columns-1 gap-6 md:columns-2 lg:columns-3">
         {items.map((item) => (
           <div key={item.id} className="mb-6 break-inside-avoid">
-            <div className="card overflow-hidden">
-              <div className="relative h-64 w-full">
+            <div className="card-nails overflow-hidden">
+              <div className="image-frame relative h-64 w-full">
                 <Image
                   src={item.image}
                   alt={item.caption}

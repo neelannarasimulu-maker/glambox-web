@@ -24,7 +24,7 @@ export default async function ProductDetailPage({
   return (
     <main className="container-glambox section-pad">
       <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr]">
-        <div className="relative h-80 w-full overflow-hidden rounded-3xl">
+        <div className="image-frame relative h-80 w-full">
           <Image
             src={product.image}
             alt={product.name}
@@ -34,7 +34,7 @@ export default async function ProductDetailPage({
         </div>
         <div>
           <p className="badge text-xs">{product.brand}</p>
-          <h1 className="mt-4 text-3xl font-semibold text-white">
+          <h1 className="mt-4 text-3xl font-semibold heading-accent">
             {product.name}
           </h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">
@@ -52,7 +52,7 @@ export default async function ProductDetailPage({
             <AddToWishlistButton productId={product.id} />
             <Link
               href={`/explore/${config.id}/shop`}
-              className="btn-secondary"
+              className="btn-accent-outline"
             >
               Back to shop
             </Link>
