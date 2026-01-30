@@ -245,9 +245,6 @@ export default async function MicrositeHomePage({
                       </span>
                     ))}
                   </div>
-                  <div className="mt-4 text-sm text-[rgb(var(--text-300))]">
-                    {therapist.locations.join(", ")}
-                  </div>
                   <Link
                     href={`/therapists/${therapist.id}`}
                     className="btn-accent mt-5 inline-flex"
