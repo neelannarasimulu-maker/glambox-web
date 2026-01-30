@@ -12,6 +12,7 @@
 @layer base {
   :root {
     /* Core */
+    --header-h: 64px;
     --bg-950: 8 8 12;
     --bg-900: 12 12 18;
     --bg-850: 16 16 24;
