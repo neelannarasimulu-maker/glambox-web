@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function BookingSuccessPage() {
   return (
-    <main className="section-pad">
+    <main className="ambient-bg section-pad">
       <div className="container-glambox max-w-2xl">
         <p className="badge text-xs">Booking confirmed</p>
         <h1 className="mt-4 text-3xl font-semibold text-white">

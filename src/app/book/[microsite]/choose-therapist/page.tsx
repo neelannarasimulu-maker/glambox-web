@@ -23,51 +23,53 @@ export default function ChooseTherapistPage() {
 
   if (!microsite) {
     return (
-      <main className="section-pad">
+      <main className="ambient-bg section-pad">
         <div className="container-glambox">Microsite not found.</div>
       </main>
     );
   }
 
   return (
-    <main className="container-glambox section-pad">
-      <div>
-        <p className="badge text-xs">Choose a therapist</p>
-        <h1 className="mt-4 text-3xl font-semibold text-white">Therapists</h1>
-        <p className="mt-3 text-[rgb(var(--text-300))]">
-          Select the therapist you’d like to book with.
-        </p>
-      </div>
-      <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {therapists.map((therapist) => (
-          <div key={therapist.id} className="card card-hover p-6">
-            <div className="flex items-start justify-between">
-              <div>
-                <h2 className="text-xl font-semibold text-white">
-                  {therapist.name}
-                </h2>
-                <p className="text-sm text-[rgb(var(--text-300))]">
-                  {therapist.roles.join(" • ")}
-                </p>
+    <main className="ambient-bg section-pad">
+      <div className="container-glambox">
+        <div>
+          <p className="badge text-xs">Choose a therapist</p>
+          <h1 className="mt-4 text-3xl font-semibold text-white">Therapists</h1>
+          <p className="mt-3 text-[rgb(var(--text-300))]">
+            Select the therapist you’d like to book with.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {therapists.map((therapist) => (
+            <div key={therapist.id} className="card card-hover p-6">
+              <div className="flex items-start justify-between">
+                <div>
+                  <h2 className="text-xl font-semibold text-white">
+                    {therapist.name}
+                  </h2>
+                  <p className="text-sm text-[rgb(var(--text-300))]">
+                    {therapist.roles.join(" • ")}
+                  </p>
+                </div>
+                <span className="badge text-xs">{therapist.rating}★</span>
               </div>
-              <span className="badge text-xs">{therapist.rating}★</span>
+              <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
+                {therapist.bio}
+              </p>
+              <Link
+                href={`/book/${microsite}/choose-time?${
+                  serviceId ? `serviceId=${serviceId}&` : ""
+                }therapistId=${therapist.id}`}
+                onClick={() =>
+                  writeBookingDraft({ microsite, serviceId, therapistId: therapist.id })
+                }
+                className="btn-primary mt-5 inline-flex"
+              >
+                Choose time
+              </Link>
             </div>
-            <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
-              {therapist.bio}
-            </p>
-            <Link
-              href={`/book/${microsite}/choose-time?${
-                serviceId ? `serviceId=${serviceId}&` : ""
-              }therapistId=${therapist.id}`}
-              onClick={() =>
-                writeBookingDraft({ microsite, serviceId, therapistId: therapist.id })
-              }
-              className="btn-primary mt-5 inline-flex"
-            >
-              Choose time
-            </Link>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </main>
   );

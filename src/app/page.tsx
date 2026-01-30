@@ -57,7 +57,7 @@ const signatureExperiences = [
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[rgb(var(--bg-900))] text-[rgb(var(--text-200))]">
+    <main className="ambient-bg min-h-screen bg-[rgb(var(--bg-950))] text-[rgb(var(--text-200))]">
 
 
       <section className="hero-bg relative overflow-hidden">

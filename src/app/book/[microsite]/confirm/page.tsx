@@ -35,57 +35,59 @@ export default function ConfirmBookingPage() {
 
   if (!config || !draft) {
     return (
-      <main className="section-pad">
+      <main className="ambient-bg section-pad">
         <div className="container-glambox">Booking details missing.</div>
       </main>
     );
   }
 
   return (
-    <main className="container-glambox section-pad">
-      <div className="card p-8">
-        <p className="badge text-xs">Confirm booking</p>
-        <h1 className="mt-4 text-3xl font-semibold text-white">
-          Review your booking
-        </h1>
-        <div className="mt-6 space-y-3 text-sm text-[rgb(var(--text-300))]">
-          <div>
-            <strong className="text-white">Microsite:</strong> {config.name}
+    <main className="ambient-bg section-pad">
+      <div className="container-glambox">
+        <div className="card p-8">
+          <p className="badge text-xs">Confirm booking</p>
+          <h1 className="mt-4 text-3xl font-semibold text-white">
+            Review your booking
+          </h1>
+          <div className="mt-6 space-y-3 text-sm text-[rgb(var(--text-300))]">
+            <div>
+              <strong className="text-white">Microsite:</strong> {config.name}
+            </div>
+            <div>
+              <strong className="text-white">Service:</strong> {service?.name ?? "TBD"}
+            </div>
+            <div>
+              <strong className="text-white">Therapist:</strong> {therapist?.name ?? "TBD"}
+            </div>
+            <div>
+              <strong className="text-white">Time:</strong> {draft.datetime ?? "TBD"}
+            </div>
           </div>
-          <div>
-            <strong className="text-white">Service:</strong> {service?.name ?? "TBD"}
-          </div>
-          <div>
-            <strong className="text-white">Therapist:</strong> {therapist?.name ?? "TBD"}
-          </div>
-          <div>
-            <strong className="text-white">Time:</strong> {draft.datetime ?? "TBD"}
-          </div>
-        </div>
 
-        {confirmed ? (
-          <div className="mt-6">
-            <p className="text-[rgb(var(--text-300))]">
-              Booking confirmed! We saved your booking locally.
-            </p>
-            <Link href={`/explore/${config.id}`} className="btn-primary mt-4">
-              Return to {config.name}
-            </Link>
-          </div>
-        ) : (
-          <div className="mt-6 flex flex-wrap gap-3">
-            <button
-              type="button"
-              onClick={() => setConfirmed(true)}
-              className="btn-primary"
-            >
-              Confirm booking
-            </button>
-            <Link href={`/book/${config.id}`} className="btn-secondary">
-              Start over
-            </Link>
-          </div>
-        )}
+          {confirmed ? (
+            <div className="mt-6">
+              <p className="text-[rgb(var(--text-300))]">
+                Booking confirmed! We saved your booking locally.
+              </p>
+              <Link href={`/explore/${config.id}`} className="btn-primary mt-4">
+                Return to {config.name}
+              </Link>
+            </div>
+          ) : (
+            <div className="mt-6 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => setConfirmed(true)}
+                className="btn-primary"
+              >
+                Confirm booking
+              </button>
+              <Link href={`/book/${config.id}`} className="btn-secondary">
+                Start over
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );

@@ -19,7 +19,7 @@ export default function BookingLauncherPage() {
 
   if (!config) {
     return (
-      <main className="section-pad">
+      <main className="ambient-bg section-pad">
         <div className="container-glambox">
           <p className="text-[rgb(var(--text-300))]">
             Microsite not found.
@@ -30,7 +30,7 @@ export default function BookingLauncherPage() {
   }
 
   return (
-    <main className="section-pad">
+    <main className="ambient-bg section-pad">
       <div className="container-glambox">
         <div className="max-w-2xl">
           <p className="badge text-xs">Book {config.name}</p>
