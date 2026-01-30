@@ -16,14 +16,20 @@ export default function BookPage() {
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {microsites.map((microsite) => (
-            <div key={microsite.id} className="card card-hover p-6">
+            <div
+              key={microsite.id}
+              className="card card-hover flex h-full flex-col gap-3 p-6"
+            >
               <h2 className="text-xl font-semibold text-white">
                 {microsite.name}
               </h2>
-              <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
+              <p className="text-sm text-[rgb(var(--text-300))]">
                 {microsite.tagline}
               </p>
-              <Link href={`/book/${microsite.id}`} className="btn-primary mt-6">
+              <Link
+                href={`/book/${microsite.id}`}
+                className="btn-primary mt-4 inline-flex self-start"
+              >
                 Book {microsite.name}
               </Link>
             </div>
