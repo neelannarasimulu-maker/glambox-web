@@ -32,14 +32,7 @@ export default function Header() {
   const closeMobile = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50">
-      {/* REAL colourful background (gradient variable) */}
-      <div className="absolute inset-0 -z-10 [background:var(--btn-primary)]" />
-      {/* subtle glass layer */}
-      <div className="absolute inset-0 -z-10 bg-black/10 backdrop-blur-xl" />
-      {/* bottom border to separate from hero */}
-      <div className="absolute inset-x-0 bottom-0 h-px -z-10 bg-white/15" />
-
+    <header className="sticky top-0 z-50 bg-[rgb(var(--bg-900))/0.85] backdrop-blur-xl border-b border-white/10">
       <Container>
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}

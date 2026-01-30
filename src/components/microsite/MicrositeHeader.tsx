@@ -19,7 +19,7 @@ const navPaths: Record<string, (microsite: string) => string> = {
 
 export default function MicrositeHeader({ config }: { config: MicrositeConfig }) {
   return (
-    <div className="sticky top-16 z-40 border-b border-white/5 bg-[rgb(var(--bg-900))/0.85] backdrop-blur-xl">
+    <div className="sticky top-[var(--header-h)] z-40 border-b border-white/5 bg-[rgb(var(--bg-900))/0.85] backdrop-blur-xl">
       <div className="container-glambox flex flex-wrap items-center justify-between gap-4 py-5">
         <div>
           <Link href={`/explore/${config.id}`} className="text-lg font-semibold text-white">
