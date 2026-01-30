@@ -22,8 +22,7 @@ export default function GalleryGrid({ data }: { data: GalleryData }) {
     <div className="container-glambox section-pad">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="badge text-xs">Gallery</p>
-          <h1 className="mt-4 text-3xl font-semibold heading-accent">Latest looks</h1>
+          <h1 className="text-3xl font-semibold heading-accent">Latest looks</h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">
             Browse by tag to explore the aesthetic.
           </p>

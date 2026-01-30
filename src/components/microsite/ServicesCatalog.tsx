@@ -30,8 +30,7 @@ export default function ServicesCatalog({
     <div className="container-glambox section-pad">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="badge text-xs">Service Catalogue</p>
-          <h1 className="mt-4 text-3xl font-semibold heading-accent">Services</h1>
+          <h1 className="text-3xl font-semibold heading-accent">Services</h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">{data.pricingNote}</p>
         </div>
         <div className="flex flex-wrap gap-3 text-sm">

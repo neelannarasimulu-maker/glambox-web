@@ -23,8 +23,7 @@ export default async function ShopPage({
   return (
     <main className="container-glambox section-pad">
       <div>
-        <p className="badge text-xs">Shop {config.name}</p>
-        <h1 className="mt-4 text-3xl font-semibold heading-accent">
+        <h1 className="text-3xl font-semibold heading-accent">
           Products curated for you
         </h1>
         <p className="mt-3 text-[rgb(var(--text-300))]">
