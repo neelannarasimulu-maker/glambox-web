@@ -1,5 +1,5 @@
 import therapistsData from "@/content/therapists/therapists.json";
-import assignmentsData from "@/content/therapists/therapist-services.json";
+import assignmentsData from "@/content/therapists/therapist-services_OLD.json";
 
 export type Therapist = {
   id: string;

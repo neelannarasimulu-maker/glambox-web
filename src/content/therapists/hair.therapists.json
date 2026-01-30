@@ -1,20 +1,117 @@
 {
   "microsite": "hair",
-  "title": "Hair therapists",
-  "subtitle": "Choose a hair specialist matched to your service goals.",
-  "therapistIds": [
-    "t-aya",
-    "t-lee",
-    "t-sam",
-    "t-nia",
-    "t-zahra",
-    "t-thando",
-    "t-mariam",
-    "t-jade"
-  ],
-  "emptyState": {
-    "title": "No Hair therapists available yet",
-    "body": "We’re finalising schedules for the Hair Studio. Browse services or check back soon.",
-    "cta": { "label": "Browse services", "href": "/explore/hair/services" }
-  }
+  "therapists": [
+    {
+      "id": "t-aya",
+      "name": "Ayanda M.",
+      "role": "Colour Specialist",
+      "photo": "/gallery/g-1.jpg",
+      "bio": "Warm, precise, and trend-aware. Ayanda specialises in luminous colour that keeps hair feeling healthy, hydrated, and glossy.",
+      "specialties": ["Balayage", "Root tint", "Gloss treatments"],
+      "vibeTags": ["Calm energy", "Bridal-ready", "Bold colour"],
+      "priceTier": "Signature",
+      "rating": 4.8,
+      "reviewsCount": 128,
+      "nextAvailable": "Tomorrow 14:30",
+      "locations": ["Cape Town"]
+    },
+    {
+      "id": "t-lee",
+      "name": "Leilani R.",
+      "role": "Cutting & Styling Artist",
+      "photo": "/gallery/g-2.jpg",
+      "bio": "Precision cuts with a soft touch. Leilani crafts effortless shapes and blowouts that last beyond the chair.",
+      "specialties": ["Precision cuts", "Blowouts", "Silk press"],
+      "vibeTags": ["Detail-obsessed", "Soft luxe", "Fast & fabulous"],
+      "priceTier": "Essential",
+      "rating": 4.7,
+      "reviewsCount": 94,
+      "nextAvailable": "Friday 11:00",
+      "locations": ["Johannesburg", "Pretoria"]
+    },
+    {
+      "id": "t-nia",
+      "name": "Nia P.",
+      "role": "Protective Styling Specialist",
+      "photo": "/gallery/g-3.jpg",
+      "bio": "Gentle, calm, and protective-first. Nia keeps hair healthy while delivering neat installs and clean parts.",
+      "specialties": ["Protective styling", "Braids", "Scalp care"],
+      "vibeTags": ["Protective care", "Gentle touch", "Calm energy"],
+      "priceTier": "Essential",
+      "rating": 4.6,
+      "reviewsCount": 112,
+      "nextAvailable": "Saturday 10:15",
+      "locations": ["Pretoria", "Johannesburg"]
+    },
+    {
+      "id": "t-kay",
+      "name": "Keneilwe \"Kay\" S.",
+      "role": "Treatment Therapist",
+      "photo": "/services/hair-1.jpg",
+      "bio": "Focused on repair and scalp health with customised rituals for every texture. Kay is known for science-backed care and soothing treatments.",
+      "specialties": ["Deep conditioning", "Scalp care", "Smoothing"],
+      "vibeTags": ["Wellness-led", "Patient educator", "Restorative"],
+      "priceTier": "Signature",
+      "rating": 4.9,
+      "reviewsCount": 76,
+      "nextAvailable": "Today 16:00",
+      "locations": ["Cape Town", "Durban"]
+    },
+    {
+      "id": "t-jess",
+      "name": "Jess V.",
+      "role": "Foil & Colour Specialist",
+      "photo": "/services/hair-1.jpg",
+      "bio": "Known for dimensional foils and seamless blends that grow out beautifully. Jess delivers high-impact colour with minimal upkeep.",
+      "specialties": ["Half head foils", "Full head foils", "Toners"],
+      "vibeTags": ["Trend-aware", "Glossy finishes", "Bold colour"],
+      "priceTier": "Luxe",
+      "rating": 4.8,
+      "reviewsCount": 138,
+      "nextAvailable": "Monday 09:30",
+      "locations": ["Cape Town"]
+    },
+    {
+      "id": "t-lulu",
+      "name": "Lulu B.",
+      "role": "Wig & Weave Specialist",
+      "photo": "/services/hair-1.jpg",
+      "bio": "Expert at natural-looking installs with a secure, comfortable finish. Lulu prioritises scalp health and seamless blending.",
+      "specialties": ["Wig installs", "Weave installs", "Natural blends"],
+      "vibeTags": ["Precision", "Protective care", "Client-first"],
+      "priceTier": "Signature",
+      "rating": 4.7,
+      "reviewsCount": 88,
+      "nextAvailable": "Thursday 13:00",
+      "locations": ["Johannesburg", "Cape Town"]
+    },
+    {
+      "id": "t-sam",
+      "name": "Samke D.",
+      "role": "Bridal & Styling Artist",
+      "photo": "/services/hair-1.jpg",
+      "bio": "Polished, elegant styling with a focus on sleek finishes and event-ready looks that photograph beautifully.",
+      "specialties": ["Silk press", "Bridal styling", "Blowouts"],
+      "vibeTags": ["Bridal-ready", "Editorial polish", "Confident energy"],
+      "priceTier": "Luxe",
+      "rating": 4.9,
+      "reviewsCount": 102,
+      "nextAvailable": "Tomorrow 18:10",
+      "locations": ["Durban", "Cape Town"]
+    },
+    {
+      "id": "t-zola",
+      "name": "Zola T.",
+      "role": "Healthy Hair Coach",
+      "photo": "/services/hair-1.jpg",
+      "bio": "Supportive and detail-led. Zola creates healthy routines, precision trims, and shiny finishes for long-term hair goals.",
+      "specialties": ["Trim & shape", "Moisture routines", "Sleek finishes"],
+      "vibeTags": ["Supportive", "Calm energy", "Healthy hair"],
+      "priceTier": "Essential",
+      "rating": 4.7,
+      "reviewsCount": 67,
+      "nextAvailable": "Wednesday 15:20",
+      "locations": ["Pretoria", "Johannesburg"]
+    }
+  ]
 }

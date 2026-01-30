@@ -41,7 +41,7 @@
   
   "nav": [
     { "key": "services", "label": "Services", "href": "/explore/hair/services" },
-    { "key": "therapists", "label": "Therapists", "href": "/explore/hair/therapists" },
+    { "key": "therapists", "label": "Hair Stylists", "href": "/explore/hair/therapists" },
     { "key": "gallery", "label": "Gallery", "href": "/explore/hair/gallery" },
     { "key": "shop", "label": "Shop", "href": "/explore/hair/shop" },
     { "key": "book", "label": "Book Hair", "href": "/book/hair" }
@@ -70,23 +70,23 @@
 
     "therapists": {
       "title": "Meet the Hair Artists",
-      "subtitle": "Choose your therapist or let Glambox recommend the best match.",
-      "viewAllLabel": "View all therapists",
+      "subtitle": "Choose your stylist or let Glambox recommend the best match.",
+      "viewAllLabel": "View all stylists",
       "viewAllHref": "/explore/hair/therapists",
       "featuredTherapists": {
-        "therapistIds": ["t-aya", "t-lee", "t-sam", "t-nia", "t-zoe"],
+        "therapistIds": ["t-aya", "t-lee", "t-sam", "t-zoe"],
         "note": "GLOBAL therapist IDs. Availability for this microsite is validated via therapist-services.json assignments for microsite='hair'."
       },
       "cardCtaLabel": "View profile",
       "emptyState": {
-        "title": "No Hair therapists available yet",
+        "title": "No Hair stylist available yet",
         "body": "We’re finalising schedules for this pop-up. Browse services or check back soon.",
         "cta": { "label": "Browse services", "href": "/explore/hair/services" }
       }
     },
 
     "gallery": {
-      "title": "Results gallery",
+      "title": "Hair gallery",
       "subtitle": "Real women. Real glow. Premium lighting, confident energy.",
       "viewAllLabel": "View gallery",
       "viewAllHref": "/explore/hair/gallery",
@@ -101,7 +101,7 @@
     "shop": {
       "title": "Shop Hair essentials",
       "subtitle": "Curated products that support your results at home.",
-      "viewAllLabel": "Shop all products",
+      "viewAllLabel": "Shop all hair products",
       "viewAllHref": "/explore/hair/shop",
       "teaserProductIds": [
         "prod-argan-shine-oil",

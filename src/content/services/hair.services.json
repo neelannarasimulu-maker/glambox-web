@@ -1,7 +1,7 @@
 {
   "microsite": "hair",
   "currency": "ZAR",
-  "pricingNote": "Final price varies by hair length/thickness, technique, and consultation. Prices shown are from and may differ by location.",
+  "pricingNote": "Final prices varies by hair length/thickness, technique, and consultation. Prices shown are from and may differ by location.",
   "categories": ["Cuts & Styling", "Colour", "Treatments", "Protective Styles", "Wigs & Weaves"],
   "tiers": ["Essential", "Signature", "Luxe"],
   "services": [
