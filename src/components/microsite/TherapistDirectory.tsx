@@ -55,7 +55,7 @@ export default function TherapistDirectory({
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="badge text-xs">{badgeLabel}</p>
-          <h1 className="mt-4 text-3xl font-semibold text-white">{title}</h1>
+          <h1 className="mt-4 text-3xl font-semibold heading-accent">{title}</h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">{subtitle}</p>
         </div>
         <div className="flex flex-wrap gap-3 text-sm">
@@ -96,24 +96,24 @@ export default function TherapistDirectory({
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filtered.map((therapist) => (
-          <div key={therapist.id} className="card card-hover p-6">
+          <div key={therapist.id} className="card-nails card-hover p-6">
             <div className="flex items-start justify-between">
               <div>
-                <h2 className="text-xl font-semibold text-white">
+                <h2 className="text-xl font-semibold heading-accent">
                   {therapist.name}
                 </h2>
                 <p className="text-sm text-[rgb(var(--text-300))]">
                   {therapist.roles.join(" • ")}
                 </p>
               </div>
-              <span className="badge text-xs">{therapist.rating}★</span>
+              <span className="pill-accent text-xs">{therapist.rating}★</span>
             </div>
             <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
               {therapist.bio}
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               {therapist.specialties.slice(0, 3).map((specialty) => (
-                <span key={specialty} className="chip text-xs">
+                <span key={specialty} className="pill-accent text-xs">
                   {specialty}
                 </span>
               ))}
@@ -125,14 +125,14 @@ export default function TherapistDirectory({
                 </div>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {worksIn[therapist.id]?.map((microsite) => (
-                    <span key={microsite} className="badge text-xs">
+                    <span key={microsite} className="pill-accent text-xs">
                       {microsite}
                     </span>
                   ))}
                 </div>
               </>
             ) : null}
-            <Link href={`/therapists/${therapist.id}`} className="btn-primary mt-6">
+            <Link href={`/therapists/${therapist.id}`} className="btn-accent mt-6">
               View profile
             </Link>
           </div>

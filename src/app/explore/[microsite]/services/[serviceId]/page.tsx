@@ -27,13 +27,13 @@ export default async function ServiceDetailPage({
     <main className="container-glambox section-pad">
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <p className="badge text-xs">{service.category}</p>
-          <h1 className="mt-4 text-4xl font-semibold text-white">
+          <p className="pill-accent text-xs">{service.category}</p>
+          <h1 className="mt-4 text-4xl font-semibold heading-accent">
             {service.name}
           </h1>
           <p className="mt-4 text-[rgb(var(--text-300))]">{service.outcome}</p>
           <div className="mt-6 flex flex-wrap gap-3 text-sm text-[rgb(var(--text-300))]">
-            <span className="badge text-xs">{service.tier}</span>
+            <span className="pill-accent text-xs">{service.tier}</span>
             <span>{service.durationMins} mins</span>
             <span>From {formatZar(service.fromPriceZar)}</span>
           </div>
@@ -43,7 +43,7 @@ export default async function ServiceDetailPage({
 
           <div className="mt-8 grid gap-6">
             <div>
-              <h2 className="text-xl font-semibold text-white">What’s included</h2>
+              <h2 className="text-xl font-semibold heading-accent">What’s included</h2>
               <ul className="mt-3 space-y-2 text-sm text-[rgb(var(--text-300))]">
                 {service.includes.map((item) => (
                   <li key={item}>• {item}</li>
@@ -51,7 +51,7 @@ export default async function ServiceDetailPage({
               </ul>
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-white">Prep notes</h2>
+              <h2 className="text-xl font-semibold heading-accent">Prep notes</h2>
               <ul className="mt-3 space-y-2 text-sm text-[rgb(var(--text-300))]">
                 {service.prepNotes.map((item) => (
                   <li key={item}>• {item}</li>
@@ -59,7 +59,7 @@ export default async function ServiceDetailPage({
               </ul>
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-white">After care</h2>
+              <h2 className="text-xl font-semibold heading-accent">After care</h2>
               <ul className="mt-3 space-y-2 text-sm text-[rgb(var(--text-300))]">
                 {service.afterCare.map((item) => (
                   <li key={item}>• {item}</li>
@@ -70,8 +70,8 @@ export default async function ServiceDetailPage({
         </div>
 
         <aside className="space-y-6">
-          <div className="card overflow-hidden">
-            <div className="relative h-56 w-full">
+          <div className="card-nails overflow-hidden">
+            <div className="image-frame relative h-56 w-full">
               <Image
                 src={service.image}
                 alt={service.name}
@@ -80,20 +80,20 @@ export default async function ServiceDetailPage({
               />
             </div>
             <div className="p-6">
-              <h2 className="text-lg font-semibold text-white">Book this service</h2>
+              <h2 className="text-lg font-semibold heading-accent">Book this service</h2>
               <p className="mt-2 text-sm text-[rgb(var(--text-300))]">
                 Choose a therapist and time that works for you.
               </p>
               <Link
                 href={`/book/${config.id}/choose-therapist?serviceId=${service.id}`}
-                className="btn-primary mt-4"
+                className="btn-accent mt-4"
               >
                 Book this service
               </Link>
             </div>
           </div>
-          <div className="card p-6">
-            <h2 className="text-lg font-semibold text-white">Available with</h2>
+          <div className="card-nails p-6">
+            <h2 className="text-lg font-semibold heading-accent">Available with</h2>
             <div className="mt-4 space-y-3 text-sm text-[rgb(var(--text-300))]">
               {therapists.length > 0 ? (
                 therapists.map((therapist) => (

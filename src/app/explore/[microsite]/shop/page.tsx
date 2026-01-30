@@ -23,7 +23,7 @@ export default async function ShopPage({
     <main className="container-glambox section-pad">
       <div>
         <p className="badge text-xs">Shop {config.name}</p>
-        <h1 className="mt-4 text-3xl font-semibold text-white">
+        <h1 className="mt-4 text-3xl font-semibold heading-accent">
           Products curated for you
         </h1>
         <p className="mt-3 text-[rgb(var(--text-300))]">
@@ -32,8 +32,8 @@ export default async function ShopPage({
       </div>
       <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {productsData.products.map((product) => (
-          <div key={product.id} className="card card-hover p-6">
-            <div className="relative h-40 w-full overflow-hidden rounded-2xl">
+          <div key={product.id} className="card-nails card-hover p-6">
+            <div className="image-frame relative h-40 w-full">
               <Image
                 src={product.image}
                 alt={product.name}
@@ -41,7 +41,7 @@ export default async function ShopPage({
                 className="object-cover"
               />
             </div>
-            <h3 className="mt-4 text-lg font-semibold text-white">
+            <h3 className="mt-4 text-lg font-semibold heading-accent">
               {product.name}
             </h3>
             <p className="text-sm text-[rgb(var(--text-300))]">
@@ -52,7 +52,7 @@ export default async function ShopPage({
             </div>
             <Link
               href={`/explore/${config.id}/shop/${product.id}`}
-              className="btn-primary mt-4 inline-flex"
+              className="btn-accent mt-4 inline-flex"
             >
               View product
             </Link>

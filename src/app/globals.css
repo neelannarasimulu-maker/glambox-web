@@ -64,6 +64,7 @@
     --accent-2: var(--pop-rose);
     --accent-3: var(--pop-aqua);
     --accent-contrast: 255 255 255;
+    --accent-gradient: var(--grad-vibrant);
 
     /* Borders & surfaces */
     --border: 255 255 255 / 0.10;
@@ -174,9 +175,9 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at 10% 10%, rgba(214,90,62,0.16), transparent 55%),
-      radial-gradient(circle at 80% 20%, rgba(255,64,129,0.14), transparent 55%),
-      radial-gradient(circle at 60% 80%, rgba(0,229,255,0.12), transparent 55%);
+      radial-gradient(circle at 12% 12%, rgb(var(--accent) / 0.12), transparent 55%),
+      radial-gradient(circle at 80% 18%, rgb(var(--accent-2) / 0.10), transparent 55%),
+      radial-gradient(circle at 45% 82%, rgba(214,90,62,0.10), transparent 60%);
     pointer-events: none;
     z-index: -1;
   }
@@ -204,6 +205,11 @@
     transform: translateY(-1px);
     border-color: rgba(255, 255, 255, 0.22);
     box-shadow: var(--shadow-pop);
+  }
+
+  .card-nails.card-hover:hover {
+    border-color: rgb(var(--accent) / 0.45);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.5);
   }
 
   .hero-bg {
@@ -241,6 +247,83 @@
     transform: translateY(-1px);
     border-color: rgba(255,255,255,0.26);
     background: rgba(255,255,255,0.06);
+  }
+
+  .heading-accent {
+    color: rgb(var(--accent));
+  }
+
+  .border-accent {
+    border-color: rgb(var(--accent));
+  }
+
+  .card-theme {
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 22px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-nails {
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgb(var(--accent) / 0.22);
+    border-radius: 22px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.42);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-nails::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(circle at 60% 20%, rgb(var(--accent) / 0.20), transparent 55%);
+    pointer-events: none;
+  }
+
+  .btn-accent {
+    background: var(--accent-gradient);
+    color: rgb(var(--accent-contrast));
+    border-radius: 999px;
+    padding: 0.75rem 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+    transition: transform 120ms ease, filter 120ms ease;
+  }
+  .btn-accent:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+
+  .btn-accent-outline {
+    border-radius: 999px;
+    padding: 0.75rem 1.1rem;
+    font-weight: 700;
+    background: rgba(0,0,0,0.12);
+    border: 1px solid rgb(var(--accent) / 0.4);
+    color: rgb(var(--accent));
+  }
+  .btn-accent-outline:hover {
+    border-color: rgb(var(--accent) / 0.6);
+    background: rgba(255,255,255,0.06);
+  }
+
+  .pill-accent {
+    border: 1px solid rgb(var(--accent) / 0.45);
+    color: rgb(var(--text-200));
+    background: rgba(255,255,255,0.03);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .image-frame {
+    border: 1px solid rgb(var(--accent) / 0.35);
+    border-radius: 18px;
+    overflow: hidden;
   }
 
   .badge {
@@ -396,6 +479,13 @@
     --ring: 0 229 255;
     --border: 0 153 255 / 0.18;
     --border-strong: 0 153 255 / 0.28;
+    --accent-contrast: 255 255 255;
+    --accent-gradient: linear-gradient(90deg,
+      rgb(0 153 255) 0%,
+      rgb(120 92 255) 100%
+    );
+    --btn-primary: var(--accent-gradient);
+    --tuscany-warm: 214 90 62;
   }
 
   body[data-theme="wellness"],

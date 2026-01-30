@@ -41,7 +41,7 @@ export default function AddToWishlistButton({ productId }: { productId: string }
   };
 
   return (
-    <button type="button" onClick={handleClick} className="btn-primary">
+    <button type="button" onClick={handleClick} className="btn-accent">
       {saved ? "Saved to wishlist" : "Add to wishlist"}
     </button>
   );
