@@ -107,7 +107,6 @@ export default function Header() {
               </div>
             </div>
 
-            <TopLink href="/book">Book</TopLink>
             <TopLink href="/ui">UI Kit</TopLink>
           </nav>
 
@@ -174,14 +173,6 @@ export default function Header() {
               </Link>
 
               <div className="h-px bg-neutral-200 my-2" />
-
-              <Link
-                href="/book"
-                className="text-sm font-medium hover:underline"
-                onClick={closeMobile}
-              >
-                Book
-              </Link>
 
               <Link
                 href="/ui"
