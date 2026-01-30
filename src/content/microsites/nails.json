@@ -33,6 +33,10 @@
     { "key": "shop", "label": "Shop", "href": "/explore/nails/shop" },
     { "key": "book", "label": "Book Nails", "href": "/book/nails" }
   ],
+  "therapistsPage": {
+    "title": "Meet the Nail Atelier team",
+    "subtitle": "Browse therapists who specialise in nail care."
+  },
   "sections": {
     "services": {
       "title": "Signature nail services",

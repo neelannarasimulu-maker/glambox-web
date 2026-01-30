@@ -38,6 +38,10 @@ export type MicrositeConfig = {
         href: string;
       }
   >;
+  therapistsPage?: {
+    title: string;
+    subtitle: string;
+  };
   sections: {
     services: {
       title: string;
