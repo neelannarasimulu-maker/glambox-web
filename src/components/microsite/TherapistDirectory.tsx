@@ -7,9 +7,17 @@ import type { Therapist } from "@/lib/content/therapists";
 export default function TherapistDirectory({
   therapists,
   worksIn,
+  badgeLabel = "Therapists",
+  title = "Find your match",
+  subtitle = "Browse across hair, nails, and wellness.",
+  showWorksIn = true,
 }: {
   therapists: Therapist[];
   worksIn: Record<string, string[]>;
+  badgeLabel?: string;
+  title?: string;
+  subtitle?: string;
+  showWorksIn?: boolean;
 }) {
   const [location, setLocation] = useState("all");
   const [role, setRole] = useState("all");
@@ -46,13 +54,9 @@ export default function TherapistDirectory({
     <main className="container-glambox section-pad">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="badge text-xs">Therapists</p>
-          <h1 className="mt-4 text-3xl font-semibold text-white">
-            Find your match
-          </h1>
-          <p className="mt-3 text-[rgb(var(--text-300))]">
-            Browse across hair, nails, and wellness.
-          </p>
+          <p className="badge text-xs">{badgeLabel}</p>
+          <h1 className="mt-4 text-3xl font-semibold text-white">{title}</h1>
+          <p className="mt-3 text-[rgb(var(--text-300))]">{subtitle}</p>
         </div>
         <div className="flex flex-wrap gap-3 text-sm">
           <label className="flex flex-col gap-2">
@@ -114,16 +118,20 @@ export default function TherapistDirectory({
                 </span>
               ))}
             </div>
-            <div className="mt-4 text-xs uppercase text-[rgb(var(--text-400))]">
-              Works in
-            </div>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {worksIn[therapist.id]?.map((microsite) => (
-                <span key={microsite} className="badge text-xs">
-                  {microsite}
-                </span>
-              ))}
-            </div>
+            {showWorksIn ? (
+              <>
+                <div className="mt-4 text-xs uppercase text-[rgb(var(--text-400))]">
+                  Works in
+                </div>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {worksIn[therapist.id]?.map((microsite) => (
+                    <span key={microsite} className="badge text-xs">
+                      {microsite}
+                    </span>
+                  ))}
+                </div>
+              </>
+            ) : null}
             <Link href={`/therapists/${therapist.id}`} className="btn-primary mt-6">
               View profile
             </Link>
