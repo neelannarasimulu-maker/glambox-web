@@ -49,7 +49,7 @@ export default async function MicrositeHomePage({
     .filter((product): product is NonNullable<typeof product> => Boolean(product));
 
   return (
-    <main>
+    <main className="ambient-bg">
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image

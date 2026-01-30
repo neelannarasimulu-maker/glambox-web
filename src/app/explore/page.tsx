@@ -5,7 +5,7 @@ export default function ExplorePage() {
   const microsites = getMicrosites();
 
   return (
-    <main className="section-pad">
+    <main className="ambient-bg section-pad">
       <div className="container-glambox">
         <p className="badge text-xs">Explore</p>
         <h1 className="mt-4 text-3xl font-semibold text-white">
