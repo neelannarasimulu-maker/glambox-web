@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { MicrositeConfig } from "@/lib/content/microsite";
+import { cn } from "@/lib/cn";
 
 const navLabels: Record<string, string> = {
   services: "Services",
@@ -18,6 +22,8 @@ const navPaths: Record<string, (microsite: string) => string> = {
 };
 
 export default function MicrositeHeader({ config }: { config: MicrositeConfig }) {
+  const pathname = usePathname();
+
   return (
     <div className="sticky top-[var(--header-h)] z-40 border-b border-white/10 bg-[rgb(var(--bg-900))/0.9] backdrop-blur-xl">
       <div className="container-glambox flex flex-wrap items-center justify-between gap-4 py-5">
@@ -35,12 +41,18 @@ export default function MicrositeHeader({ config }: { config: MicrositeConfig })
             const href = isObject
               ? item.href
               : navPaths[item]?.(config.id) ?? `/explore/${config.id}`;
+            const isActive = pathname === href || pathname.startsWith(`${href}/`);
 
             return (
               <Link
                 key={key}
                 href={href}
-                className="rounded-full border border-white/10 px-4 py-2 text-[rgb(var(--text-200))] hover:border-white/30"
+                className={cn(
+                  "rounded-full border px-4 py-2 transition",
+                  isActive
+                    ? "border-[rgb(var(--accent)/0.5)] bg-[rgb(var(--accent)/0.14)] text-white shadow-[0_0_16px_rgb(var(--accent)/0.25)]"
+                    : "border-white/10 text-[rgb(var(--text-200))] hover:border-white/30 hover:text-white"
+                )}
               >
                 {label}
               </Link>
