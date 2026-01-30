@@ -17,7 +17,7 @@
       "includes": ["Consultation", "Wash", "Blow dry finish"],
       "prepNotes": ["Arrive with detangled hair if possible."],
       "afterCare": ["Avoid tight styles for 24 hours to keep the finish smooth."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-blow.jpg"
     },
     {
       "id": "ladies-cut",
@@ -31,7 +31,7 @@
       "includes": ["Consultation", "Cut", "Style guidance"],
       "prepNotes": ["Bring reference photos if you have a specific shape in mind."],
       "afterCare": ["Rebook every 6–10 weeks for shape maintenance."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-cut.jpg"
     },
     {
       "id": "wash-cut-blow",
@@ -45,7 +45,7 @@
       "includes": ["Consultation", "Wash", "Precision cut", "Blow dry finish"],
       "prepNotes": ["If you wear your hair curly, tell your stylist before the cut."],
       "afterCare": ["Avoid heavy oils on day 1 to keep the finish airy."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-colour.jpg"
     },
     {
       "id": "silk-press",
@@ -59,7 +59,7 @@
       "includes": ["Consultation", "Wash", "Heat protect", "Silk press finish"],
       "prepNotes": ["Avoid heavy styling products before your appointment."],
       "afterCare": ["Wrap hair at night; avoid steam or moisture for 48 hours."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-colour.jpg"
     },
 
     {
@@ -74,7 +74,7 @@
       "includes": ["Consultation", "Root application", "Tone check", "Basic finish"],
       "prepNotes": ["Tell us your colour history (box dye, henna, prior bleach)."],
       "afterCare": ["Use colour-safe shampoo; avoid hot water for 48 hours."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-treatment.jpg"
     },
     {
       "id": "half-foils",
@@ -88,7 +88,7 @@
       "includes": ["Consultation", "Foils application", "Tone", "Finish"],
       "prepNotes": ["Bring reference photos of your desired tone."],
       "afterCare": ["Purple shampoo 1–2x weekly if going blonde."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-colour.jpg"
     },
     {
       "id": "full-foils",
@@ -102,7 +102,7 @@
       "includes": ["Consultation", "Full foils", "Tone", "Finish"],
       "prepNotes": ["Expect longer timing for thick or very long hair."],
       "afterCare": ["Use bond repair weekly; avoid heat for 48 hours."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-treatment.jpg"
     },
     {
       "id": "balayage",
@@ -116,7 +116,7 @@
       "includes": ["Consultation", "Hand-painted colour", "Tone", "Finish"],
       "prepNotes": ["Share your natural hair colour + prior lightening history."],
       "afterCare": ["Use sulphate-free shampoo; refresh tone every 6–10 weeks."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-protective.jpg"
     },
     {
       "id": "balayage-root",
@@ -130,7 +130,7 @@
       "includes": ["Consultation", "Root colour", "Balayage placement", "Tone", "Finish"],
       "prepNotes": ["Best for clients wanting dimension without harsh regrowth lines."],
       "afterCare": ["Bond treatment recommended weekly for 4 weeks."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-protective.jpg"
     },
 
     {
@@ -145,7 +145,7 @@
       "includes": ["Hair assessment", "Deep conditioning mask", "Heat/steam (if needed)", "Rinse + finish"],
       "prepNotes": ["Tell us if you have had chemical treatments recently."],
       "afterCare": ["Avoid clarifying shampoos for 7 days."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-treatment.jpg"
     },
     {
       "id": "scalp-care",
@@ -159,7 +159,7 @@
       "includes": ["Scalp assessment", "Gentle cleanse", "Targeted scalp treatment", "Massage", "Finish"],
       "prepNotes": ["Let us know if you are fragrance sensitive."],
       "afterCare": ["Avoid heavy oils for 48 hours if scalp is congested."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-treatment.jpg"
     },
     {
       "id": "smoothing",
@@ -173,7 +173,7 @@
       "includes": ["Consultation", "Cleanse", "Treatment application", "Heat seal", "Finish"],
       "prepNotes": ["Timing varies by length and density."],
       "afterCare": ["Follow your stylist’s wash/wait guidance for best longevity."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-protective.jpg"
     },
 
     {
@@ -188,7 +188,7 @@
       "includes": ["Consultation", "Detangle + section", "Scalp prep", "Moisture plan"],
       "prepNotes": ["Bring your extension hair if needed; we can advise on type/weight."],
       "afterCare": ["Hydrate scalp lightly; avoid heavy buildup."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-protective.jpg"
     },
     {
       "id": "braids-starter",
@@ -202,7 +202,7 @@
       "includes": ["Consultation", "Sectioning + braiding", "Edge finish", "Style guidance"],
       "prepNotes": ["Duration varies by braid size and length."],
       "afterCare": ["Use a braid spray; protect at night with a satin wrap."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-protective.jpg"
     },
 
     {
@@ -217,7 +217,7 @@
       "includes": ["Consultation", "Install", "Blend + style finish"],
       "prepNotes": ["Bring your unit clean and ready if possible."],
       "afterCare": ["Follow maintenance schedule to protect edges and scalp."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-protective.jpg"
     },
     {
       "id": "full-house-weave",
@@ -231,7 +231,7 @@
       "includes": ["Removal", "Wash", "Cornrows base", "Install", "Final style"],
       "prepNotes": ["Timing varies by condition of existing install and hair density."],
       "afterCare": ["Schedule a maintenance visit every 2–4 weeks."],
-      "image": "/services/hair-1.jpg"
+      "image": "/services/hair/hair-service-protective.jpg"
     }
   ]
 }
