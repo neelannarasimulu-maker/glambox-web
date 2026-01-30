@@ -285,6 +285,52 @@
     pointer-events: none;
   }
 
+  .card-hair {
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgb(var(--accent) / 0.22);
+    border-radius: 22px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.38);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-hair::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(
+      circle at 30% 20%,
+      rgb(var(--accent) / 0.18),
+      transparent 55%
+    );
+    pointer-events: none;
+  }
+
+  .btn-hair {
+    background: var(--accent-gradient);
+    color: rgb(var(--accent-contrast));
+    border-radius: 999px;
+    padding: 0.75rem 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+    transition: transform 120ms ease, filter 120ms ease;
+  }
+
+  .btn-hair:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+
+  .pill-hair {
+    border: 1px solid rgb(var(--accent) / 0.45);
+    color: rgb(var(--text-200));
+    background: rgba(255,255,255,0.04);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+  }
+
   .btn-accent {
     background: var(--accent-gradient);
     color: rgb(var(--accent-contrast));
@@ -463,12 +509,19 @@
 @layer base {
   body[data-theme="hair"],
   [data-theme="hair"] {
-    --accent: 255 64 129;
-    --accent-2: 214 90 62;
-    --accent-3: 0 229 255;
-    --ring: 0 229 255;
-    --border: 255 64 129 / 0.18;
-    --border-strong: 255 64 129 / 0.28;
+    --accent: 214 90 62;
+    --accent-2: 212 175 55;
+    --accent-3: 255 193 110;
+    --accent-contrast: 255 255 255;
+    --border: 214 90 62 / 0.22;
+    --border-strong: 214 90 62 / 0.32;
+    --accent-gradient: linear-gradient(
+      90deg,
+      rgb(214 90 62) 0%,
+      rgb(212 175 55) 55%,
+      rgb(255 193 110) 100%
+    );
+    --ring: 214 90 62;
   }
 
   body[data-theme="nails"],
