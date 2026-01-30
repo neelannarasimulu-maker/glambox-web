@@ -29,7 +29,7 @@ export default async function MicrositeTherapistsPage({
       worksIn={worksIn}
       themeKey={config.themeKey}
       title={`Meet the ${config.name} team`}
-      subtitle={`Browse therapists who specialize in ${config.name.toLowerCase()}.`}
+      subtitle={`Browse therapists who specialise in ${config.name.toLowerCase()}.`}
       showWorksIn={false}
     />
   );
