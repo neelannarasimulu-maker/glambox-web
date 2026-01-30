@@ -7,6 +7,7 @@ import type { Therapist } from "@/lib/content/therapists";
 export default function TherapistDirectory({
   therapists,
   worksIn,
+  themeKey,
   badgeLabel = "Therapists",
   title = "Find your match",
   subtitle = "Browse across hair, nails, and wellness.",
@@ -14,6 +15,7 @@ export default function TherapistDirectory({
 }: {
   therapists: Therapist[];
   worksIn: Record<string, string[]>;
+  themeKey?: string;
   badgeLabel?: string;
   title?: string;
   subtitle?: string;
@@ -21,6 +23,7 @@ export default function TherapistDirectory({
 }) {
   const [location, setLocation] = useState("all");
   const [role, setRole] = useState("all");
+  const isHairTheme = themeKey === "hair";
 
   const locations = useMemo(() => {
     const unique = new Set<string>();
@@ -96,7 +99,10 @@ export default function TherapistDirectory({
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filtered.map((therapist) => (
-          <div key={therapist.id} className="card-nails card-hover p-6">
+          <div
+            key={therapist.id}
+            className={`${isHairTheme ? "card-artist-hair" : "card-nails"} card-hover p-6`}
+          >
             <div className="flex items-start justify-between">
               <div>
                 <h2 className="text-xl font-semibold heading-accent">
