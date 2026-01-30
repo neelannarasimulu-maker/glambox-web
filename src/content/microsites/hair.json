@@ -46,6 +46,10 @@
     { "key": "shop", "label": "Shop", "href": "/explore/hair/shop" },
     { "key": "book", "label": "Book Hair", "href": "/book/hair" }
   ],
+  "therapistsPage": {
+    "title": "Meet the Hair Studio team",
+    "subtitle": "Browse therapists who specialise in hair studio."
+  },
   "sections": {
     "services": {
       "title": "Signature services",

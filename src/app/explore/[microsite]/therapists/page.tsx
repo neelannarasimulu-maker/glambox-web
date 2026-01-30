@@ -22,14 +22,18 @@ export default async function MicrositeTherapistsPage({
     acc[therapist.id] = getMicrositesForTherapist(therapist.id);
     return acc;
   }, {});
+  const therapistsPage = config.therapistsPage;
 
   return (
     <TherapistDirectory
       therapists={therapists}
       worksIn={worksIn}
       themeKey={config.themeKey}
-      title={`Meet the ${config.name} team`}
-      subtitle={`Browse therapists who specialize in ${config.name.toLowerCase()}.`}
+      title={therapistsPage?.title ?? `Meet the ${config.name} team`}
+      subtitle={
+        therapistsPage?.subtitle ??
+        `Browse therapists who specialize in ${config.name.toLowerCase()}.`
+      }
       showWorksIn={false}
     />
   );

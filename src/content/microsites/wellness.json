@@ -33,6 +33,10 @@
     { "key": "shop", "label": "Shop", "href": "/explore/wellness/shop" },
     { "key": "book", "label": "Book Wellness", "href": "/book/wellness" }
   ],
+  "therapistsPage": {
+    "title": "Meet the Wellness Lounge team",
+    "subtitle": "Browse therapists who specialise in wellness rituals."
+  },
   "sections": {
     "services": {
       "title": "Signature wellness rituals",
