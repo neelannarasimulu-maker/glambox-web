@@ -43,9 +43,11 @@ export default function ServicesCatalog({
               onChange={(event) => setCategory(event.target.value)}
               className="rounded-full border border-white/10 bg-transparent px-4 py-2 text-[rgb(var(--text-200))]"
             >
-              <option value="all">All</option>
+              <option value="all" className="bg-white text-slate-900">
+                All
+              </option>
               {data.categories.map((item) => (
-                <option key={item} value={item}>
+                <option key={item} value={item} className="bg-white text-slate-900">
                   {item}
                 </option>
               ))}
@@ -58,9 +60,11 @@ export default function ServicesCatalog({
               onChange={(event) => setTier(event.target.value)}
               className="rounded-full border border-white/10 bg-transparent px-4 py-2 text-[rgb(var(--text-200))]"
             >
-              <option value="all">All</option>
+              <option value="all" className="bg-white text-slate-900">
+                All
+              </option>
               {data.tiers.map((item) => (
-                <option key={item} value={item}>
+                <option key={item} value={item} className="bg-white text-slate-900">
                   {item}
                 </option>
               ))}
