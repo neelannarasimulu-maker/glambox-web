@@ -19,17 +19,8 @@ export default function TherapistDirectory({
   subtitle?: string;
   showWorksIn?: boolean;
 }) {
-  const [location, setLocation] = useState("all");
   const [role, setRole] = useState("all");
   const isHairTheme = themeKey === "hair";
-
-  const locations = useMemo(() => {
-    const unique = new Set<string>();
-    therapists.forEach((therapist) =>
-      therapist.locations.forEach((item) => unique.add(item)),
-    );
-    return Array.from(unique);
-  }, [therapists]);
 
   const roles = useMemo(() => {
     const unique = new Set<string>();
@@ -41,15 +32,12 @@ export default function TherapistDirectory({
 
   const filtered = useMemo(() => {
     return therapists.filter((therapist) => {
-      if (location !== "all" && !therapist.locations.includes(location)) {
-        return false;
-      }
       if (role !== "all" && !therapist.roles.includes(role)) {
         return false;
       }
       return true;
     });
-  }, [therapists, location, role]);
+  }, [therapists, role]);
 
   return (
     <main className="container-glambox section-pad">
@@ -60,32 +48,21 @@ export default function TherapistDirectory({
         </div>
         <div className="flex flex-wrap gap-3 text-sm">
           <label className="flex flex-col gap-2">
-            <span className="text-xs uppercase text-[rgb(var(--text-400))]">
-              Location
-            </span>
-            <select
-              value={location}
-              onChange={(event) => setLocation(event.target.value)}
-              className="rounded-full border border-white/10 bg-transparent px-4 py-2 text-[rgb(var(--text-200))]"
-            >
-              <option value="all">All</option>
-              {locations.map((item) => (
-                <option key={item} value={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="flex flex-col gap-2">
             <span className="text-xs uppercase text-[rgb(var(--text-400))]">Role</span>
             <select
               value={role}
               onChange={(event) => setRole(event.target.value)}
-              className="rounded-full border border-white/10 bg-transparent px-4 py-2 text-[rgb(var(--text-200))]"
+              className="rounded-full border border-white/10 bg-[rgb(var(--bg-900))] px-4 py-2 text-[rgb(var(--text-100))]"
             >
-              <option value="all">All</option>
+              <option value="all" className="bg-[rgb(var(--bg-900))] text-[rgb(var(--text-100))]">
+                All
+              </option>
               {roles.map((item) => (
-                <option key={item} value={item}>
+                <option
+                  key={item}
+                  value={item}
+                  className="bg-[rgb(var(--bg-900))] text-[rgb(var(--text-100))]"
+                >
                   {item}
                 </option>
               ))}
@@ -135,9 +112,11 @@ export default function TherapistDirectory({
                 </div>
               </>
             ) : null}
-            <Link href={`/therapists/${therapist.id}`} className="btn-accent mt-6">
-              View profile
-            </Link>
+            <div className="mt-6">
+              <Link href={`/therapists/${therapist.id}`} className="btn-accent inline-flex">
+                View profile
+              </Link>
+            </div>
           </div>
         ))}
       </div>
