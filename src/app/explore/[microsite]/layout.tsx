@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import MicrositeHeader from "@/components/microsite/MicrositeHeader";
+import MicrositeScrollToTop from "@/components/microsite/MicrositeScrollToTop";
 import { getMicrosite } from "@/lib/content/microsite";
 import Breadcrumbs from "@/components/nav/Breadcrumbs";
 
@@ -23,6 +24,7 @@ export default async function MicrositeLayout({
       className="ambient-bg min-h-screen bg-[rgb(var(--bg-900))] text-[rgb(var(--text-200))]"
     >
       <MicrositeHeader config={config} />
+      <MicrositeScrollToTop />
       <Breadcrumbs />
       {children}
     </div>
