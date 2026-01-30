@@ -86,7 +86,7 @@ export default async function ServiceDetailPage({
               </p>
               <Link
                 href={`/book/${config.id}/choose-therapist?serviceId=${service.id}`}
-                className="btn-accent mt-4"
+                className="btn-accent mt-4 inline-flex"
               >
                 Book this service
               </Link>
