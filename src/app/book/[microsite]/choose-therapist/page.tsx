@@ -14,6 +14,7 @@ export default function ChooseTherapistPage() {
   const searchParams = useSearchParams();
   const microsite = params?.microsite ?? "";
   const serviceId = searchParams.get("serviceId") ?? "";
+  const isHairTheme = microsite === "hair";
 
   const therapists = useMemo(() => {
     if (!microsite) return [];
@@ -41,7 +42,10 @@ export default function ChooseTherapistPage() {
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {therapists.map((therapist) => (
-            <div key={therapist.id} className="card card-hover p-6">
+            <div
+              key={therapist.id}
+              className={`${isHairTheme ? "card-artist-hair" : "card"} card-hover p-6`}
+            >
               <div className="flex items-start justify-between">
                 <div>
                   <h2 className="text-xl font-semibold text-white">
