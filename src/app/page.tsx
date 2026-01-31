@@ -85,7 +85,7 @@ export default function HomePage() {
               <Link href="/book" className="btn-primary">
                 Book Your Moment
               </Link>
-              <Link href="/experiences" className="btn-secondary">
+              <Link href="/explore" className="btn-secondary">
                 Explore the Glambox World
               </Link>
             </div>
@@ -207,8 +207,8 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-10">
-            <Link href="/experiences" className="btn-primary">
-              Discover Experiences
+            <Link href="/explore" className="btn-primary">
+              Explore Experiences
             </Link>
           </div>
         </div>
@@ -235,9 +235,6 @@ export default function HomePage() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link href="/book" className="btn-primary">
                     Book Now
-                  </Link>
-                  <Link href="/locations" className="btn-secondary">
-                    Explore Locations &amp; Experiences
                   </Link>
                 </div>
               </div>
