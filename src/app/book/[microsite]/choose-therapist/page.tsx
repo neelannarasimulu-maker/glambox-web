@@ -34,7 +34,6 @@ export default function ChooseTherapistPage() {
     <main className="ambient-bg section-pad">
       <div className="container-glambox">
         <div>
-          <p className="badge text-xs">Choose a therapist</p>
           <h1 className="mt-4 text-3xl font-semibold text-white">Therapists</h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">
             Select the therapist you’d like to book with.

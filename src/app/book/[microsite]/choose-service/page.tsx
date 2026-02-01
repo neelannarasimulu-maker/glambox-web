@@ -38,9 +38,6 @@ export default function ChooseServicePage() {
     <main className="ambient-bg section-pad">
       <div className="container-glambox">
         <div>
-          <p className={`${isHairTheme ? "pill-accent" : "badge"} text-xs`}>
-            Choose a service
-          </p>
           <h1
             className={`mt-4 text-3xl font-semibold ${
               isHairTheme ? "heading-accent" : "text-white"
