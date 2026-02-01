@@ -41,8 +41,8 @@ export default function Header() {
             <Image
               src="/home/glambox-logo.jpg"
               alt="Glambox"
-              width={160}
-              height={36}
+              width={1000}
+              height={50}
               className="h-9 w-auto rounded-md"
               priority
             />
