@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getMicrosite, getMicrosites } from "@/lib/content/microsite";
@@ -28,20 +29,33 @@ export default async function TherapistProfilePage({
   return (
     <main className="container-glambox section-pad">
       <div className="card p-8">
-        <p className="badge text-xs">Therapist Profile</p>
-        <h1 className="mt-4 text-3xl font-semibold text-white">
-          {therapist.name}
-        </h1>
-        <p className="mt-2 text-sm text-[rgb(var(--text-300))]">
-          {therapist.roles.join(" • ")}
-        </p>
-        <p className="mt-4 text-[rgb(var(--text-300))]">{therapist.bio}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {therapist.vibeTags.map((tag) => (
-            <span key={tag} className="chip text-xs">
-              {tag}
-            </span>
-          ))}
+        <div className="flex flex-col gap-6 md:flex-row md:items-start">
+          <div className="image-frame relative h-64 w-full md:h-64 md:w-64">
+            <Image
+              src={therapist.photo}
+              alt={therapist.name}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="flex-1">
+            <p className="badge text-xs">Therapist Profile</p>
+            <h1 className="mt-4 text-3xl font-semibold text-white">
+              {therapist.name}
+            </h1>
+            <p className="mt-2 text-sm text-[rgb(var(--text-300))]">
+              {therapist.roles.join(" • ")}
+            </p>
+            <p className="mt-4 text-[rgb(var(--text-300))]">{therapist.bio}</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {therapist.vibeTags.map((tag) => (
+                <span key={tag} className="chip text-xs">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
