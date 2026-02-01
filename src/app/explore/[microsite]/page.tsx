@@ -29,7 +29,6 @@ export default async function MicrositeHomePage({
   const gallerySection = config.sections.gallery;
   const shopSection = config.sections.shop;
   const standardsSection = config.sections.standards;
-  const isHairTheme = config.themeKey === "hair";
 
   const featuredServices = servicesSection.featuredServiceIds
     .map((id) => servicesData.services.find((service) => service.id === id))
@@ -111,7 +110,7 @@ export default async function MicrositeHomePage({
           {highlights.length > 0 ? (
             <div className="grid gap-4">
               {highlights.map((highlight) => (
-                <div key={highlight.title} className="card-nails p-6">
+                <div key={highlight.title} className="card-accent p-6">
                   <h3 className="text-lg font-semibold heading-accent">
                     {highlight.title}
                   </h3>
@@ -148,7 +147,7 @@ export default async function MicrositeHomePage({
               {featuredServices.map((service) => (
                 <div
                   key={service.id}
-                  className={`${isHairTheme ? "card-hair" : "card-nails"} card-hover p-6`}
+                  className="card-accent card-hover p-6"
                 >
                   <div className="flex items-center justify-between">
                     <span className="pill-accent text-xs">{service.tier}</span>
@@ -176,7 +175,7 @@ export default async function MicrositeHomePage({
             </div>
           ) : servicesSection.emptyState ? (
             <div className="mt-8">
-              <div className="card-nails p-6 text-center">
+              <div className="card-accent p-6 text-center">
                 <h3 className="text-xl font-semibold heading-accent">
                   {servicesSection.emptyState.title}
                 </h3>
@@ -217,7 +216,7 @@ export default async function MicrositeHomePage({
               {featuredTherapists.map((therapist) => (
                 <div
                   key={therapist.id}
-                  className={`${isHairTheme ? "card-artist-hair" : "card-nails"} card-hover p-6`}
+                  className="card-accent card-hover p-6"
                 >
                   <div className="image-frame relative h-56 w-full">
                     <Image
@@ -256,7 +255,7 @@ export default async function MicrositeHomePage({
             </div>
           ) : therapistsSection.emptyState ? (
             <div className="mt-8">
-              <div className="card-nails p-6 text-center">
+              <div className="card-accent p-6 text-center">
                 <h3 className="text-xl font-semibold heading-accent">
                   {therapistsSection.emptyState.title}
                 </h3>
@@ -298,7 +297,7 @@ export default async function MicrositeHomePage({
           {galleryTeasers.length > 0 ? (
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {galleryTeasers.map((item) => (
-                <div key={item.id} className="card-nails overflow-hidden">
+                <div key={item.id} className="card-accent overflow-hidden">
                   <div className="image-frame relative h-56 w-full">
                     <Image
                       src={item.image}
@@ -315,7 +314,7 @@ export default async function MicrositeHomePage({
             </div>
           ) : gallerySection.emptyState ? (
             <div className="mt-8">
-              <div className="card-nails p-6 text-center">
+              <div className="card-accent p-6 text-center">
                 <h3 className="text-xl font-semibold heading-accent">
                   {gallerySection.emptyState.title}
                 </h3>
@@ -356,7 +355,7 @@ export default async function MicrositeHomePage({
               {shopTeasers.map((product) => (
                 <div
                   key={product.id}
-                  className={`${isHairTheme ? "card-product-hair" : "card-nails"} card-hover p-6`}
+                  className="card-accent card-hover p-6"
                 >
                   <div className="image-frame relative h-40 w-full">
                     <Image
@@ -386,7 +385,7 @@ export default async function MicrositeHomePage({
             </div>
           ) : shopSection.emptyState ? (
             <div className="mt-8">
-              <div className="card-nails p-6 text-center">
+              <div className="card-accent p-6 text-center">
                 <h3 className="text-xl font-semibold heading-accent">
                   {shopSection.emptyState.title}
                 </h3>
@@ -420,7 +419,7 @@ export default async function MicrositeHomePage({
             </div>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {standardsSection.items.map((item) => (
-                <div key={item.title} className="card-nails p-6">
+                <div key={item.title} className="card-accent p-6">
                   <h3 className="text-lg font-semibold heading-accent">
                     {item.title}
                   </h3>
@@ -436,7 +435,7 @@ export default async function MicrositeHomePage({
 
       <section className="section-pad">
         <div className="container-glambox">
-          <div className="card-nails p-8 text-center">
+          <div className="card-accent p-8 text-center">
             <h2 className="text-3xl font-semibold heading-accent">
               {config.cta?.headline}
             </h2>

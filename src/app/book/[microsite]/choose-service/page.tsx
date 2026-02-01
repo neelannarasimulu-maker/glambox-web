@@ -15,7 +15,6 @@ export default function ChooseServicePage() {
   const microsite = params?.microsite ?? "";
   const therapistId = searchParams.get("therapistId") ?? "";
   const servicesData = getServicesByMicrosite(microsite);
-  const isHairTheme = microsite === "hair";
 
   const services = useMemo(() => {
     if (!servicesData) return [];
@@ -38,13 +37,7 @@ export default function ChooseServicePage() {
     <main className="ambient-bg section-pad">
       <div className="container-glambox">
         <div>
-          <h1
-            className={`mt-4 text-3xl font-semibold ${
-              isHairTheme ? "heading-accent" : "text-white"
-            }`}
-          >
-            Services
-          </h1>
+          <h1 className="mt-4 text-3xl font-semibold heading-accent">Services</h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">
             {servicesData.pricingNote}
           </p>
@@ -53,21 +46,15 @@ export default function ChooseServicePage() {
           {services.map((service) => (
             <div
               key={service.id}
-              className={`${isHairTheme ? "card-hair" : "card"} card-hover p-6`}
+              className="card-accent card-hover p-6"
             >
               <div className="flex items-center justify-between">
-                <span className={`${isHairTheme ? "pill-accent" : "badge"} text-xs`}>
-                  {service.tier}
-                </span>
+                <span className="pill-accent text-xs">{service.tier}</span>
                 <span className="text-sm text-[rgb(var(--text-300))]">
                   {service.durationMins} mins
                 </span>
               </div>
-              <h2
-                className={`mt-4 text-xl font-semibold ${
-                  isHairTheme ? "heading-accent" : "text-white"
-                }`}
-              >
+              <h2 className="mt-4 text-xl font-semibold heading-accent">
                 {service.name}
               </h2>
               <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
@@ -82,9 +69,7 @@ export default function ChooseServicePage() {
                   onClick={() =>
                     writeBookingDraft({ microsite, serviceId: service.id, therapistId })
                   }
-                  className={`mt-5 inline-flex ${
-                    isHairTheme ? "btn-hair" : "btn-primary"
-                  }`}
+                  className="btn-accent mt-5 inline-flex"
                 >
                   Choose time
                 </Link>
@@ -94,9 +79,7 @@ export default function ChooseServicePage() {
                   onClick={() =>
                     writeBookingDraft({ microsite, serviceId: service.id })
                   }
-                  className={`mt-5 inline-flex ${
-                    isHairTheme ? "btn-hair" : "btn-primary"
-                  }`}
+                  className="btn-accent mt-5 inline-flex"
                 >
                   Choose hair stylist
                 </Link>

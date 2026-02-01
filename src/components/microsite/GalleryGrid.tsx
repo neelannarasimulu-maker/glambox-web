@@ -59,7 +59,7 @@ export default function GalleryGrid({ data }: { data: GalleryData }) {
       <div className="mt-10 columns-1 gap-6 md:columns-2 lg:columns-3">
         {items.map((item) => (
           <div key={item.id} className="mb-6 break-inside-avoid">
-            <div className="card-nails overflow-hidden">
+            <div className="card-accent overflow-hidden">
               <div className="image-frame relative h-64 w-full">
                 <Image
                   src={item.image}

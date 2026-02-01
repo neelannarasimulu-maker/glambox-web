@@ -18,7 +18,6 @@ export default async function ShopPage({
   if (!config || !productsData) {
     notFound();
   }
-  const isHairTheme = config.themeKey === "hair";
 
   return (
     <main className="container-glambox section-pad">
@@ -34,7 +33,7 @@ export default async function ShopPage({
         {productsData.products.map((product) => (
           <div
             key={product.id}
-            className={`${isHairTheme ? "card-product-hair" : "card-nails"} card-hover p-6`}
+            className="card-accent card-hover p-6"
           >
             <div className="image-frame relative h-40 w-full">
               <Image
