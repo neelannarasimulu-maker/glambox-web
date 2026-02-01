@@ -70,7 +70,7 @@ export default async function ServiceDetailPage({
         </div>
 
         <aside className="space-y-6">
-          <div className="card-nails overflow-hidden">
+          <div className="card-accent overflow-hidden">
             <div className="image-frame relative h-56 w-full">
               <Image
                 src={service.image}
@@ -92,7 +92,7 @@ export default async function ServiceDetailPage({
               </Link>
             </div>
           </div>
-          <div className="card-nails p-6">
+          <div className="card-accent p-6">
             <h2 className="text-lg font-semibold heading-accent">Available with</h2>
             <div className="mt-4 space-y-3 text-sm text-[rgb(var(--text-300))]">
               {therapists.length > 0 ? (

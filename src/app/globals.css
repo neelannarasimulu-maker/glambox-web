@@ -286,9 +286,7 @@
     pointer-events: none;
   }
 
-  [data-theme="hair"] .card-hair,
-  [data-theme="hair"] .card-product-hair,
-  [data-theme="hair"] .card-artist-hair {
+  .card-accent {
     background: rgba(255,255,255,0.045);
     border: 1px solid rgb(var(--accent) / 0.22);
     border-radius: 22px;
@@ -301,9 +299,7 @@
       transform 160ms ease;
   }
 
-  [data-theme="hair"] .card-hair:hover,
-  [data-theme="hair"] .card-product-hair:hover,
-  [data-theme="hair"] .card-artist-hair:hover {
+  .card-accent.card-hover:hover {
     border-width: 2px;
     border-color: rgb(var(--accent) / 0.55);
     box-shadow:

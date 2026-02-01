@@ -14,7 +14,6 @@ export default function ChooseTherapistPage() {
   const searchParams = useSearchParams();
   const microsite = params?.microsite ?? "";
   const serviceId = searchParams.get("serviceId") ?? "";
-  const isHairTheme = microsite === "hair";
 
   const therapists = useMemo(() => {
     if (!microsite) return [];
@@ -34,11 +33,7 @@ export default function ChooseTherapistPage() {
     <main className="ambient-bg section-pad">
       <div className="container-glambox">
         <div>
-          <h1
-            className={`mt-4 text-3xl font-semibold ${
-              isHairTheme ? "heading-accent" : "text-white"
-            }`}
-          >
+          <h1 className="mt-4 text-3xl font-semibold heading-accent">
             Hair Stylists
           </h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">
@@ -49,20 +44,18 @@ export default function ChooseTherapistPage() {
           {therapists.map((therapist) => (
             <div
               key={therapist.id}
-              className={`${isHairTheme ? "card-artist-hair" : "card"} card-hover p-6`}
+              className="card-accent card-hover p-6"
             >
               <div className="flex items-start justify-between">
                 <div>
-                  <h2 className="text-xl font-semibold text-white">
+                  <h2 className="text-xl font-semibold heading-accent">
                     {therapist.name}
                   </h2>
                   <p className="text-sm text-[rgb(var(--text-300))]">
                     {therapist.roles.join(" • ")}
                   </p>
                 </div>
-                <span className={`${isHairTheme ? "pill-accent" : "badge"} text-xs`}>
-                  {therapist.rating}★
-                </span>
+                <span className="pill-accent text-xs">{therapist.rating}★</span>
               </div>
               <p className="mt-3 text-sm text-[rgb(var(--text-300))]">
                 {therapist.bio}
@@ -74,9 +67,7 @@ export default function ChooseTherapistPage() {
                 onClick={() =>
                   writeBookingDraft({ microsite, serviceId, therapistId: therapist.id })
                 }
-                className={`mt-5 inline-flex ${
-                  isHairTheme ? "btn-hair" : "btn-primary"
-                }`}
+                className="btn-accent mt-5 inline-flex"
               >
                 Choose time
               </Link>
