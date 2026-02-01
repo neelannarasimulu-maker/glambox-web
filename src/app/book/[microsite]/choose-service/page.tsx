@@ -98,7 +98,7 @@ export default function ChooseServicePage() {
                     isHairTheme ? "btn-hair" : "btn-primary"
                   }`}
                 >
-                  Choose therapist
+                  Choose hair stylist
                 </Link>
               )}
             </div>

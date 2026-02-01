@@ -3,7 +3,7 @@
     {
       "id": "t-aya",
       "name": "Ayanda M.",
-      "roles": ["Colour Specialist", "Hair Artist"],
+      "roles": ["Hair Artist", "Colour Specialist"],
       "photo": "/therapists/hair/ayanda.jpg",
       "bio": "Warm, precise, and trend-aware. Known for glossy colour and healthy-hair outcomes.",
       "specialties": ["Balayage", "Root tint", "Toning + gloss"],
@@ -27,7 +27,7 @@
     {
       "id": "t-sam",
       "name": "Samantha K.",
-      "roles": ["Protective Styling Specialist", "Hair Artist"],
+      "roles": ["Hair Artist", "Protective Styling Specialist"],
       "photo": "/therapists/hair/samantha.jpg",
       "bio": "Protective styles that respect hair health. Clean parts, neat tension, and long-wear results.",
       "specialties": ["Braids", "Protective prep", "Weave foundations"],
@@ -39,7 +39,7 @@
     {
       "id": "t-nia",
       "name": "Nia P.",
-      "roles": ["Treatment Specialist", "Hair Artist"],
+      "roles": ["Hair Artist", "Treatment Specialist"],
       "photo": "/therapists/hair/nia.jpg",
       "bio": "Scalp-first haircare with a wellness vibe. Perfect if you want calm, comfort, and healthy growth.",
       "specialties": ["Scalp care", "Deep repair", "Smoothing treatments"],
@@ -51,7 +51,7 @@
     {
       "id": "t-zahra",
       "name": "Zahra S.",
-      "roles": ["Colour Specialist", "Hair Artist"],
+      "roles": ["Hair Artist", "Colour Specialist"],
       "photo": "/therapists/hair/zahra.jpg",
       "bio": "Brightening and dimension specialist. Loves modern blonding and lived-in colour.",
       "specialties": ["Foils", "Balayage", "Blonde toning"],
@@ -87,7 +87,7 @@
     {
       "id": "t-jade",
       "name": "Jade V.",
-      "roles": ["Cut Specialist", "Hair Artist"],
+      "roles": ["Hair Artist", "Cut Specialist"],
       "photo": "/therapists/hair/jade.jpg",
       "bio": "Modern shapes, fringe work, and airy layers. Great listener, even better execution.",
       "specialties": ["Layers", "Fringe", "Shape correction"],

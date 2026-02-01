@@ -35,7 +35,7 @@
     },
     {
       "title": "Personalised recommendations",
-      "body": "Match your goals, vibe, and sensitivities to the right service and therapist."
+      "body": "Match your goals, vibe, and sensitivities to the right service and hair stylist."
     }
   ],
   
@@ -142,7 +142,7 @@
 
   "cta": {
     "headline": "Ready for your next hair moment?",
-    "body": "Choose a service, match with a therapist, and book a time that fits your rhythm.",
+    "body": "Choose a service, match with a stylist, and book a time that fits your rhythm.",
     "primaryCta": { "label": "Book Hair", "href": "/book/hair" },
     "secondaryCta": { "label": "Browse Services", "href": "/explore/hair/services" }
   }

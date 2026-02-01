@@ -39,10 +39,10 @@ export default function ChooseTherapistPage() {
               isHairTheme ? "heading-accent" : "text-white"
             }`}
           >
-            Therapists
+            Hair Stylists
           </h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">
-            Select the therapist you’d like to book with.
+            Select the stylist you’d like to book with.
           </p>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">

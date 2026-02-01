@@ -33,12 +33,11 @@ export default function BookingLauncherPage() {
     <main className="ambient-bg section-pad">
       <div className="container-glambox">
         <div className="max-w-2xl">
-          <p className="badge text-xs">Book {config.name}</p>
           <h1 className="mt-4 text-3xl font-semibold heading-accent">
             Choose how you want to book
           </h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">
-            Start with a service or start with a therapist. We’ll guide you to the
+            Start with a service or start with a hair stylist. We’ll guide you to the
             perfect match.
           </p>
         </div>
@@ -47,7 +46,7 @@ export default function BookingLauncherPage() {
           <div className="card-nails card-hover flex h-full flex-col gap-3 p-6">
             <h2 className="text-xl font-semibold heading-accent">Book by Service</h2>
             <p className="text-sm text-[rgb(var(--text-300))]">
-              Pick the outcome you want, then choose the best therapist and time.
+              Pick the outcome you want, then choose the best hair stylist and time.
             </p>
             <Link
               href={`/book/${config.id}/choose-service`}
@@ -57,15 +56,15 @@ export default function BookingLauncherPage() {
             </Link>
           </div>
           <div className="card-nails card-hover flex h-full flex-col gap-3 p-6">
-            <h2 className="text-xl font-semibold heading-accent">Book by Therapist</h2>
+            <h2 className="text-xl font-semibold heading-accent">Book by Hair Stylist</h2>
             <p className="text-sm text-[rgb(var(--text-300))]">
-              Choose a therapist you love, then select the right service.
+              Choose a stylist you love, then select the right service.
             </p>
             <Link
               href={`/book/${config.id}/choose-therapist`}
               className="btn-accent mt-4 inline-flex self-start"
             >
-              Start with a therapist
+              Start with a hair stylist
             </Link>
           </div>
         </div>
