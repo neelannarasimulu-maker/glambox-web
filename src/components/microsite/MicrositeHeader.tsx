@@ -28,10 +28,10 @@ export default function MicrositeHeader({ config }: { config: MicrositeConfig })
     <div className="microsite-header border-white/10 backdrop-blur-xl md:sticky md:top-[var(--header-h)] md:z-40 md:border-b">
       <div className="container-glambox flex flex-wrap items-center justify-between gap-4 py-5">
         <div className="microsite-header-meta hidden md:block">
-          <Link href={`/explore/${config.id}`} className="text-lg font-semibold text-white">
+          <Link href={`/explore/${config.id}`} className="text-lg font-semibold text-black">
             {config.name}
           </Link>
-          <p className="text-sm text-[rgb(var(--text-300))]">{config.tagline}</p>
+          <p className="text-sm text-black/70">{config.tagline}</p>
         </div>
         <div className="microsite-header-nav sticky top-[var(--header-h)] z-40 w-full border-b border-white/10 py-4 backdrop-blur-xl md:static md:w-auto md:border-0 md:bg-transparent md:py-0 md:backdrop-blur-none">
           <nav className="flex flex-wrap gap-3 text-sm">
@@ -51,8 +51,8 @@ export default function MicrositeHeader({ config }: { config: MicrositeConfig })
                   className={cn(
                     "rounded-full border px-4 py-2 transition",
                     isActive
-                      ? "border-[rgb(var(--accent)/0.5)] bg-[rgb(var(--accent)/0.14)] text-white shadow-[0_0_16px_rgb(var(--accent)/0.25)]"
-                      : "border-white/10 text-[rgb(var(--text-200))] hover:border-white/30 hover:text-white"
+                      ? "border-[rgb(var(--accent)/0.5)] bg-[rgb(var(--accent)/0.14)] text-black shadow-[0_0_16px_rgb(var(--accent)/0.25)]"
+                      : "border-white/10 text-black hover:border-white/30 hover:text-white"
                   )}
                 >
                   {label}
