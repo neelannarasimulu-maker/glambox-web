@@ -39,7 +39,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3" onClick={closeMobile}>
             <Image
-              src="/glambox-logo.jpg"
+              src="/home/glambox-logo.jpg"
               alt="Glambox"
               width={160}
               height={36}

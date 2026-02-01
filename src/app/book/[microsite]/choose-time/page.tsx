@@ -31,7 +31,6 @@ export default function ChooseTimePage() {
     <main className="ambient-bg section-pad">
       <div className="container-glambox">
         <div>
-          <p className="badge text-xs">Choose a time</p>
           <h1 className="mt-4 text-3xl font-semibold text-white">Available times</h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">
             Select a preferred time for your booking.
