@@ -50,6 +50,9 @@ export default function Footer() {
                     <Text tone="muted" size="sm">
                       Vibrant health, beauty and wellness portal.
                     </Text>
+                    <Text tone="muted" size="sm">
+                      © {new Date().getFullYear()} Glambox. All rights reserved.
+                    </Text>
                   </div>
                 </div>
 
@@ -58,7 +61,7 @@ export default function Footer() {
                     href="mailto:hello@glambox.com"
                     className="gb-glass rounded-xl border border-border px-4 py-2 text-sm text-text shadow-soft hover:bg-surface-2 transition focus-visible:gb-focus"
                   >
-                    hello@glambox.com
+                    hello@glambox.co.za
                   </a>
                   <a
                     href="tel:+27000000000"
@@ -72,21 +75,10 @@ export default function Footer() {
 
             {/* Link columns */}
             <div className="md:col-span-7 grid gap-8 sm:grid-cols-3">
-              <div>
-                <Heading as="h4" className="text-base">
-                  Explore
-                </Heading>
-                <div className="mt-3 flex flex-col gap-2">
-                  <FooterLink href="/services">Services</FooterLink>
-                  <FooterLink href="/gallery">Gallery</FooterLink>
-                  <FooterLink href="/book">Book</FooterLink>
-                  <FooterLink href="/ui">UI Kit</FooterLink>
-                </div>
-              </div>
 
               <div>
                 <Heading as="h4" className="text-base">
-                  Micro-sites
+                  Pop Ups
                 </Heading>
                 <div className="mt-3 flex flex-col gap-2">
                   <FooterLink href="/hair" className="text-brand">
@@ -108,28 +100,12 @@ export default function Footer() {
                 <div className="mt-3 flex flex-col gap-2">
                   <FooterLink href="/about">About</FooterLink>
                   <FooterLink href="/contact">Contact</FooterLink>
-                  <FooterLink href="/privacy">Privacy</FooterLink>
-                  <FooterLink href="/terms">Terms</FooterLink>
+                  <FooterLink href="/privacy">Ts & Cs</FooterLink>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Bottom row */}
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <Text tone="muted" size="sm">
-              © {new Date().getFullYear()} Glambox. All rights reserved.
-            </Text>
-
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="gb-glass rounded-full border border-border px-3 py-1 text-xs text-muted shadow-soft">
-                Built with Next.js + Tailwind
-              </span>
-              <span className="gb-glass rounded-full border border-border px-3 py-1 text-xs text-muted shadow-soft">
-                Proudly SA 🇿🇦
-              </span>
-            </div>
-          </div>
         </Container>
       </div>
     </footer>
