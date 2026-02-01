@@ -519,19 +519,19 @@
 @layer base {
   body[data-theme="hair"],
   [data-theme="hair"] {
-    --accent: 214 90 62;
-    --accent-2: 212 175 55;
-    --accent-3: 255 193 110;
+    --accent: 255 176 64;
+    --accent-2: 255 205 95;
+    --accent-3: 255 236 178;
     --accent-contrast: 255 255 255;
-    --border: 214 90 62 / 0.22;
-    --border-strong: 214 90 62 / 0.32;
+    --border: 255 176 64 / 0.22;
+    --border-strong: 255 176 64 / 0.32;
     --accent-gradient: linear-gradient(
       90deg,
-      rgb(214 90 62) 0%,
-      rgb(212 175 55) 55%,
-      rgb(255 193 110) 100%
+      rgb(255 176 64) 0%,
+      rgb(255 205 95) 55%,
+      rgb(255 236 178) 100%
     );
-    --ring: 214 90 62;
+    --ring: 255 176 64;
   }
 
   body[data-theme="nails"],
