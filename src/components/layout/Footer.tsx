@@ -29,16 +29,16 @@ function FooterLink({
 
 export default function Footer() {
   return (
-    <footer className="mt-12">
+    <footer className="mt-8">
       {/* Top divider */}
       <div className="gb-divider" />
 
       <div className="gb-bg">
-        <Container className="py-10">
-          <div className="grid gap-10 md:grid-cols-12">
+        <Container className="py-6 md:py-8">
+          <div className="grid gap-6 md:grid-cols-12">
             {/* Brand column */}
             <div className="md:col-span-5">
-              <div className="gb-sticker rounded-2xl p-5 shadow-soft">
+              <div className="gb-sticker rounded-2xl p-4 shadow-soft">
                 <div className="flex items-center gap-3">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-brand text-brand-ink shadow-glow">
                     G
@@ -56,16 +56,16 @@ export default function Footer() {
                   </div>
                 </div>
 
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap gap-2">
                   <a
                     href="mailto:hello@glambox.com"
-                    className="gb-glass rounded-xl border border-border px-4 py-2 text-sm text-text shadow-soft hover:bg-surface-2 transition focus-visible:gb-focus"
+                    className="gb-glass rounded-xl border border-border px-3 py-1.5 text-sm text-text shadow-soft hover:bg-surface-2 transition focus-visible:gb-focus"
                   >
                     hello@glambox.co.za
                   </a>
                   <a
                     href="tel:+27000000000"
-                    className="gb-glass rounded-xl border border-border px-4 py-2 text-sm text-text shadow-soft hover:bg-surface-2 transition focus-visible:gb-focus"
+                    className="gb-glass rounded-xl border border-border px-3 py-1.5 text-sm text-text shadow-soft hover:bg-surface-2 transition focus-visible:gb-focus"
                   >
                     +27 00 000 0000
                   </a>
@@ -74,13 +74,13 @@ export default function Footer() {
             </div>
 
             {/* Link columns */}
-            <div className="md:col-span-7 grid gap-8 sm:grid-cols-3">
+            <div className="md:col-span-7 grid gap-6 sm:grid-cols-3">
 
               <div>
                 <Heading as="h4" className="text-base">
                   Pop Ups
                 </Heading>
-                <div className="mt-3 flex flex-col gap-2">
+                <div className="mt-2.5 flex flex-col gap-2">
                   <FooterLink href="/hair" className="text-brand">
                     Hair
                   </FooterLink>
@@ -97,7 +97,7 @@ export default function Footer() {
                 <Heading as="h4" className="text-base">
                   Company
                 </Heading>
-                <div className="mt-3 flex flex-col gap-2">
+                <div className="mt-2.5 flex flex-col gap-2">
                   <FooterLink href="/about">About</FooterLink>
                   <FooterLink href="/contact">Contact</FooterLink>
                   <FooterLink href="/privacy">Ts & Cs</FooterLink>
