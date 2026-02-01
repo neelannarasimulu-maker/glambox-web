@@ -16,7 +16,6 @@ export default function ServicesCatalog({
 }) {
   const [category, setCategory] = useState("all");
   const [tier, setTier] = useState("all");
-  const isHairTheme = microsite === "hair";
 
   const services = useMemo(() => {
     return data.services.filter((service) => {
@@ -82,7 +81,7 @@ export default function ServicesCatalog({
           return (
             <div
               key={service.id}
-              className={`${isHairTheme ? "card-hair" : "card-nails"} card-hover p-6`}
+              className="card-accent card-hover p-6"
             >
               <div className="flex items-center justify-between">
                 <span className="pill-accent text-xs">{service.tier}</span>
