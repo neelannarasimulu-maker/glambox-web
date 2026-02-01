@@ -12,19 +12,19 @@ const pillars = [
     title: "Beauty",
     description:
       "Hair, nails, skin, and finishing touches delivered by skilled professionals who understand modern style and timeless elegance.",
-    image: "/services/hair-1.jpg",
+    image: "/home/beauty-1.jpg",
   },
   {
     title: "Wellness",
     description:
       "Moments of pause, recovery, and renewal—because looking good starts with feeling good.",
-    image: "/services/wellness-1.jpg",
+    image: "/home/wellness-1.jpg",
   },
   {
     title: "Experiences",
     description:
       "Curated pop-ups, themed days, collaborations, and limited-edition moments that turn routine appointments into something memorable.",
-    image: "/gallery/g-2.jpg",
+    image: "/home/experiences-1.jpg",
   },
 ];
 
@@ -39,19 +39,19 @@ const signatureExperiences = [
     title: "The Glow Edit",
     description:
       "A curated combination of services designed to work together for a complete look.",
-    image: "/gallery/g-1.jpg",
+    image: "/home/glow-edit-1.jpg",
   },
   {
     title: "Pop-Up Weekends",
     description:
       "Limited-time themes, guest artists, and trend-forward beauty moments.",
-    image: "/gallery/g-3.jpg",
+    image: "/home/weekends-1.jpg",
   },
   {
     title: "Bridal & Celebration",
     description:
       "Calm, confident preparation for life’s most photographed days.",
-    image: "/services/nails-1.jpg",
+    image: "/home/celebration-1.jpg",
   },
 ];
 
@@ -118,7 +118,7 @@ export default function HomePage() {
           </div>
           <div className="relative overflow-hidden rounded-[28px]">
             <Image
-              src="/services/hair-1.jpg"
+              src="/home/more-than-beauty-1.jpg"
               alt="Close-up moments of hair texture and glow"
               fill
               className="object-cover"
@@ -156,7 +156,7 @@ export default function HomePage() {
         <div className="container-glambox grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="relative overflow-hidden rounded-[28px]">
             <Image
-              src="/gallery/g-1.jpg"
+              src="/home/premium-1.jpg"
               alt="Diverse women enjoying premium beauty experiences"
               fill
               className="object-cover"
@@ -220,7 +220,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="absolute inset-0">
                 <Image
-                  src="/services/wellness-1.jpg"
+                  src="/home/wellness-1.jpg"
                   alt="Soft editorial background"
                   fill
                   className="object-cover"

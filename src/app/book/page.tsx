@@ -7,12 +7,11 @@ export default function BookPage() {
   return (
     <main className="ambient-bg section-pad">
       <div className="container-glambox">
-        <p className="badge text-xs">Book</p>
         <h1 className="mt-4 text-3xl font-semibold text-white">
           Choose your booking journey
         </h1>
         <p className="mt-3 text-[rgb(var(--text-300))]">
-          Start with a microsite to book the right service and therapist for you.
+          Start with a popup to book the right service and consultant for you.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {microsites.map((microsite) => (

@@ -7,12 +7,11 @@ export default function ExplorePage() {
   return (
     <main className="ambient-bg section-pad">
       <div className="container-glambox">
-        <p className="badge text-xs">Explore</p>
         <h1 className="mt-4 text-3xl font-semibold text-white">
-          Discover our microsites
+          Discover our popups
         </h1>
         <p className="mt-3 text-[rgb(var(--text-300))]">
-          Browse services, therapists, gallery inspiration, and curated shop picks.
+          Browse services, consultants, gallery inspiration, and curated shop picks.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {microsites.map((microsite) => (
