@@ -504,6 +504,16 @@
     width: 100%;
     background: linear-gradient(90deg, transparent, rgb(var(--border-2)), transparent);
   }
+
+  .microsite-header,
+  .microsite-header-nav {
+    background: linear-gradient(
+      90deg,
+      rgb(var(--accent) / 0.95) 0%,
+      rgb(var(--accent-2) / 0.85) 55%,
+      rgb(var(--accent-3) / 0.75) 100%
+    );
+  }
 }
 
 /* ---------------------------------------------
