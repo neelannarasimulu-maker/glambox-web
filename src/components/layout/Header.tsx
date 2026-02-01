@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Container from "./Container";
@@ -37,12 +38,14 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3" onClick={closeMobile}>
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-white text-black font-bold shadow-lg">
-              G
-            </span>
-            <span className="text-sm font-semibold tracking-tight text-white">
-              Glambox
-            </span>
+            <Image
+              src="/glambox-logo.jpg"
+              alt="Glambox"
+              width={160}
+              height={36}
+              className="h-9 w-auto rounded-md"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
