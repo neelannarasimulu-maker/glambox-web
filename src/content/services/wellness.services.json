@@ -1,8 +1,8 @@
 {
   "microsite": "wellness",
   "currency": "ZAR",
-  "pricingNote": "Pricing varies by therapist and add-ons. Prices shown are from.",
-  "categories": ["Massage", "Recovery"],
+  "pricingNote": "Pricing varies by therapist focus and session length. Prices shown are from.",
+  "categories": ["Massage", "Recovery", "Mindfulness"],
   "tiers": ["Essential", "Signature", "Luxe"],
   "services": [
     {
@@ -17,7 +17,77 @@
       "includes": ["Breathwork", "Targeted massage", "Aromatherapy"],
       "prepNotes": ["Arrive hydrated."],
       "afterCare": ["Plan a quiet 30 minutes after."],
-      "image": "/services/wellness-1.jpg"
+      "image": "/home/wellness-1.jpg"
+    },
+    {
+      "id": "deep-tissue",
+      "name": "Deep Tissue Recovery",
+      "category": "Massage",
+      "tier": "Luxe",
+      "fromPriceZar": 720,
+      "priceRangeZar": [720, 1100],
+      "durationMins": 75,
+      "outcome": "Focused pressure to release stubborn knots and tension.",
+      "includes": ["Consultation", "Slow pressure work", "Heat compress"],
+      "prepNotes": ["Let us know any injuries or areas to avoid."],
+      "afterCare": ["Drink extra water to support recovery."],
+      "image": "/home/premium-1.jpg"
+    },
+    {
+      "id": "flow-stretch",
+      "name": "Assisted Stretch + Flow",
+      "category": "Recovery",
+      "tier": "Essential",
+      "fromPriceZar": 480,
+      "priceRangeZar": [480, 720],
+      "durationMins": 50,
+      "outcome": "Improved mobility and eased tension through guided stretches.",
+      "includes": ["Mobility assessment", "Assisted stretches", "Breath cues"],
+      "prepNotes": ["Wear comfortable clothing for ease of movement."],
+      "afterCare": ["Repeat key stretches at home for best results."],
+      "image": "/home/experiences-1.jpg"
+    },
+    {
+      "id": "lymph-drain",
+      "name": "Lymphatic Drain Ritual",
+      "category": "Recovery",
+      "tier": "Signature",
+      "fromPriceZar": 680,
+      "priceRangeZar": [680, 980],
+      "durationMins": 60,
+      "outcome": "Light pressure to support circulation and reduce puffiness.",
+      "includes": ["Dry brush prep", "Gentle lymphatic massage", "Hydration cues"],
+      "prepNotes": ["Avoid heavy meals right before your session."],
+      "afterCare": ["Plan a low-key day to maintain the reset."],
+      "image": "/home/glow-edit-1.jpg"
+    },
+    {
+      "id": "aroma-restore",
+      "name": "Aroma Restore Ritual",
+      "category": "Mindfulness",
+      "tier": "Essential",
+      "fromPriceZar": 520,
+      "priceRangeZar": [520, 780],
+      "durationMins": 55,
+      "outcome": "A calming ritual that balances body and mind.",
+      "includes": ["Inhalation ritual", "Scalp + neck massage", "Grounding touch"],
+      "prepNotes": ["Share fragrance sensitivities in advance."],
+      "afterCare": ["Give yourself 10 minutes to ease back into the day."],
+      "image": "/home/more-than-beauty-1.jpg"
+    },
+    {
+      "id": "sound-reset",
+      "name": "Sound + Breath Reset",
+      "category": "Mindfulness",
+      "tier": "Luxe",
+      "fromPriceZar": 640,
+      "priceRangeZar": [640, 920],
+      "durationMins": 70,
+      "outcome": "A nervous-system reset using breath, sound, and gentle touch.",
+      "includes": ["Breath guidance", "Sound therapy", "Light grounding massage"],
+      "prepNotes": ["Arrive a few minutes early to settle in."],
+      "afterCare": ["Journal or hydrate to extend the calm."],
+      "image": "/home/beauty-1.jpg"
     }
   ]
 }

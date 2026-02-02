@@ -43,7 +43,14 @@
       "subtitle": "Manicures and design work tailored to your vibe.",
       "viewAllLabel": "View all services",
       "viewAllHref": "/explore/nails/services",
-      "featuredServiceIds": ["signature-mani"],
+      "featuredServiceIds": [
+        "express-mani",
+        "signature-mani",
+        "gel-overlay",
+        "spa-pedi",
+        "acrylic-full-set",
+        "signature-art"
+      ],
       "cardCtaLabel": "View details",
       "emptyState": {
         "title": "No nail services available yet",
@@ -72,7 +79,7 @@
       "subtitle": "Fresh sets and clean finishes from recent appointments.",
       "viewAllLabel": "View gallery",
       "viewAllHref": "/explore/nails/gallery",
-      "teaserIds": ["ng1"],
+      "teaserIds": ["nails-g1", "nails-g2", "nails-g3"],
       "emptyState": {
         "title": "Gallery coming soon",
         "body": "We’re capturing new looks for the Nail Atelier.",
@@ -84,7 +91,11 @@
       "subtitle": "Take-home care for glossy, long-lasting sets.",
       "viewAllLabel": "Shop all products",
       "viewAllHref": "/explore/nails/shop",
-      "teaserProductIds": ["prod-cuticle-oil"],
+      "teaserProductIds": [
+        "prod-cuticle-oil",
+        "prod-glass-topcoat",
+        "prod-hydra-hand-cream"
+      ],
       "cardCtaLabel": "View product",
       "emptyState": {
         "title": "Shop coming soon",
