@@ -1,10 +1,24 @@
 {
   "microsite": "nails",
   "currency": "ZAR",
-  "pricingNote": "Pricing depends on design complexity. Prices shown are from.",
-  "categories": ["Manicure", "Pedicure", "Design"],
+  "pricingNote": "Pricing depends on design complexity, length, and finish. Prices shown are from and may vary by artist.",
+  "categories": ["Manicure", "Pedicure", "Extensions", "Design"],
   "tiers": ["Essential", "Signature", "Luxe"],
   "services": [
+    {
+      "id": "express-mani",
+      "name": "Express Clean Manicure",
+      "category": "Manicure",
+      "tier": "Essential",
+      "fromPriceZar": 220,
+      "priceRangeZar": [220, 320],
+      "durationMins": 40,
+      "outcome": "Neat shaping, hydrated cuticles, and a tidy finish.",
+      "includes": ["Shape + file", "Cuticle care", "Hydration", "Polish or buff"],
+      "prepNotes": ["Remove existing gel if possible to keep timing smooth."],
+      "afterCare": ["Apply cuticle oil daily for lasting softness."],
+      "image": "/home/beauty-1.jpg"
+    },
     {
       "id": "signature-mani",
       "name": "Signature Manicure",
@@ -13,11 +27,81 @@
       "fromPriceZar": 320,
       "priceRangeZar": [320, 480],
       "durationMins": 60,
-      "outcome": "Clean shaping, nourishing care, and a glossy finish.",
-      "includes": ["Cuticle care", "Hydration treatment", "Polish"],
-      "prepNotes": ["Remove existing gel if possible."],
-      "afterCare": ["Apply cuticle oil daily."],
-      "image": "/services/hair-1.jpg"
+      "outcome": "Glossy, long-wear polish with refined nail care.",
+      "includes": ["Consultation", "Cuticle care", "Hydration treatment", "Polish"],
+      "prepNotes": ["Share any sensitivities to gel or polish removers."],
+      "afterCare": ["Use gloves for chores to extend wear."],
+      "image": "/home/glow-edit-1.jpg"
+    },
+    {
+      "id": "gel-overlay",
+      "name": "Gel Overlay + Strength",
+      "category": "Manicure",
+      "tier": "Signature",
+      "fromPriceZar": 420,
+      "priceRangeZar": [420, 650],
+      "durationMins": 75,
+      "outcome": "Strengthened natural nails with a high-shine finish.",
+      "includes": ["Nail prep", "Builder gel overlay", "Polish colour"],
+      "prepNotes": ["Let us know if you prefer a thinner or structured finish."],
+      "afterCare": ["Avoid picking the edges to protect the overlay."],
+      "image": "/home/premium-1.jpg"
+    },
+    {
+      "id": "spa-pedi",
+      "name": "Spa Pedicure",
+      "category": "Pedicure",
+      "tier": "Signature",
+      "fromPriceZar": 380,
+      "priceRangeZar": [380, 580],
+      "durationMins": 65,
+      "outcome": "Softened heels, refreshed soles, and polished toes.",
+      "includes": ["Foot soak", "Callus care", "Exfoliation", "Massage", "Polish"],
+      "prepNotes": ["Avoid shaving within 24 hours for comfort."],
+      "afterCare": ["Moisturise feet nightly to keep heels smooth."],
+      "image": "/home/experiences-1.jpg"
+    },
+    {
+      "id": "lux-pedi",
+      "name": "Luxe Pedicure Ritual",
+      "category": "Pedicure",
+      "tier": "Luxe",
+      "fromPriceZar": 520,
+      "priceRangeZar": [520, 780],
+      "durationMins": 80,
+      "outcome": "A spa-level reset with extra massage and hydration.",
+      "includes": ["Aromatherapy soak", "Intensive callus care", "Mask", "Extended massage", "Polish"],
+      "prepNotes": ["Let us know if you prefer deep or gentle massage."],
+      "afterCare": ["Apply foot balm before bed for ongoing softness."],
+      "image": "/home/weekends-1.jpg"
+    },
+    {
+      "id": "acrylic-full-set",
+      "name": "Acrylic Full Set",
+      "category": "Extensions",
+      "tier": "Luxe",
+      "fromPriceZar": 650,
+      "priceRangeZar": [650, 980],
+      "durationMins": 120,
+      "outcome": "Structured length with crisp shaping and long wear.",
+      "includes": ["Consultation", "Extension sculpt", "Shape + finish", "Polish"],
+      "prepNotes": ["Bring inspo images to align on length and shape."],
+      "afterCare": ["Book infills every 2–3 weeks for best upkeep."],
+      "image": "/home/celebration-1.jpg"
+    },
+    {
+      "id": "signature-art",
+      "name": "Signature Nail Art",
+      "category": "Design",
+      "tier": "Luxe",
+      "fromPriceZar": 180,
+      "priceRangeZar": [180, 420],
+      "durationMins": 30,
+      "outcome": "Custom details that elevate any manicure or set.",
+      "includes": ["Design consult", "Hand-painted or chrome accents"],
+      "prepNotes": ["Share your colour palette and references in advance."],
+      "afterCare": ["Avoid harsh chemicals to protect art details."],
+      "image": "/home/more-than-beauty-1.jpg"
     }
   ]
 }

@@ -43,7 +43,14 @@
       "subtitle": "Massage and recovery care curated to reset your energy.",
       "viewAllLabel": "View all services",
       "viewAllHref": "/explore/wellness/services",
-      "featuredServiceIds": ["reset-massage"],
+      "featuredServiceIds": [
+        "reset-massage",
+        "deep-tissue",
+        "flow-stretch",
+        "lymph-drain",
+        "aroma-restore",
+        "sound-reset"
+      ],
       "cardCtaLabel": "View details",
       "emptyState": {
         "title": "No wellness services available yet",
@@ -72,7 +79,7 @@
       "subtitle": "Restorative moments and spaces that feel calm and grounded.",
       "viewAllLabel": "View gallery",
       "viewAllHref": "/explore/wellness/gallery",
-      "teaserIds": ["wg1"],
+      "teaserIds": ["wellness-g1", "wellness-g2", "wellness-g3"],
       "emptyState": {
         "title": "Gallery coming soon",
         "body": "We’re capturing new wellness moments for the lounge.",
@@ -84,7 +91,11 @@
       "subtitle": "Products that extend your recovery ritual at home.",
       "viewAllLabel": "Shop all products",
       "viewAllHref": "/explore/wellness/shop",
-      "teaserProductIds": ["prod-calm-balm"],
+      "teaserProductIds": [
+        "prod-calm-balm",
+        "prod-muscle-soak",
+        "prod-breath-oil"
+      ],
       "cardCtaLabel": "View product",
       "emptyState": {
         "title": "Shop coming soon",

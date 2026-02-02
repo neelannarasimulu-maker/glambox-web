@@ -1,6 +1,41 @@
 {
   "microsite": "nails",
   "items": [
-    { "id": "ng1", "image": "/gallery/g-1.jpg", "caption": "Glossed nude set", "tags": ["manicure", "neutral"] }
+    {
+      "id": "nails-g1",
+      "image": "/home/beauty-1.jpg",
+      "caption": "Glossed nude set with a soft almond shape.",
+      "tags": ["manicure", "neutral", "clean"]
+    },
+    {
+      "id": "nails-g2",
+      "image": "/home/celebration-1.jpg",
+      "caption": "Bold chrome accents for a statement set.",
+      "tags": ["chrome", "statement", "luxe"]
+    },
+    {
+      "id": "nails-g3",
+      "image": "/home/glow-edit-1.jpg",
+      "caption": "Fresh gel overlay with glossy finish.",
+      "tags": ["gel", "shine", "longwear"]
+    },
+    {
+      "id": "nails-g4",
+      "image": "/home/experiences-1.jpg",
+      "caption": "Soft pink ombré with clean detailing.",
+      "tags": ["ombre", "design", "soft"]
+    },
+    {
+      "id": "nails-g5",
+      "image": "/home/premium-1.jpg",
+      "caption": "Crisp square tips with micro-art accents.",
+      "tags": ["art", "tips", "precision"]
+    },
+    {
+      "id": "nails-g6",
+      "image": "/home/weekends-1.jpg",
+      "caption": "Fresh pedicure glow with smooth heels.",
+      "tags": ["pedicure", "care", "refresh"]
+    }
   ]
 }
