@@ -95,6 +95,78 @@
       "rating": 4.6,
       "reviewsCount": 63,
       "locations": ["Cape Town"]
+    },
+    {
+      "id": "t-zuri",
+      "name": "Zuri L.",
+      "roles": ["Nail Technician", "Gel Specialist"],
+      "photo": "/home/beauty-1.jpg",
+      "bio": "Clean prep and glossy finishes with a focus on nail health and long wear.",
+      "specialties": ["Gel overlays", "Cuticle care", "High-shine finishes"],
+      "vibeTags": ["Detail-led", "Gentle prep", "Glossy finish"],
+      "rating": 4.8,
+      "reviewsCount": 86,
+      "locations": ["Cape Town", "Johannesburg"]
+    },
+    {
+      "id": "t-kali",
+      "name": "Kali N.",
+      "roles": ["Nail Technician", "Pedicure Specialist"],
+      "photo": "/home/experiences-1.jpg",
+      "bio": "Spa-level pedicures with calming care and a luxe, polished finish.",
+      "specialties": ["Spa pedicures", "Callus care", "Foot massage"],
+      "vibeTags": ["Soothing touch", "Footcare focus", "Relaxed energy"],
+      "rating": 4.7,
+      "reviewsCount": 71,
+      "locations": ["Durban"]
+    },
+    {
+      "id": "t-maya",
+      "name": "Maya T.",
+      "roles": ["Nail Technician", "Extension Specialist"],
+      "photo": "/home/glow-edit-1.jpg",
+      "bio": "Structured extensions, clean shaping, and custom art details that last.",
+      "specialties": ["Acrylic extensions", "Structured gel", "Custom art"],
+      "vibeTags": ["Precision", "Creative sets", "Long-wear"],
+      "rating": 4.9,
+      "reviewsCount": 92,
+      "locations": ["Johannesburg", "Pretoria"]
+    },
+    {
+      "id": "t-iman",
+      "name": "Iman R.",
+      "roles": ["Wellness Consultant", "Massage Specialist"],
+      "photo": "/home/wellness-1.jpg",
+      "bio": "Balances calming touch with targeted recovery work for full-body relief.",
+      "specialties": ["Reset massage", "Aromatherapy", "Tension release"],
+      "vibeTags": ["Grounded energy", "Restorative", "Calm pacing"],
+      "rating": 4.8,
+      "reviewsCount": 104,
+      "locations": ["Cape Town"]
+    },
+    {
+      "id": "t-sage",
+      "name": "Sage D.",
+      "roles": ["Wellness Consultant", "Recovery Specialist"],
+      "photo": "/home/premium-1.jpg",
+      "bio": "Recovery-focused sessions that release tightness and restore circulation.",
+      "specialties": ["Deep tissue", "Mobility work", "Lymphatic flow"],
+      "vibeTags": ["Focused care", "Athlete-friendly", "Rebalancing"],
+      "rating": 4.7,
+      "reviewsCount": 88,
+      "locations": ["Johannesburg", "Durban"]
+    },
+    {
+      "id": "t-lara",
+      "name": "Lara K.",
+      "roles": ["Wellness Consultant", "Mindfulness Coach"],
+      "photo": "/home/more-than-beauty-1.jpg",
+      "bio": "Slow, breath-led rituals that reset the nervous system and quiet the mind.",
+      "specialties": ["Breathwork", "Sound reset", "Calming rituals"],
+      "vibeTags": ["Soft spoken", "Grounding", "Mind-body focus"],
+      "rating": 4.9,
+      "reviewsCount": 96,
+      "locations": ["Pretoria", "Cape Town"]
     }
   ]
 }

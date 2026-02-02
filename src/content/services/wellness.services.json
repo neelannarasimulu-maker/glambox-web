@@ -1,7 +1,7 @@
 {
   "microsite": "wellness",
   "currency": "ZAR",
-  "pricingNote": "Pricing varies by therapist focus and session length. Prices shown are from.",
+  "pricingNote": "Pricing varies by consultant focus and session length. Prices shown are from.",
   "categories": ["Massage", "Recovery", "Mindfulness"],
   "tiers": ["Essential", "Signature", "Luxe"],
   "services": [

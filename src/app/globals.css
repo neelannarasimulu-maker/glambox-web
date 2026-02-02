@@ -559,6 +559,12 @@
     --ring: 212 175 55;
     --border: 128 140 85 / 0.18;
     --border-strong: 128 140 85 / 0.28;
+    --accent-gradient: linear-gradient(90deg,
+      rgb(128 140 85) 0%,
+      rgb(212 175 55) 55%,
+      rgb(248 236 218) 100%
+    );
+    --btn-primary: var(--accent-gradient);
   }
 
   body[data-theme="bridal"],

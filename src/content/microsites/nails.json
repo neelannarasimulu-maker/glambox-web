@@ -28,14 +28,14 @@
   ],
   "nav": [
     { "key": "services", "label": "Services", "href": "/explore/nails/services" },
-    { "key": "therapists", "label": "Therapists", "href": "/explore/nails/therapists" },
+    { "key": "therapists", "label": "Nail Technicians", "href": "/explore/nails/therapists" },
     { "key": "gallery", "label": "Gallery", "href": "/explore/nails/gallery" },
     { "key": "shop", "label": "Shop", "href": "/explore/nails/shop" },
     { "key": "book", "label": "Book Nails", "href": "/book/nails" }
   ],
   "therapistsPage": {
-    "title": "Meet the Nail Atelier team",
-    "subtitle": "Browse therapists who specialise in nail care."
+    "title": "Meet the Nail Atelier technicians",
+    "subtitle": "Browse nail technicians who specialise in nail care."
   },
   "sections": {
     "services": {
@@ -59,17 +59,17 @@
       }
     },
     "therapists": {
-      "title": "Meet the Nail Artists",
-      "subtitle": "Select your artist or let Glambox match you to the right hands.",
-      "viewAllLabel": "View all therapists",
+      "title": "Meet the Nail Technicians",
+      "subtitle": "Select your technician or let Glambox match you to the right hands.",
+      "viewAllLabel": "View all technicians",
       "viewAllHref": "/explore/nails/therapists",
       "featuredTherapists": {
-        "therapistIds": [],
-        "note": "Therapists will be added once schedules are finalised."
+        "therapistIds": ["t-zuri", "t-kali", "t-maya"],
+        "note": "Technician availability will be confirmed with schedules."
       },
       "cardCtaLabel": "View profile",
       "emptyState": {
-        "title": "No Nail artists available yet",
+        "title": "No nail technicians available yet",
         "body": "We’re finalising the roster. Browse services or check back soon.",
         "cta": { "label": "Browse services", "href": "/explore/nails/services" }
       }
@@ -124,7 +124,7 @@
   },
   "cta": {
     "headline": "Ready for a fresh set?",
-    "body": "Choose your service, pair with an artist, and lock in a time that suits you.",
+    "body": "Choose your service, pair with a technician, and lock in a time that suits you.",
     "primaryCta": { "label": "Book Nails", "href": "/book/nails" },
     "secondaryCta": { "label": "Browse Services", "href": "/explore/nails/services" }
   }

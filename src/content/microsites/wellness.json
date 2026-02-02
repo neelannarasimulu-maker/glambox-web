@@ -28,14 +28,14 @@
   ],
   "nav": [
     { "key": "services", "label": "Services", "href": "/explore/wellness/services" },
-    { "key": "therapists", "label": "Therapists", "href": "/explore/wellness/therapists" },
+    { "key": "therapists", "label": "Wellness Consultants", "href": "/explore/wellness/therapists" },
     { "key": "gallery", "label": "Gallery", "href": "/explore/wellness/gallery" },
     { "key": "shop", "label": "Shop", "href": "/explore/wellness/shop" },
     { "key": "book", "label": "Book Wellness", "href": "/book/wellness" }
   ],
   "therapistsPage": {
-    "title": "Meet the Wellness Lounge team",
-    "subtitle": "Browse therapists who specialise in wellness rituals."
+    "title": "Meet the Wellness Lounge consultants",
+    "subtitle": "Browse wellness consultants who specialise in wellness rituals."
   },
   "sections": {
     "services": {
@@ -59,17 +59,17 @@
       }
     },
     "therapists": {
-      "title": "Meet the Wellness Therapists",
-      "subtitle": "Find a therapist who matches your pace and recovery goals.",
-      "viewAllLabel": "View all therapists",
+      "title": "Meet the Wellness Consultants",
+      "subtitle": "Find a consultant who matches your pace and recovery goals.",
+      "viewAllLabel": "View all consultants",
       "viewAllHref": "/explore/wellness/therapists",
       "featuredTherapists": {
-        "therapistIds": [],
-        "note": "Therapists will be added once schedules are finalised."
+        "therapistIds": ["t-iman", "t-sage", "t-lara"],
+        "note": "Consultant availability will be confirmed with schedules."
       },
       "cardCtaLabel": "View profile",
       "emptyState": {
-        "title": "No Wellness therapists available yet",
+        "title": "No wellness consultants available yet",
         "body": "We’re preparing schedules. Browse services or check back soon.",
         "cta": { "label": "Browse services", "href": "/explore/wellness/services" }
       }
@@ -124,7 +124,7 @@
   },
   "cta": {
     "headline": "Ready to reset?",
-    "body": "Choose a ritual, match with a therapist, and book your restorative moment.",
+    "body": "Choose a ritual, match with a consultant, and book your restorative moment.",
     "primaryCta": { "label": "Book Wellness", "href": "/book/wellness" },
     "secondaryCta": { "label": "Browse Services", "href": "/explore/wellness/services" }
   }

@@ -7,6 +7,12 @@
     { "therapistId": "t-zahra", "microsite": "hair", "serviceIds": ["half-foils", "full-foils", "balayage", "balayage-root"] },
     { "therapistId": "t-thando", "microsite": "hair", "serviceIds": ["wig-weave-install", "full-house-weave"] },
     { "therapistId": "t-mariam", "microsite": "hair", "serviceIds": ["wash-blow", "wash-cut-blow", "silk-press"] },
-    { "therapistId": "t-jade", "microsite": "hair", "serviceIds": ["ladies-cut", "wash-cut-blow"] }
+    { "therapistId": "t-jade", "microsite": "hair", "serviceIds": ["ladies-cut", "wash-cut-blow"] },
+    { "therapistId": "t-zuri", "microsite": "nails", "serviceIds": ["express-mani", "signature-mani", "gel-overlay"] },
+    { "therapistId": "t-kali", "microsite": "nails", "serviceIds": ["spa-pedi", "lux-pedi", "express-mani"] },
+    { "therapistId": "t-maya", "microsite": "nails", "serviceIds": ["acrylic-full-set", "signature-art", "gel-overlay"] },
+    { "therapistId": "t-iman", "microsite": "wellness", "serviceIds": ["reset-massage", "aroma-restore", "lymph-drain"] },
+    { "therapistId": "t-sage", "microsite": "wellness", "serviceIds": ["deep-tissue", "flow-stretch", "lymph-drain"] },
+    { "therapistId": "t-lara", "microsite": "wellness", "serviceIds": ["sound-reset", "aroma-restore", "reset-massage"] }
   ]
 }

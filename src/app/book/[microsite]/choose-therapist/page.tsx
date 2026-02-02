@@ -8,12 +8,14 @@ import {
   getTherapistsForMicrosite,
   getTherapistsForService,
 } from "@/lib/content/therapists";
+import { getProviderCopy } from "@/lib/content/provider-copy";
 
 export default function ChooseTherapistPage() {
   const params = useParams<{ microsite: string }>();
   const searchParams = useSearchParams();
   const microsite = params?.microsite ?? "";
   const serviceId = searchParams.get("serviceId") ?? "";
+  const providerCopy = getProviderCopy(microsite);
 
   const therapists = useMemo(() => {
     if (!microsite) return [];
@@ -34,10 +36,10 @@ export default function ChooseTherapistPage() {
       <div className="container-glambox">
         <div>
           <h1 className="mt-4 text-3xl font-semibold heading-accent">
-            Hair Stylists
+            {providerCopy.title}
           </h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">
-            Select the stylist you’d like to book with.
+            Select the {providerCopy.singular} you’d like to book with.
           </p>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
