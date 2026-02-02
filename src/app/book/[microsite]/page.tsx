@@ -5,11 +5,13 @@ import { useEffect } from "react";
 import { useParams } from "next/navigation";
 import { writeBookingDraft } from "@/lib/booking";
 import { getMicrosite } from "@/lib/content/microsite";
+import { getProviderCopy } from "@/lib/content/provider-copy";
 
 export default function BookingLauncherPage() {
   const params = useParams<{ microsite: string }>();
   const microsite = params?.microsite ?? "";
   const config = getMicrosite(microsite);
+  const providerCopy = getProviderCopy(microsite);
 
   useEffect(() => {
     if (microsite) {
@@ -37,8 +39,8 @@ export default function BookingLauncherPage() {
             Choose how you want to book
           </h1>
           <p className="mt-3 text-[rgb(var(--text-300))]">
-            Start with a service or start with a hair stylist. We’ll guide you to the
-            perfect match.
+            Start with a service or start with a {providerCopy.singular}. We’ll guide you to
+            the perfect match.
           </p>
         </div>
 
@@ -46,7 +48,7 @@ export default function BookingLauncherPage() {
           <div className="card-accent card-hover flex h-full flex-col gap-3 p-6">
             <h2 className="text-xl font-semibold heading-accent">Book by Service</h2>
             <p className="text-sm text-[rgb(var(--text-300))]">
-              Pick the outcome you want, then choose the best hair stylist and time.
+              Pick the outcome you want, then choose the best {providerCopy.singular} and time.
             </p>
             <Link
               href={`/book/${config.id}/choose-service`}
@@ -56,15 +58,17 @@ export default function BookingLauncherPage() {
             </Link>
           </div>
           <div className="card-accent card-hover flex h-full flex-col gap-3 p-6">
-            <h2 className="text-xl font-semibold heading-accent">Book by Hair Stylist</h2>
+            <h2 className="text-xl font-semibold heading-accent">
+              Book by {providerCopy.label}
+            </h2>
             <p className="text-sm text-[rgb(var(--text-300))]">
-              Choose a stylist you love, then select the right service.
+              Choose a {providerCopy.singular} you love, then select the right service.
             </p>
             <Link
               href={`/book/${config.id}/choose-therapist`}
               className="btn-accent mt-4 inline-flex self-start"
             >
-              Start with a hair stylist
+              Start with a {providerCopy.singular}
             </Link>
           </div>
         </div>

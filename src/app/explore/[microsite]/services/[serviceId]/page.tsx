@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getMicrosite } from "@/lib/content/microsite";
 import { getServiceById, getServicesByMicrosite } from "@/lib/content/services";
 import { getTherapistsForService } from "@/lib/content/therapists";
+import { getProviderCopy } from "@/lib/content/provider-copy";
 
 const formatZar = (value: number) => `R${value.toLocaleString("en-ZA")}`;
 
@@ -22,6 +23,7 @@ export default async function ServiceDetailPage({
   }
 
   const therapists = getTherapistsForService(config.id, service.id);
+  const providerCopy = getProviderCopy(config.id);
 
   return (
     <main className="container-glambox section-pad">
@@ -82,7 +84,7 @@ export default async function ServiceDetailPage({
             <div className="p-6">
               <h2 className="text-lg font-semibold heading-accent">Book this service</h2>
               <p className="mt-2 text-sm text-[rgb(var(--text-300))]">
-                Choose a therapist and time that works for you.
+                Choose a {providerCopy.singular} and time that works for you.
               </p>
               <Link
                 href={`/book/${config.id}/choose-therapist?serviceId=${service.id}`}
@@ -108,7 +110,7 @@ export default async function ServiceDetailPage({
                   </div>
                 ))
               ) : (
-                <p>No therapists assigned yet.</p>
+                <p>No {providerCopy.plural} assigned yet.</p>
               )}
             </div>
           </div>

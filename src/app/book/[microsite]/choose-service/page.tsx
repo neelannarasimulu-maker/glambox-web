@@ -6,6 +6,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import { writeBookingDraft } from "@/lib/booking";
 import { getServicesByMicrosite } from "@/lib/content/services";
 import { getServiceIdsForTherapistMicrosite } from "@/lib/content/therapists";
+import { getProviderCopy } from "@/lib/content/provider-copy";
 
 const formatZar = (value: number) => `R${value.toLocaleString("en-ZA")}`;
 
@@ -15,6 +16,7 @@ export default function ChooseServicePage() {
   const microsite = params?.microsite ?? "";
   const therapistId = searchParams.get("therapistId") ?? "";
   const servicesData = getServicesByMicrosite(microsite);
+  const providerCopy = getProviderCopy(microsite);
 
   const services = useMemo(() => {
     if (!servicesData) return [];
@@ -81,7 +83,7 @@ export default function ChooseServicePage() {
                   }
                   className="btn-accent mt-5 inline-flex"
                 >
-                  Choose hair stylist
+                  Choose {providerCopy.singular}
                 </Link>
               )}
             </div>

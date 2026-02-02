@@ -1,7 +1,7 @@
 {
   "microsite": "nails",
   "currency": "ZAR",
-  "pricingNote": "Pricing depends on design complexity, length, and finish. Prices shown are from and may vary by artist.",
+  "pricingNote": "Pricing depends on design complexity, length, and finish. Prices shown are from and may vary by technician.",
   "categories": ["Manicure", "Pedicure", "Extensions", "Design"],
   "tiers": ["Essential", "Signature", "Luxe"],
   "services": [

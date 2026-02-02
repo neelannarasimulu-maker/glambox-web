@@ -7,6 +7,7 @@ import { appendBooking, clearBookingDraft, readBookingDraft } from "@/lib/bookin
 import { getServiceById } from "@/lib/content/services";
 import { getTherapistById } from "@/lib/content/therapists";
 import { getMicrosite } from "@/lib/content/microsite";
+import { getProviderCopy } from "@/lib/content/provider-copy";
 
 export default function ConfirmBookingPage() {
   const params = useParams<{ microsite: string }>();
@@ -25,6 +26,7 @@ export default function ConfirmBookingPage() {
     ? getTherapistById(draft.therapistId)
     : null;
   const config = getMicrosite(microsite);
+  const providerCopy = getProviderCopy(microsite);
 
   useEffect(() => {
     if (confirmed && draft) {
@@ -57,7 +59,8 @@ export default function ConfirmBookingPage() {
               <strong className="text-white">Service:</strong> {service?.name ?? "TBD"}
             </div>
             <div>
-              <strong className="text-white">Therapist:</strong> {therapist?.name ?? "TBD"}
+              <strong className="text-white">{providerCopy.label}:</strong>{" "}
+              {therapist?.name ?? "TBD"}
             </div>
             <div>
               <strong className="text-white">Time:</strong> {draft.datetime ?? "TBD"}
