@@ -4,6 +4,7 @@ import path from "node:path";
 const ROOT = process.cwd();
 
 const SIZE_MAP = {
+  landing: { width: 2400, height: 1600, container: "microsite landing hero (full bleed)" },
   gallery: { width: 1500, height: 1000, container: "gallery cards (h-56/h-64)" },
   services: { width: 1500, height: 1000, container: "service cards/details (h-56)" },
   products: { width: 1200, height: 800, container: "shop cards/details (h-40/h-80)" },
@@ -11,6 +12,41 @@ const SIZE_MAP = {
 };
 
 const dataSources = [
+  {
+    type: "landing",
+    microsite: "hair",
+    file: "src/content/microsites/hair.json",
+    getItems: (data) => [data],
+    getImage: (item) => item.heroImage,
+    getPrompt: (item) =>
+      `Landing hero image for ${item.name}: ${item.tagline} Editorial hair studio scene with luxe lighting, confident styling, and modern salon texture.`,
+  },
+  {
+    type: "landing",
+    microsite: "nails",
+    file: "src/content/microsites/nails.json",
+    getItems: (data) => [data],
+    getImage: (item) => item.heroImage,
+    getPrompt: (item) =>
+      `Landing hero image for ${item.name}: ${item.tagline} Polished nail studio scene, clean surfaces, soft daylight, premium beauty editorial.`,
+  },
+  {
+    type: "landing",
+    microsite: "wellness",
+    file: "src/content/microsites/wellness.json",
+    getItems: (data) => [data],
+    getImage: (item) => item.heroImage,
+    getPrompt: (item) =>
+      `Landing hero image for ${item.name}: ${item.tagline} Calm wellness lounge with layered textiles, warm neutrals, and restorative lighting.`,
+  },
+  {
+    type: "gallery",
+    microsite: "hair",
+    file: "src/content/gallery/hair.gallery.json",
+    itemsKey: "items",
+    getPrompt: (item) =>
+      `Hair artistry photo: ${item.caption} Tags: ${item.tags.join(", ")}. Premium salon lighting, polished finish, editorial focus on texture and shine.`,
+  },
   {
     type: "gallery",
     microsite: "nails",
@@ -26,6 +62,14 @@ const dataSources = [
     itemsKey: "items",
     getPrompt: (item) =>
       `Wellness lounge scene: ${item.caption} Tags: ${item.tags.join(", ")}. Calm, restorative atmosphere, soft lighting, spa textures.`,
+  },
+  {
+    type: "services",
+    microsite: "hair",
+    file: "src/content/services/hair.services.json",
+    itemsKey: "services",
+    getPrompt: (item) =>
+      `Hair service visual for "${item.name}": ${item.outcome} Modern studio setting, focus on hair texture and finish, premium editorial styling.`,
   },
   {
     type: "services",
@@ -45,6 +89,14 @@ const dataSources = [
   },
   {
     type: "products",
+    microsite: "hair",
+    file: "src/content/products/hair.products.json",
+    itemsKey: "products",
+    getPrompt: (item) =>
+      `Product still-life for "${item.name}": ${item.shortDesc} Haircare editorial styling, glossy reflections, clean background, soft shadows.`,
+  },
+  {
+    type: "products",
     microsite: "nails",
     file: "src/content/products/nails.products.json",
     itemsKey: "products",
@@ -61,10 +113,21 @@ const dataSources = [
   },
   {
     type: "therapists",
+    microsite: "hair",
+    file: "src/content/therapists/therapists.json",
+    itemsKey: "therapists",
+    filter: (item) => item.roles.some((role) => role.toLowerCase().includes("hair")),
+    getImage: (item) => item.photo,
+    getPrompt: (item) =>
+      `Portrait of a hair stylist: ${item.name}. ${item.bio} Modern salon portrait, warm premium lighting, confident and polished.`,
+  },
+  {
+    type: "therapists",
     microsite: "nails",
     file: "src/content/therapists/therapists.json",
     itemsKey: "therapists",
     filter: (item) => item.roles.some((role) => role.toLowerCase().includes("nail")),
+    getImage: (item) => item.photo,
     getPrompt: (item) =>
       `Portrait of a nail technician: ${item.name}. ${item.bio} Clean studio portrait, professional attire, warm premium lighting.`,
   },
@@ -74,6 +137,7 @@ const dataSources = [
     file: "src/content/therapists/therapists.json",
     itemsKey: "therapists",
     filter: (item) => item.roles.some((role) => role.toLowerCase().includes("wellness")),
+    getImage: (item) => item.photo,
     getPrompt: (item) =>
       `Portrait of a wellness consultant: ${item.name}. ${item.bio} Calm, grounded expression, spa-inspired backdrop, soft diffused light.`,
   },
@@ -95,13 +159,14 @@ const main = async () => {
 
   for (const source of dataSources) {
     const data = await readJson(source.file);
-    const items = data[source.itemsKey] ?? [];
+    const items = source.getItems ? source.getItems(data) : data[source.itemsKey] ?? [];
     for (const item of items) {
       if (source.filter && !source.filter(item)) continue;
+      const image = source.getImage ? source.getImage(item) : item.image;
       rows.push({
         microsite: source.microsite,
         type: source.type,
-        image: item.image,
+        image,
         size: formatSize(source.type),
         prompt: source.getPrompt(item),
       });
@@ -113,7 +178,7 @@ const main = async () => {
   );
 
   const output = [
-    "# AI Image Briefs (Nails + Wellness)",
+    "# AI Image Briefs (Nails + Wellness + Hair)",
     "",
     "Use the prompts below to generate images that match the container sizes in the UI.",
     "",
