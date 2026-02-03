@@ -11,6 +11,11 @@ const SIZE_MAP = {
   therapists: { width: 1500, height: 1000, container: "therapist cards (h-56)" },
 };
 
+// AI_IMAGE_BRIEFS.md is generated from this script; keep it out of version control.
+const POPUP_AESTHETIC =
+  "Glambox pop-up studio, modular stations, branded signage, curated props, warm neutral palette, soft diffused lighting, premium editorial styling.";
+const UNIQUE_SEED = "Unique seed: {{seed}}.";
+
 const dataSources = [
   {
     type: "landing",
@@ -143,6 +148,9 @@ const dataSources = [
   },
 ];
 
+const addPopupContext = (prompt) =>
+  `${prompt} Popup aesthetic: ${POPUP_AESTHETIC} ${UNIQUE_SEED}`;
+
 const readJson = async (relativePath) => {
   const fullPath = path.join(ROOT, relativePath);
   const raw = await fs.readFile(fullPath, "utf-8");
@@ -168,7 +176,7 @@ const main = async () => {
         type: source.type,
         image,
         size: formatSize(source.type),
-        prompt: source.getPrompt(item),
+        prompt: addPopupContext(source.getPrompt(item)),
       });
     }
   }
@@ -181,6 +189,10 @@ const main = async () => {
     "# AI Image Briefs (Nails + Wellness + Hair)",
     "",
     "Use the prompts below to generate images that match the container sizes in the UI.",
+    "## Popup alignment + uniqueness",
+    "",
+    `- Every image should feel like a Glambox pop-up: ${POPUP_AESTHETIC}`,
+    `- Replace {{seed}} in every prompt with a fresh unique token (timestamp or UUID) each time you run it in ChatGPT to force distinct outputs.`,
     "",
     "| Microsite | Usage | Image Path | Target Size | Prompt |",
     "| --- | --- | --- | --- | --- |",
