@@ -17,7 +17,7 @@
       "includes": ["Shape + file", "Cuticle care", "Hydration", "Polish or buff"],
       "prepNotes": ["Remove existing gel if possible to keep timing smooth."],
       "afterCare": ["Apply cuticle oil daily for lasting softness."],
-      "image": "/home/beauty-1.jpg"
+      "image": "/services/nails/beauty-1.jpg"
     },
     {
       "id": "signature-mani",
@@ -31,7 +31,7 @@
       "includes": ["Consultation", "Cuticle care", "Hydration treatment", "Polish"],
       "prepNotes": ["Share any sensitivities to gel or polish removers."],
       "afterCare": ["Use gloves for chores to extend wear."],
-      "image": "/home/glow-edit-1.jpg"
+      "image": "/services/nails/glow-edit-1.jpg"
     },
     {
       "id": "gel-overlay",
@@ -45,7 +45,7 @@
       "includes": ["Nail prep", "Builder gel overlay", "Polish colour"],
       "prepNotes": ["Let us know if you prefer a thinner or structured finish."],
       "afterCare": ["Avoid picking the edges to protect the overlay."],
-      "image": "/home/premium-1.jpg"
+      "image": "/services/nails/premium-1.jpg"
     },
     {
       "id": "spa-pedi",
@@ -59,7 +59,7 @@
       "includes": ["Foot soak", "Callus care", "Exfoliation", "Massage", "Polish"],
       "prepNotes": ["Avoid shaving within 24 hours for comfort."],
       "afterCare": ["Moisturise feet nightly to keep heels smooth."],
-      "image": "/home/experiences-1.jpg"
+      "image": "/services/nails/experiences-1.jpg"
     },
     {
       "id": "lux-pedi",
@@ -73,7 +73,7 @@
       "includes": ["Aromatherapy soak", "Intensive callus care", "Mask", "Extended massage", "Polish"],
       "prepNotes": ["Let us know if you prefer deep or gentle massage."],
       "afterCare": ["Apply foot balm before bed for ongoing softness."],
-      "image": "/home/weekends-1.jpg"
+      "image": "/services/nails/weekends-1.jpg"
     },
     {
       "id": "acrylic-full-set",
@@ -87,7 +87,7 @@
       "includes": ["Consultation", "Extension sculpt", "Shape + finish", "Polish"],
       "prepNotes": ["Bring inspo images to align on length and shape."],
       "afterCare": ["Book infills every 2–3 weeks for best upkeep."],
-      "image": "/home/celebration-1.jpg"
+      "image": "/services/nails/celebration-1.jpg"
     },
     {
       "id": "signature-art",
@@ -101,7 +101,7 @@
       "includes": ["Design consult", "Hand-painted or chrome accents"],
       "prepNotes": ["Share your colour palette and references in advance."],
       "afterCare": ["Avoid harsh chemicals to protect art details."],
-      "image": "/home/more-than-beauty-1.jpg"
+      "image": "/services/nails/more-than-beauty-1.jpg"
     }
   ]
 }
