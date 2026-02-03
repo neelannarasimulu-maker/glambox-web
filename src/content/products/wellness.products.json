@@ -7,7 +7,7 @@
       "name": "Calm Balm",
       "brand": "Glambox Select",
       "priceZar": 190,
-      "image": "/home/wellness-1.jpg",
+      "image": "/shop/wellness/wellness-1.jpg",
       "shortDesc": "Soothing blend for post-treatment care.",
       "details": ["Lavender", "Soft finish", "Travel friendly"],
       "tags": ["calm", "recovery"]
@@ -17,7 +17,7 @@
       "name": "Muscle Reset Soak",
       "brand": "Glambox Select",
       "priceZar": 210,
-      "image": "/home/premium-1.jpg",
+      "image": "/shop/wellness/premium-1.jpg",
       "shortDesc": "Mineral soak to ease tired muscles.",
       "details": ["Magnesium rich", "Post-workout", "Aromatherapy salts"],
       "tags": ["recovery", "soak", "muscle"]
@@ -27,7 +27,7 @@
       "name": "Breath Ritual Oil",
       "brand": "Glambox Select",
       "priceZar": 175,
-      "image": "/home/experiences-1.jpg",
+      "image": "/shop/wellness/experiences-1.jpg",
       "shortDesc": "Grounding essential oil blend for reset moments.",
       "details": ["Roll-on", "Cedar + citrus", "Pocket size"],
       "tags": ["breath", "balance", "calm"]
@@ -37,7 +37,7 @@
       "name": "Recovery Body Butter",
       "brand": "Glambox Select",
       "priceZar": 240,
-      "image": "/home/beauty-1.jpg",
+      "image": "/shop/wellness/beauty-1.jpg",
       "shortDesc": "Deep hydration for skin after massage or bath.",
       "details": ["Rich moisture", "Glow finish", "Night ritual"],
       "tags": ["hydrate", "skin", "ritual"]
@@ -47,7 +47,7 @@
       "name": "Stretch Support Band",
       "brand": "Glambox Select",
       "priceZar": 160,
-      "image": "/home/glow-edit-1.jpg",
+      "image": "/shop/wellness/glow-edit-1.jpg",
       "shortDesc": "Gentle support for at-home mobility sessions.",
       "details": ["Light resistance", "Portable", "Recovery kit"],
       "tags": ["stretch", "mobility", "support"]
@@ -57,7 +57,7 @@
       "name": "Evening Herbal Tea",
       "brand": "Glambox Select",
       "priceZar": 120,
-      "image": "/home/more-than-beauty-1.jpg",
+      "image": "/shop/wellness/more-than-beauty-1.jpg",
       "shortDesc": "A calming cup to extend the reset.",
       "details": ["Caffeine free", "Chamomile + mint", "Loose leaf"],
       "tags": ["calm", "sleep", "ritual"]

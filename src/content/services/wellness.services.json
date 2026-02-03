@@ -17,7 +17,7 @@
       "includes": ["Breathwork", "Targeted massage", "Aromatherapy"],
       "prepNotes": ["Arrive hydrated."],
       "afterCare": ["Plan a quiet 30 minutes after."],
-      "image": "/home/wellness-1.jpg"
+      "image": "/services/wellness/wellness-1.jpg"
     },
     {
       "id": "deep-tissue",
@@ -31,7 +31,7 @@
       "includes": ["Consultation", "Slow pressure work", "Heat compress"],
       "prepNotes": ["Let us know any injuries or areas to avoid."],
       "afterCare": ["Drink extra water to support recovery."],
-      "image": "/home/premium-1.jpg"
+      "image": "/services/wellness/premium-1.jpg"
     },
     {
       "id": "flow-stretch",
@@ -45,7 +45,7 @@
       "includes": ["Mobility assessment", "Assisted stretches", "Breath cues"],
       "prepNotes": ["Wear comfortable clothing for ease of movement."],
       "afterCare": ["Repeat key stretches at home for best results."],
-      "image": "/home/experiences-1.jpg"
+      "image": "/services/wellness/experiences-1.jpg"
     },
     {
       "id": "lymph-drain",
@@ -59,7 +59,7 @@
       "includes": ["Dry brush prep", "Gentle lymphatic massage", "Hydration cues"],
       "prepNotes": ["Avoid heavy meals right before your session."],
       "afterCare": ["Plan a low-key day to maintain the reset."],
-      "image": "/home/glow-edit-1.jpg"
+      "image": "/services/wellness/glow-edit-1.jpg"
     },
     {
       "id": "aroma-restore",
@@ -73,7 +73,7 @@
       "includes": ["Inhalation ritual", "Scalp + neck massage", "Grounding touch"],
       "prepNotes": ["Share fragrance sensitivities in advance."],
       "afterCare": ["Give yourself 10 minutes to ease back into the day."],
-      "image": "/home/more-than-beauty-1.jpg"
+      "image": "/services/wellness/more-than-beauty-1.jpg"
     },
     {
       "id": "sound-reset",
@@ -87,7 +87,7 @@
       "includes": ["Breath guidance", "Sound therapy", "Light grounding massage"],
       "prepNotes": ["Arrive a few minutes early to settle in."],
       "afterCare": ["Journal or hydrate to extend the calm."],
-      "image": "/home/beauty-1.jpg"
+      "image": "/services/wellness/beauty-1.jpg"
     }
   ]
 }

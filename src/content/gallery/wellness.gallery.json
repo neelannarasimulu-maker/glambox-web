@@ -3,37 +3,37 @@
   "items": [
     {
       "id": "wellness-g1",
-      "image": "/home/wellness-1.jpg",
+      "image": "/gallery/wellness/wellness-1.jpg",
       "caption": "Restorative reset ritual with calming tones.",
       "tags": ["massage", "calm", "reset"]
     },
     {
       "id": "wellness-g2",
-      "image": "/home/more-than-beauty-1.jpg",
+      "image": "/gallery/wellness/more-than-beauty-1.jpg",
       "caption": "Quiet recovery moments designed for ease.",
       "tags": ["recovery", "relax", "balance"]
     },
     {
       "id": "wellness-g3",
-      "image": "/home/experiences-1.jpg",
+      "image": "/gallery/wellness/experiences-1.jpg",
       "caption": "Guided stretch flow for mobility and release.",
       "tags": ["stretch", "mobility", "flow"]
     },
     {
       "id": "wellness-g4",
-      "image": "/home/beauty-1.jpg",
+      "image": "/gallery/wellness/beauty-1.jpg",
       "caption": "Breath-led ritual with grounded ambiance.",
       "tags": ["breath", "mindfulness", "calm"]
     },
     {
       "id": "wellness-g5",
-      "image": "/home/glow-edit-1.jpg",
+      "image": "/gallery/wellness/glow-edit-1.jpg",
       "caption": "Aromatherapy moments to deepen the reset.",
       "tags": ["aroma", "restore", "ritual"]
     },
     {
       "id": "wellness-g6",
-      "image": "/home/premium-1.jpg",
+      "image": "/gallery/wellness/premium-1.jpg",
       "caption": "Soft lighting and quiet cues for true downtime.",
       "tags": ["space", "unwind", "restore"]
     }

@@ -7,7 +7,7 @@
       "name": "Cuticle Oil",
       "brand": "Glambox Select",
       "priceZar": 120,
-      "image": "/home/glow-edit-1.jpg",
+      "image": "/shop/nails/glow-edit-1.jpg",
       "shortDesc": "Daily nourishment for healthy cuticles.",
       "details": ["Vitamin E", "Quick absorb", "Travel size"],
       "tags": ["care", "hydration"]
@@ -17,7 +17,7 @@
       "name": "Glass Top Coat",
       "brand": "Glambox Select",
       "priceZar": 140,
-      "image": "/home/premium-1.jpg",
+      "image": "/shop/nails/premium-1.jpg",
       "shortDesc": "High-shine sealant for longer wear and fewer chips.",
       "details": ["Fast dry", "High gloss", "Long wear"],
       "tags": ["shine", "finish", "protect"]
@@ -27,7 +27,7 @@
       "name": "Hydra Hand Cream",
       "brand": "Glambox Select",
       "priceZar": 160,
-      "image": "/home/beauty-1.jpg",
+      "image": "/shop/nails/beauty-1.jpg",
       "shortDesc": "Silky moisture that keeps hands soft between appointments.",
       "details": ["Non-greasy", "Shea butter blend", "Everyday use"],
       "tags": ["hands", "moisture", "care"]
@@ -37,7 +37,7 @@
       "name": "Nail Strengthener",
       "brand": "Glambox Select",
       "priceZar": 150,
-      "image": "/home/experiences-1.jpg",
+      "image": "/shop/nails/experiences-1.jpg",
       "shortDesc": "Support for weak or peeling nails.",
       "details": ["Protective base", "Fortifying blend", "Weekly treatment"],
       "tags": ["repair", "strength", "base"]
@@ -47,7 +47,7 @@
       "name": "Gentle Polish Remover",
       "brand": "Glambox Select",
       "priceZar": 110,
-      "image": "/home/weekends-1.jpg",
+      "image": "/shop/nails/weekends-1.jpg",
       "shortDesc": "Non-drying removal for polish and light gel.",
       "details": ["Acetone-free", "Aloe infused", "No harsh scent"],
       "tags": ["remove", "gentle", "cleanse"]
@@ -57,7 +57,7 @@
       "name": "Soft Step Foot Balm",
       "brand": "Glambox Select",
       "priceZar": 180,
-      "image": "/home/celebration-1.jpg",
+      "image": "/shop/nails/celebration-1.jpg",
       "shortDesc": "Overnight repair for smooth heels.",
       "details": ["Rich repair", "Peppermint cool", "Heel rescue"],
       "tags": ["feet", "repair", "pedicure"]
